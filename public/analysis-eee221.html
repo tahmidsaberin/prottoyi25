@@ -11,25 +11,33 @@
     /* ── Reset & Base ─────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg:        #0e0e10;
-      --bg2:       #141416;
-      --bg3:       #1a1a1d;
-      --bg4:       #212126;
-      --border:    #2a2a30;
-      --border2:   #353540;
-      --accent:    #7c6af7;
-      --accent2:   #a594ff;
-      --gold:      #e8c96a;
-      --red:       #f06a6a;
-      --orange:    #f0a06a;
-      --green:     #6af0a0;
-      --text:      #e8e8ec;
-      --text2:     #9898a8;
-      --text3:     #5a5a70;
-      --mono:      'Space Mono', monospace;
-      --sans:      'DM Sans', sans-serif;
-      --head:      'Rajdhani', sans-serif;
-    }
+ /* core colour palette – identical to analysis‑style.css */
+ --g1: #00FF40;
+ --g2: #00FF00;
+  --g3: #3FFF00;
+  --g4: #0BDA51;
+  --g-dim: rgba(11,218,81,0.10);
+  --g-glow: rgba(0,255,64,0.30);
+  --bg: #060c07;
+  --bg2: #0a130b;
+  --bg3: #1a1c10;
+  --surface: rgba(11,218,81,0.05);
+  --surface2: rgba(11,218,81,0.09);
+  --text: #e8f5e9;
+  --text2: #9db89e;
+  --text3: #5a7a5b;
+  --border: rgba(11,218,81,0.15);
+  --border2: rgba(11,218,81,0.32);
+  --red-bg: #1a0a0a;   --red-text: #ff6b6b;
+  --orange-bg: #1a1000; --orange-text: #ffbb44;
+  --green-bg: #0a1a0b;  --green-text: #4ade80;
+ --font-display: 'Rajdhani', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  /* Map the old “accent” names that the page still uses */
+  --accent: var(--g1);
+  --accent2: var(--g1);
+}
     html { scroll-behavior: smooth; }
     body {
       background: var(--bg);
