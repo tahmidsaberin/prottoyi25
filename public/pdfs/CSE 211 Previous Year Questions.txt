@@ -1,0 +1,1611 @@
+
+
+
+
+University of Chittagong
+De rtment of Computer Science and Engineering
+Course Code: CS ; ter B.Sc. (En g) Exa inati n-2023
+T		Course Title: ObJect Oriented Programming otal marks: 54 Marks	Time: 4.00 hours
+[Answer any three questions fro	h	f th	S	•
+scri t must be	m_ eac	e	ection-A and Section-B; a Separate answer
+P	used for each Section. Figures in the right-hand margin indicate full marks.]
+
+Section-A
+1. Answer the following questions:
+
+
+
+
+
+
+
+
+
+
+
+
+0.75
+
+i)
+ ii) iii) iv)
+v)
+
+Is it a must for abstract classes to have abstract method/methods? State the differences between a method and a constructor.
+What is the use of the final keyword?
+How is multiple inheritance achieved in Java? How does Java support platform independence?
+
+x12
+=9
+
+vi) Which operator is used to allocate the reference address in memory for an object?
+vii) Which collection allows you to retrieve elements in the order they were inserted?
+viii) Which method is used to check if a collection has a certain element?
+ix) What happens when you put a duplicate key into a HashMap?
+x) State the differences between methods overloading and methods overriding.
+xi) When will you·prefer multithreading using interfaces rather than extending the Thread class?
+xii) State the differences between class and interfaces.
+
+2. a) Complete the Student class below by adding appropriate attributes and/or methods such	3 that running the main method provides the following expected output. You must not modify the main method.
+
+public class Student {
+private String name, id;
+private double cgpa;
+public static void main(String[] args){
+Student sl • new Student("011162101", "Kratos", 3.0); Student s2 • new Student("011162102", "Thanos", 4.0);
+System.out.println("Before swap"); System.out.println(s1); System.out.println(s2);
+swap(s1, s2); System.aut.println("After swap"); System.out.println(s1); System.out,println(s2);
+
+Expected Output: Before swap 011162101 Kratos 3.0
+011162102 Thanos 4.0
+After swap 011162102 Thanos 4.0
+011162101 Kratos 3.0
+
+}
+}
+
+b) Provide an example code snippet tltat coulcl lead to a deadlock am) discuss how to resolve	2
+or prevent it.
+c) Suppose you arc building a software for a private orgnnizntion. Now, writo n. Java progTam	4 that contains a class named Employee. It ha  two attributes name and salary with types respectively String and Floating point number. The constructor of the Employee
+class initializes the name and salary with this reference keyword. There is one method named void printSalary( ). Theclasses that extend Employee are PlatinumEmployee and SilverEmployee. PlatinumEmployee class overrides printSalary( ) method by invoking the parent method and also prints the name and bonus amount which is 15% of the actual salary and finally prints the total salary by adding the bonus amount. SilverEmployee class also overrides printSalary( ) in a similar way except that the bonus amount is 7% in this case.
+
+
+
+
+
+
+3.a) Write a Java program to explair, the use of this and super keywor.d.
+b) Wri_tethe output of the c,)de with the rationale of your answer.	1.5
+
+
+class Wizard { String name; Wizard.(String 11)
+{
+name=n;
+}
+}
+
+
+
+''
+
+public class OOPCU {
+public static void main(String[J args) {
+Wizard wl=new Wizard("Hagrid")·; Wizard w2=new Wizard("Sirius"); Wizard w3=new Wizard("Harry"); wl=w2;
+W2=i:,t3;
+w3=wl; System.out.println(wl.name); System.out.println(w2.name); System.out.println(w3.name);
+} .
+
+I	}
+c) Write a class named Box whichh .:t3 instance variables [width(double), height(double),
+./	and depth(double)], one illstance method [double volume()], and one constructor. Create .
+I	two classes named Cube a1Ld DifferentShapedBox by inheriting the Box class. Is it possible
+to write the above progra11 using "Abstract classes"? If possible then:	·
+• i)  Complete the program using the abstract class.
+ii) What is the advant<tge of using abstract class in question no - (i)?
+d) ·•Write the output of the code with the rationale of your answer.
+
+
+
+3.5
+
+
+
+
+
+2
+
+class Example {
+static int a=S;
+_int  b=10;
+}
+
+p1Jblic class Test3 {
+public static void main(String[] args) { Example el=new Example(); Example.e2=n w Example()
+el.Q=10;  .
+el.b=30;
+System.uut. vrintln(e2 .g.); System.out.printin(e2.b); System.out.println("Sum: "+2+3); System.out.println('a'+2);
+}
+
+I
+i
+I
+
+
+4.a)	Is the following code snip1,et allowed? Give your answer as 'yes' or 'no' and provide a proper reason behind your .mswer.
+
+
+
+
+
+
+1.5
+
+class Vertebrate{
+public final void get(){
+System.out:println("This is a
+vertebrate");
+}
+}
+
+class Human extends Vertebrate{
+public void get(){ System.out.println("This is a
+• human");
+}
+}
+
+b) Ifa method in a subclass h i.s the i:ame name as a -!Ilethod in its superclass with different parameter types, is the met hod ov,midden and overloaded?
+c) Suppose there are 8 ro thocls defined as follows: void ml(), void m2(), void m3(), void m4(), void mS(),  void m6(), voidm7.0, and void m8().
+There are also 4 interfaces named xl, x2, x3 and x4 and a class named MyClass thatneeds to be forced to implement all the a.bove 8 methods. You have to_maintain the following
+constraints:
+i) Each interface can dufine at most 2 methods.
+ii) The class MyClass cf,.n only implement i interface.
+iii) (iii) Write Java code for MyClass to achieve the abovescenario,.
+
+1.5
+
+
+3
+
+
+
+
+
+
+
+
+
+
+
+Page12
+
+' ,..,.,.. ..,..,.. ,.• * - .'
+i"	..
+
+d) Consider the following Jara program. The values of String s, integers b and c are taken	3 as input. Write the outpu; of the program for the following alues o si b and c:
+4.
+s= "100" b=200
+C = 10
+
+import java.util.Scanner; public class Test {
+public static void main(String[) args) { Scanner sc • new Scanner(System.in); try{
+Strings - sc.next();
+int a - Integer.valueOf(s); int b = sc.nextint();
+int c • sc.nextlnt();
+int (] array= new int[S].;
+int d - a / b; array[c] = d;
+System.Jut.println(array(c]);
+}
+catch (NwncarFormatException e){ System.:mt.println("Input was not an Integer.");
+}
+catch (ArrayindexOutOfBoundsException e){ System.Jut.println("Array index should be less than 5");
+}
+catch (ArithmeticException e){ System.Jut.println("Can not divide by 0");
+
+
+
+Section-B
+
+5.a) Write a Java program tha; takes a string as input and finds the largest word in the string. You need to use lambda ex 1ressions for a Comparator to compare the word length. Assume that two words are separa ;ed by a single space. In case of a tie, print the first one.3.5b)	Write a Java program to :ind the maximum element in a large array by splitting it into3.5multiple parts and using ;hreads to find the maximum in each part to find the overallmaximum.c)	What modifier should you use for the following cases? Explain with proper rationale2i) A class in a different package cannot access the class, but its subclass in any package can access it.
+ii) A class in the same Jackage can access the class, ut a class in a different package
+cannot access it.
+
+6. a) Consider the following inf,,rmat1' 0n on d1'fferent tootba11 p1avers' weekly salaries.	5
+
+Lie Crl Ne.
+Write Java co<le for the fc llowlng:
+i) Create an appropriate Hash-bOBc<l collection to store the above information and
+then store the abov  three information.
+ii) Increase Lionel Met si's balance by 100000.
+iii) Write a generic in .erface named iStack with methods push, pop, and isEmpty. Then write a gener.c class Stack that implements the iStack interface.
+
+
+
+
+b) Enumerate the difference between various layout managers usingdiagrams.
+c) D1.scuss the restrictions that you need to cons·ider w1t 1c11workm' g ' vith Java generics.
+
+7. a) Differentiate the following clas.c;c.<Jnvnilnblo in the Jnvn collection fmmoworkusing necessary code segment, output, 1U11l proper explanation.
+i) ArrayList vs. l,lnkc,'(ILlst
+ii) List vs. Set
+iii) TrccMop vs. LlnkcxllfoshMap
+
+2
+2
+
+4.5
+
+b) Write a Java program to convert a given nrray into a collection with the MList() method.	2
+
+c) Write the out,11ut of the following program with proper rem;uning.
+import Java.util.•; class Tricky {
+
+2.5
+
+public static void main(String args())
+{
+ArrayList<String> list• new ArrayList<String>();
+list.add("C"); list.add(null); list.add("A"); list.add(null);
+System.out.println("ArrayList: 11  + list);
+HashMap<Integer, String> hm • new HashMap<Integer, String>(); hm.put(1, "A");
+hm.put(2, 11811);
+hm.put(null, "C"); hm.put(null, null); hm.put(3, null);
+System.out.println("HasMap: 11 + hm);
+}
+}
+
+
+.a)	(The Person, Student, Employee, Faculty, and Staff classes) Design a class named Person	5
+and it.s two sulr<:las.'iCSnamed Student and Employee. Make Fnculty nnd Staff subclasses of Employee. A person has a name, address, phone 11111111,cr, 1u11l cmnil 11ddrcss. A student hns ad.	status (First Year, Sccon<IYcar, ThirdYmr, or Fo111thYt'nr). Defino the stattLs 1\8 a const,u1t. Au e111ploycc lti.l!jau offkt! mad snlnry. A faculty llll'lllbC'r has offico hon.rs and a rank. A staff member haHn title. OV<·rrido tho t0Stri11 ( ) method in each class to d' play the rial name and tho J>CfSOUfl.'I llllOll'. l111plt'11ll'11t nil tho clnssC'Susi11g Jan\.
+b)		Yc,u ar rcquiroo to oomplcto n Java CUI npplirntio11n1111how1l1ow usiug Swing and	4 AWT that I	tho fu11ctio1U1lily ofconvcrli11g US Dollar to Euro aftn pm,siug tho Co11,·crt Dutt.c,11. Pon11ula: l USD = 0.88 F.11ro.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I	r
+
+University of Chittagong
+Department of Computer Science and Engineering
+3rd Semester B.Sc. (Engg) Examination-2022
+Course Code: CSE-311		Course Title: Object Oriented Programming Language Total marks: 54 Marks	Time: 4.00 hours
+
+[Answer any three questions from each of the Section-A and Section-B; a Separate answer script must l?e used for Section-A and Section-B. Figures in the right-hand margin indicate full marks]
+
+Section-A
+1. aJ		Whatis the result of the following code fragment? public class Choosy
+.{
+public static void main (String []-args)
+{	.
+String result= ,.;i;
+int x=7, y=8;-
+if (x-3) {result +="l";)
+else if (x >'9) { result+= "2"; }
+else if (y < 9) { result+= "J"; }
+.else if (x = 7) { result += "4"; } else { result -:+-= ''.5''.; }	.
+System;out.println (result);
+}	.
+.}
+}:,)	Which are true about a static nested dass? (Choose all that·apply)
+A. -You must hav:e a r.eferf;!nC!;? to n.instance of the enclosing cla.ss ID order to insta.ntiate
+jt.
+B. It does not have access to non-static m ml;>ers of the enclosi{lg class.
++ C. Its variables and metho s must l;>e static.
+< D. .Ifthe outer cJ<\Ss is named MyOuter, and the nested class is n m_eqMylnne.r, it can be.
+      jnstqntiatecl usmg new MyOuter.Mylnner();,	·	·· "	E. It must extend the enclosing class,
+
+
+
+
+
+
+
+
+
+)	public class Tour	2
+{
+public static void main(String[] args)
+{
+Cathedral c = new Cathedral();
+// insert code here
+s.go();
+class Cathedral
+class Sanctum
+
+void go() { System.out.println("spooky"); }
+}
+..
+Which, inserted independently at line 6, compile and produce the output "spoo.ky'7 (Choose all that apply.}
+A. Sanctum s = c.new Sanctum();
+B. c.Sanctum s = c.new Sanctum();
+C c.Sanctum s = Cathedral.new Sanctum();
+D. Cathedral.Sanctum s = c.new Sanctum();
+E. Cathedral.Sanctums= Cathedral.new Sanctum(); •
+d) Find the error in following code segment.
+int sum( int x, int y)
+
+int result;
+result = x + y; f\e-\.W,,.Y'
+}
+
+)	What gets displayed on the screen when the following program is compiled and nm?
+protected class example {
+public static void main(String args[J) I
+String test= "abc";
+test = test+ test; System.out.println(test);
+l
+}
+
+
+
+2. a)	Consider the following code segment: public class MIIIMax I \-{'t'f\ l(
+public static void main (String args[ ])!
+int a"' 'MinMax("min", 2, 1, 6, 4, 5); // a=l
+int b = MinMax("max", :3, 0, 6);  If b=6 int c =·MinMax("min", 2, l, 6, S); //t=l int d""MinMax("max", 1, 7);   If d'==7
+
+3.5
+
+
+
+
+Write theJava..method MinMax.-Yot:u;an write only one MinMax method.
+b) Complete the followi.n,g javaode.: class ]Main {
+
+
+
+3.S,
+
+
+ 
+public static void main(String[J args) {. JMain obj1 = new JMain(''Java"); J_Main obj2 =new JMain("Python''.);
+]Main obj3 = new JMain("C");
+}
+}
+?\:ow, men.lion the j va feature/techniques you have used to coll\plete the code-. Write
+,downits properties and state. what makes it different from the ordi,n ry j<;1va method.
+c) Enumerate th conditions to use the keyword super.	2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+,.	)	I oint out the problems in the code below. Write two different ways to fJx Our problems,
+ou nL>ed to write the necessary code to support your solution.
+
+b) Consider the following code segment:
+
+
+
+
+
+
+
+•
+
+
+
+
+
+Write minimum code in class C2 for successful compilation. You can't define C2 as
+abstract.
+c) Point out and fix the problems in the following code snippet.	2
+
+final class X {
+final void show () { System.out.println("Print A'');class Y extends X { void show (){
+System.out.println("Print  B");'
+ 
+
+
+
+
+
+
+4- a)	PF ''th	re	m thod defmed as follows:	4
+\  i  ml(),  nid m2(), void m3(), void m4(), void m5(), void m6(), void m7(), and void m8()
+Th	, re lsu 4 interfaces named as: interface xl, x2, x3 and x4.
+There is also a class named MyClass that needs to be forced to implement all the above 8
+methods, where you have to maintain the following constraints:
+i) Each interface can define at most i methods.
+     ii) The class MyClass can only implement 1 interface. Write Java code for MyC\ass to achieve the above scenario.
+b) Consider the following code segment	3
+class Sample {
+public static void main(String args[])
+{
+Display obj = new Display(); obj.disp('a');
+obj.disp('a',10);
+obj.disp('a',10, 5.5);
+
+
+
+i\'ow, write the Java class Displm;. Also, mention the name of the java feature/techniques you have used to complete the code. Write down its benefits.
+
+-
+
+
+
+
+
+)	Ciwn the following classes:
+class Animal {
+void makeS011nd() { System.011t.printin("Aninrnl '');
+
+2
+class Cat extends Animal (
+void makeS011nd() { System.out.println("Cat");
+
+J
+
+
+
+
+class 'Dog extends Animal ( void makeSound() (
+System.out.prin-tln("Dog");
+)
+
+class Main {
+public static void mairl(Stringrl args){
+Animal a= new Animal(); Animal I,= new Dog(); Animal c = new Cat(J; a,makeSouTJdO; b.makeSound();
+c:makeSoundO;
+
+..	.  )
+.J
+Write down the output of the code with explanation.
+
+
+5. a)  Suppose, in your Java prog.ram you n:eed to create a thread A, but A.needs to exfend class- 3_5
+B. Write some coqe to s.hbw howyou can create the thread,
+b)		What is synchronizi,ition with threads? Why it ·is necessary in a Java program? Can 2.5 synchronization lead to deadlock? Explain: the .things with necessary code segments,
+.c)		Write a Java program to change the priorities of its main thread as follows: (i) Set its	3· priority below nor;mal (i3) Give it the nam¢: CSECtJ'
+
+
+
+
+
+
+
+
+
+
+PlQc 16
+
+
+
+
+
+
+
+
+6, )	i:\I,, iJ-	nm d	ount with th' (ollowlng Information:	4
+\'\ ub\ hal 1, -11'l1bl\lnncc of thll account
+,  d debit (double amount)• this method subtracts the amount from the balance
+:1hi credit (do1.1ble amount)• this method adds the artlount directly to the balance
+Th	m unt provided in the debit and credit method cat't't be negative. The balance of the
+unt can't also be negative. Now, write Java code for the fol_lowing:
+i) A custom exception named lnvalidAmountException that triggers when the given amount is negative and shows the message The given amount can't be negative'.
+ii) A custom exception named InvalidBalanceException that triggers when balance goes
+negative and shows the message 'The account balance can't be less than zero'.
+iii) The Account class to trigger these exceptions when needed.
+b) public class Error {
+public static void main(String args[]){
+int a[]={7,9,45,63,10};
+intb=7;
+for(int i=O;i<7;i++){ int x=a[i]/(b-7);
+System.out.print(x);
+
+
+
+
+What types of exceptions may occur in the above code and how can you handle those exceptions, write your solution code.
+c) With an example illustrating the usage of throw and throws in a Java program.	2
+7. a)	What is side-effect in programming? Explain with an example.	2'
+b) Explain the notion of coupling and cohesion in the context of classes. Why is high	3
+cohesion and low coupling desirable?
+c) Write the five SOLID principles of object-oriented design.	4.
+
+
+
+
+
+
+
+
+
+
+Pagel 7
+
+
+
+
+
+
+
+
+
+public class MapTcst I
+public static void main(String argsll)I
+Map<Integer, String> testMap =- new HashMap<lnteger, String>(); Map.put(?, "AB"); r-"(D
+Map.put(45, "CD"); ....
+Map.put(78, "EF'');	-
+Map.put(27, "GH");	cei)
+Map.put('l, "IJ");	.-	.
+Map.put(78, "KL"); .- Q)
+Map:put(77, 11MN"); -
+\
+l
+Write the output of the above code segment. Does the keys are sorted in the above c·ode-? If your answer is no, wr:ite·the alternative sqlution to-maintain the ordered keysef.
+b)	Write a Java proi;ra:m using Jav.a collection framework to calculate the frequency of each	3.5
+word in •the given string.
+Sample Input:
+"learning to·code is1eamin to create,and.innovate"'
+Sample Ou'tput:
+and 1
+code 1.
+create 1
+innovate 1
+is 1
+learning 2
+to 2
+c) Write a Java program to enumerate the differenc:e betwe_e.n List and Set.
+
+
+
+
+
+
+
+
+
+
+Pngc I 8
+
+
+Uni crsity of Chittagong
+l cpartmcnt of 'omputcr cicncc & Engineering 3rd Scmc. tcr H. 'c. Rnginccring Ex.amination, 2021
+nurse	ode: CSE 31 J
+onrsc	amc: Object Oriented Programming Language
+
+Time: 4 Hours	Full Marks:54
+
+[An wcr three quc. lions taking :any three from each section :ind use separate an 'i erscript foreach
+cclionJ
+Section A
+1. a)	Give concise descriptions of polymorphism, encapsulation  and in!1erit nce.	·· .	.	3
+b) uppose you are running ajava program named test\ riting the following commandm	2
+CU. Write the values of argsO variable in the parameter of main m thod. c:\>java test lam a student of CSE at	niversity of Chittagong
+c) Ilow static variable is different from the instance variable?	2
+d) Determine the value of each of the following logical e,'prc	ion  i  a=S b= IOandc=-6	2
+i. a>b && a<c	'
+11.	a<b && a>c	.a -  ,  <..
+111.	b>l5 && c<O II a>O
+2. a)	What will be the output of the following program?
+
+
+
+
+
+
+
+
+
+
+f)'
+
+
+
+
+
+
+
+
+
+
+b) 'rcatca concrete class
+i. Name
+ii. /\gc
+
+
+.,• •	I	•I	•	I	1·11	·  , ,riv•,tc, f.)::it:i 111c1nbc,rs
+nu1rn.:u  l mp uycc  iavmg I 1c l> owing f	•
+
+..,
+
+iii. Phone number	r-
+iv. Addrc
+v. Salary	.	_	.	.	,	.	,	,, 1. •	T,l
+
+
+
+'Teacher' and
+
+Two classes 'Teacher' and 'OJ l1ccr' mhcnts the Employeec ,1s.	,lc I t ·res·t' and
+
+'Officer'  classes  huvc
+
+. .	b.	.	d 'Rescarc 1	nc
+add11tonal data tncmcrs n.m,c	..·. ·d during the
+
+'Dcsignutionr' e·pectivcly..ow. the data members exceptsabry arcussS, l1·1 ,. , ill be in
+
+creation or objccts of both orthese clasc · • /\ meti10J
+
+• 	I
+
+11amcd ·computc a i.l,.;
+
+
+
+
+
+
+,, .  ·I
+
+
+
+
+
+
+
+
+
+
+
+
+Employee class to a,sign salary but its bu. iness logic for Teacher and Officer class is
+different. The '\ cacher c\a s has one additional method named	viewTeachcrlnfo" to
+how the research interes,t	ith all private members. Similarly Officer has also an
+additional method named 'V\cwOfficcrlnfo" to show designation including all private data mcn1bers of Employee class. Draw the implementation level class diagram.
+c) ls it possible to have two methods in a class with same method signature but different	3
+return t pcs'? Exp\ain with example.	,/
+d) M_aryam has written the code like below. But it is showing compile time error. Can you	2
+idcntif  what mistake he has do,n-e?-· -------
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. a)	\1/hat is wrong with the below code? Why it is showing compile time error? 'I.; rite the 3
+correct code.
+
+Creact a	function called min () that returns the smaller of the two numeric argument	3
+
+b) used to caH the funct.ion. OverI
+returns sma\lcr.
+
+oad
+
+m·in ()
+
+so ·1t accepts t Iuee numer·ic arguments, and
+
+Write a program that uses Java style 1/0  to input two integers from th_c  cy_board and	3
+c) then displays the result or raising the first to the power of the second. lt 1s md1spensablc
+to use the concept of class, public member variable and function.
+
+
+i. Why the following class is. hawing compilation error?
+4. 1  abstract class AbstractClass
+{	abstract void abstractMethod()
+{	Systern.out.println("Fir-st Method");
+)
+ }	
+
+l+l
++2
+
+. . stantiablL:? ClassA or
+.. Which dass is in
+It.
+
+lnss l3?
+
+
+
+2
+.Sca..nnecL with Ca..m.Sca..11,ner
+
+
+
+iii. B lo, code  nippct is  ho, ing compilation error'? Can you suggest the
+c rrect ions?
+
+
+
+
+
+
+
+b) Write the importance of Package to develop a professional soft\ are.	2
+c) Create a class called box ()  whose constructor function is passed three double values,	3
+each of which represents the length of one side of a box. Have the box class compute the
+volume of the box and store the result in a double variable. Include a member function called vol () that displays the volume of each box object.
+
+
+
+
+
+5. a)
+b)
+
+c) 
+
+
+6. a)
+b)
+
+
+c)
+
+7. a)
+
+
+Section B
+Explain default exception handling giving a Java code.
+Create an exception class named 'NoMatchExccption" that is thrm n, hen a string is
+not equal to "8angladcsh". Write a program that uses this exception.
+What is the basic difference between throw and throws key, ord? Explain givingjava code.
+
+What do you mean by Multithrcading? Why is it important?
+Write a program in java to create three threads A, B and C, , here it shows the
+corresponding thread name five times. Test the program b creating a class with main method.
+Is there any difference between startO nn<lrunO mctho<l of Thread class? Explain it.
+
+Whalis stream? Classify the stream based 011 thc dirccti.on of"thc flow of data.
+
+
+
+
+
+
+3
+3
+
+3
+
+
+3 ....
+4
+
+
+2
+
+4 - . \
+
+b)	Wrilta:  java code which takes employee name c;mplD cc ID and salary from keyboard	5
+and saves the data into u file named' cmployce.dnt ·. And also include the logic in the
+programwhich reads the 'cmplo cc.dat' and shows the data on the console.
+8. a)	What re the ba ic differences between J\ WT and  wing G  l component?	\ .5
+b) Wl at_1sevent? Define Event Source, }!vent Object and Event Listener giving example.	3
+c) Writea Java code for making a main window, ith l\ o text fields labeled with ''Name"	4.5 a d"Father's Name". tryou enter any text in the c fields, a dialog box will be appeared
+with 1he message containing your entered text.
+
+3
+I
+
+-
+;\  4
+
+
+
+
+
+Univcr ily of Chill,,gong
+Department of Computer Science ,md Engineering
+3. .-i Semester U.Sc. (Engineering) Examination 2020 Course Tille: Object Oriented Programming
+Course Code: CSE 311, foul! Marks: 54, Duration: 4:00 Hours
+[AIJ.	Answer any three questions from each section.
+.	. parts ofa	question should be answered sequentially; figures in the right hand margin md1cate full marks]
+Section A
+l. a)	What is object oriented  paradigm?  Explain  how object oriented  approach
+outperforms procedural appro.1ch.	3
+b) \'\7hal is .1 constructor? Show its use with an ex.1mple.	3
+c) What do you mean by Bytecode? How is it useful in Java Virtual Machine
+(]VM)?'	2
+d) What will be the output of the foIIowing code if x=4, and y=6
+if	( X > ) )
+if(y>S)
+System.out.println( "x and y' are> S" );	1
+else
+System.out.println( "xis<= S" );
+2. a)		What is the main feature of static keyword? Write a Java program to add two integers using static variable and static method inside the class.	4
+b) With an appropriate example differentiate between an Array and Arraylisl.	3
+c) Write byte size of four integer types such as byte, short, int and long.	2
+3. a)	What is StringTokenizer used for? Give an example.	2
+b) Why should you use a StringBuffer instead of a String.	2
+c) What do you understand by encapsulation? Why do we use·encapsu]ation?	2.5
+a) What is HashMap? Explain with an example.	2.5
+4. a)	Explain the concepts of function overloading in a nutshell.	2
+b) Create a function called min ( ) that returns the smaller of the two numeric	3
+arguments used to call the function. Overload min ( ) so it accepts three numeric arguments, and returns smaller.
+c) Write a program  that uses Java style 1/0  to input two integers from  the    4
+keyboard and then displays the result of raising the first to the power of the second. It is indispensable to use the concept of class, public member variable and function.
+
+
+
+
+
+
+Scanned with CamScanner
+
+C
+
+
+
+
+
+
+ ctionll.
+
+c•vc an exnn,.p\e for each.	4
+
+{ inhcrilonce7	'	'	I	.
+
+Wh"t arc the \\if{ 'r nl {ormo	orl nrnltiplc inheritance.
+.,)	be used to supp
+.	.	\' whcr, interface can
+
+3.5
+
+b)	''", an	:\ll\\
+
+an c .llllP\C' ,
+
+1.5
+
+\\ rile a Java progr,llna. '
+
+t	•,n inheritance.
+tr	construe or
+
+
+
+
+t-.  J)
+
+
+b)
+
+c)
+
+d) 
+
+
+7. a)
+b)
+
+c)
+
+d)
+
+
+8. a)
+
+11\\l lr.l\c, \1 c of upcr instcod of co mg	1	f run	time	3
+                                       \	.	hism? Give an exampe o Wh,t	do you understand by po ymorp
+po\ymorphi m.	2
+\\ hati	inner cla	in Java? Give an cxomp\c.	2
+Why do we u c cnum keyword? Give an example.
+t t	lch an error and displaya	2
+Write a code segment having try-catch stalemen o  ca
+me  age.	,
+What is data abstraction? Why and when do we use abstract class andmelhod?	2
+Write a program with an abstract class and an abstract method.	2
+Write a program that will display current date and time.	2
+How do you implement thread in Java? What is the difference between start()	3
+and run() methods in a thread's life cycle?
+What is an in-line function? What are its advantages and disadvantages?	3
+
+b) What is a friend function?	2
+c) Write a Java program that creates a class called card that maintains a library    4
+card catalog entry. Use a public member function called store ( ) to store a book's information like author's name, edition of a book. In addition, create another public member function called show ( ) to display the above mentioned information. Include a short main ( ) function to demonstrate the class. Give some flavor of friend function in this program.
+
+
+
+
+
+
+
+
+
+
+
+
+JI ,1 I' (1
+Scanned with CamSc
+
+
+          University Chittagon Deparlment of Computer Science a!d	.
+3r  Semester B.Sc. EngineeringExam;!:	:e;ring
+Course Code: CSE 311  1  0  019
+Course Name: Object Oriented Programnun L
+Total Marks: 52.5 Time:4 Hourgs	anguage
+
+
+
+.a.
+b.
+
+(	C.
+
+[Answer any three questions from each of the following section]
+Section A
+at	m es Javaa platfonn independent programming language?
+PDr1ofgferraemntm1aitnegbleatnwgeueangeC?ompiler and Interpreter. Is Java Compiled or Interpreted	2
+2
+S ppose you want_ to develop a large software. Will you choose an object
+yoonuerntcehdoi?creo.granurung language or a procedural programming language? Justify	3
+
+/2·
+I
+
+(!) Evaluate the following expressions:
+2 * 2- 3 > 2 && 4 - 2 > 5
+2 * 2- 3 > 2 11 4-2	> s
+a. TI!ustrate the basic features of an obje t..,'#,.
+b. Write a general form of a class  -Xl,o-3"  -
+c. Give output of the following method: J{l&-")
+public static void main(String[J args) { int a = S;
+a++;
+System.out.println(a);
+a -=  (a--) - {--a);
+System.out.println{a); J
+d. Rewrite the following program	gmen1 using 1hc: if-cl e s1memcn1. instead of the ternary operator
+String grad	(mark >• 90)? "A": (m  rk >• 80)?"B":"C";
+
+
+
+1.75
+
+
+
+1.75
+I
+3
+
+
+
+
+
+3
+
+3,1. Diffcrentiure bcrwc:cn  h:lhod O\Ctlo.1d1ng ttnd  h:rhod UVl.lrri<.lmg.
+
+/1/u tr'Jle l.lncap\Ulu1ion princ,plc: in J1n<1.
+The 1wo rooh of. quadr 1i cqu:,11	;.t,\	b + • 0 cm, be obtained using lhc following fomwla:
+
+r,=--b-*=-1>a•--a-<'
+
+2
+2.75
+3
+
+
+b2- •la 1·	nfh:d 1J1c t.h cri •	f I.he q	·	cqu 1ion If it 1s po 1tivc, the eciuation hm, '"	re.I,		1,cro. lhe equ tion hu, one root. If it is
+neg.uive. rhe equari n h. n n:lllr
+
+Wrirca progr.im 1h.i1p	mpr 1bc u r I	mer	tue lor a. b, ande and display rhe re ulr ba ed on the di riminanr. If the d1scrimin n1 is po itive. di,;play two
+r	r.	ff 1he di  riminam	0. dt play on	roo1. Orhcrwi<;c, display ·'The
+equation	roor .,
+
+
+.	a. How does Java program handle divi ion by zero exceptfon'! Hlustrate it witha
+impJe e ample.
+rite a general form of exception handling
+.	.	,,
+
+
+2.75
+
+1.5
+I
+3.5
+
+Section B
+
+
+
+
+5. a.
+
+
+
+Canwe call Sub class methods usingsuper classobject?
+·d	· ate methods?
+
+
+2.75
+
+2
+
+b. Can we Overn e pnv.'	.·	of inheritance.	.	3
+
+@.
+cl.
+
+Defineinheritance. List the vanoustypes . t	ers in add() method,subtracttwo
+Writea Java program which canadd two in eg	need to use one super class thod Jn your program,you
+integers in subtract  me	·	te parameterizedconstructor,
+I	h	per class you musct rea
+andtwosub classes. n t e su	'	and	methods
+and in the two sub classes you must usea
+respectively.
+? E	1 · w·1th a suitable example.
+
+
+
+
+
+
+
+2.75
+2
+
+6. a. Howmethod overriding works· xpain
+
+s an abstract?	l
+
+b . Whatwillhappen when we decladre fa clal"snsagncdoansmtruectthoor ?ma mh.entance.	2	3
+c. Illustrate another use of super instea O ca	. ct X==0.5*h*d+31. 4*r . In
+d. Writea Javaprogram to calculate an area ofanobJned' 11 onstiuctor of super
+thisprogram itisindispensable to declare the classa	caddc	tra variable
+ class froms b classusing super. Note that,youneed toa	one ex named as weight in the sub class constructor.
+
+3
+7. a.  What is displayed when the following programis run?
+public class Test {
+public static void main ( String ( ] args )
+try {
+int [ ] list= new int [10);
+System.out .println (ll  list	1 OJ is n + list[lO));
+)
+catch ( ArithmeticException ex) {
+System. out . println (llArithmeticExceptionu);
+.}	'
+catch (RuntimeException ex) {
+System. out . println (uRuntimeExceptionu l;
+}
+catch (Exception ex)
+System. out . println (uException" ); )}}
+b. Extend the codeshown below to handle the exception that canoccur when	2.75
+openinga file that does not exist. You do not have to add the import thatisneeded
+for theexception.
+public void readFile (String filename File file= new File (filename); Scanner scan= new Scanner (file);
+
+}
+c. Writea Java program to generate following output. You need touse break inorderto
+show the output.
+1
+2 3
+4 5 6
+7 8 9 10
+
+Write the constructor in order to extract a subrange of a character array. Differentiate between equals() and equalslgnoreCase () in JavaString.
+c. To create an empty String, write the statement for default constructor.
+d. What is the difference between ,quals() and== in String class? Write a Java program to sort following string array: Bangladesh, is, a, beautiful, country
+
+3
+
+
+
+
+
+
+
+1.15
+2
+l 1
+3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Scanned with CamScanner
+
+
+	
+
+
+
+
+
+
+            University of Chittagong Department of Computer Science & Engineering 3rd Semester B.Sc. Engineering Examination, 2018
+Course Code: CSE 311
+Course Title: Object Oriented Programming Language Time- 4:00 hours	Marks-52.5
+[Answer any three questions from Section-A and anv three questions from Section-B; Separate answer scripts must be used for Section-A and Section-B.]
+
+Section-A
+1. (a)		Write a Java program to calculate an area of a triangle where you need to 3.75 use parameterized constructor with this keyword.
+(b) What is the use of finalize method? What are different  types of	2+1
+arguments? What is Inline function?
+(c) State whether the following statements are True or False:	2
+i) One problem with OOP is that once a class is created, it can never be changed.
+ii) Polymorphism is extensively used in implementing inheritance.
+2. (a)	What are the programming paradigms currently available? What is	2
+object oriented paradigm?
+(b) What are threads and Synchronization? Explain the life cycle of thread	3
+with example.
+(c) What is the main feature of static? Write a Java program to add two	3.75
+integers using static variable and static method inside the class.
+
+3. (a)	What is Java Virtual Machine .ind how it is considered in context of	2.75
+Java's pl,tform independent feature?
+(b) Consider the following Java code fragment:	4
+int []a= ( 1,  6,5,3,0,2,4}
+int n = a.length;
+int [] b = new intfn]; fo1 (inti= 0; i <n; i++) b[ a [i] ] = i;
+inz[] c = new int[n];
+fo-: (inti= O; i <n; i+-1-)
+c[:J=,!b[i]J;	ft	th
+vVhcJt -ire th	vcilu s of the elements in the arrays bl1 and cl 1a	er e
+bPVL' co.'c f ilc,	ent is ex cuted?	.	'.)	2
+_	1 .	.	. _11 1 tru tc>r? E plain with a sl  tableexample.
+
+• • f'"' .1 J ·1- ,
+
+tri \  C ,	·
+
+l"'age. lot	2
+
+
+
+
+
+
+
+Scc..nnecL with Cc..m5cc..nner
+
+
+
+
+
+
+
+
+4. (a)
+
+L h	ors in each of the following statements:
+Identify and correclt e err
+if(C:=;> 7)	.	gn( ull "c is equal to or greater than 7")·
+
+
+
+(b)
+
+h	Message0ia 1O	'	'
+JOptionPane.sow	d	ta abstraction and data encapsulation.	3
+.h b tween the terms a	d
+
+Dis.tingu1s e
+
+gram to
+
+b trace, two integers where you n,ee
+
+,to use	4
+
+(c)	Wnte a Java pro
+
+su .	.
+
+turn the value from tne c1a:_;s to
+
+constructor and output function w11r1e main function using object.
+
+5. (a)	How does a try
+
+Section-B
+
+.	h" h	t h  lause should be used	3
+statement determine w ic	cac	c
+
+to handle an exception?	k?
+(b) Is it necessary that each try block must be followed bya	catchb	oc	·
+(c) ·Give some distinctions on throw and throws clause.
+(d) What is Singleton class?
+
+6. (a)	Does garbage collection guarantee that a program will not run out of
+memory?
+(b) Sometimes a method will need to refer to the object that invoked it, which will be used inside any method to refer to the current object. 1Nhat is it? Show your clarification with an example.
+(c) What is the difference between error and an exceotion?.
+(d) Define Applet.
+
+7. (a) Why String class is considered immutable and StringBuffer called
+mutable?
+(b) What are the two ways of using Super Keyword?
+(c) How cana subclass call a method or a constr uctor defi	d	.
+cla	? Ill	.	ne	m a s11per
+ss. ustrate w1th an example program.	-
+
+8. (a_) Give an example where interfacecan b
+mheritance. Developa	stand I	J	e	used  to support  multiple
+
+2
+2.75
+1
+
+2
+
+3.75
+
+
+2
+1
+
+3
+
+2
+3.75
+
+
+3.75
+
+(b) D evelop a real-life.'
+
+a	one	ava progra	f	th
+
+multithreads.
+
+app 1cat1on	program
+
+t	.
+o	illustrate	the
+
+us_of	3
+
+(c) How JavaenabledH. hp
+ig	erformance?
+
+University of Chittagong
+Department of Computer Science andngineering
+rd Semester B.Sc.(Engg.) Examination 2017
+CSE-313: Object Oriented Programing Language FuJIMarks: 52.5	Duration: 4 Hours
+
+
+
+l. (a)
+
+Se tion A
+Object Oriented (00) is a natural paradigm. Using a practical example explain how 00 approach outperfonns procedural approach.
+
+(b) Modify the following program to make it executable.
+
+{ public class First
+int qno=I; First(int number)
+{ qno=number; } public void show()
+{
+System.out.println (" First Question
+no:11 +qno);
+}
+
+publ·1c stat·ic v01·d ma·m (Stn·ng []
+args)
+{
+System.out.print1n( The name of
+the exam is OOP"); show();
+}
+}
+
+
+(c) Wbh1a_wt	i11be the output of the followingprogram?
+pu 1c 1c ass JVTest	·
+{ tring name;
+
+mt age=23;
+ublic void show( String name)
+this.name=="Muntahin"·
+} System.out.println (thi;.name+ "is"+	"
+
+
+
+
+
+old. ");
+
+{ublicstatic void main (String [] nrgs)
+lV!es vt == new JVTest()·
+Stnng Java;	'
+} vt.slww(java);
+l
+
+(d) 
+
+Whawt ill be the output of the fiI	.	.
+
+public class En1ployee	o lowing Jnv.i program? Exp.Iam with t w lines.
+
+
+2.5
+
+{	try
+String nnm ·
+privi tc: int snfory;
+
+
+{
+emp2.namc=''Rony''; emp2.·alar =30000;
+
+
+
+
+Employee()
+{
+narnc="Administrator'';
+
+ernpI .display();
+emp1.name="A1m·1ta"
+
+salary=70000;	empl .salary=32000;
+
+}
+void display 0
+{
+System.0Ht.println(11The salary of''
++na1ne +" is" + salary);
+}
+public static void main (String(] args)
+{
+Employee emp1= new Employee(); Employee emp2= emp1;
+
+emp2.display(); empI .display(); cmp1=null; emp2.display();
+· emp2=emp1;
+cmp2.display();
+}	.
+catch(NullPointerExcept10n  e)
+{
+      System.out.println(''Null pointer exception has been thrown");
+} } }
+
+(e) What comes to your mind when someone mentions a shallow copy in Java?
+2	(a)	Using a compiete java program differentiate local variable, instance variable, class	1.75
+variable, final variable.
+(b) "A class can also be a return type of a method." Explain it with a complete java	2
+program.
+
+(c) Student
+S1
+
+Mark	4
+40
+
+S2	42
+S3	40
+54	41
+S5	40
+studentRecords.txt
+The file named stduentRecords.txt contains student id with their corresponding name. Read the data from the file and put them into a map. Write two methodsthat will give the corresponding mark for the given student id and will give the corresponding student ids for the given mark, i.e. getMark(S2) will give 42 and getld(40) will give (S1, S3, S5).
+(d) What is Java swing? What is AWT?	0.5+0.5=l=
+
+( a) Design 8 class named Bank that includes 11'1me, swift code, and location as instance varinblcs. Demonstrntc the Bank class with several overloaded constructors that enable objects of that class to be initialized in different ways. In your program, you should .r:11ow that a constructor can be invoked from another constructor too.
+
+2.5
+
+(b)
+
+\,\ hen y .,ll p,Ls an object as a parameter into a method, changes that are made to the
+ ob_jecl r,.:rsist aft r the method completes cxccuti n. However, if yo 1pass.an int_as a p rnmc :...r ilncl clwnt:-c the value of thnt paran ct r 1 a m thod, the ongmal mt vannble thJ 1  a · passed in rema·ns unchanged. Explam1t _with a J2VO.progr m.	.
+1.-i.ie  .•, 1;i 1it: mcth0d dispt1lch (DMD), ava implements nm-tnne polyrnorplusm.
+E:·pfji'.·  .-.ID u: ing a complete e/t:l- 1 0 le _1ava program.
+
+3.5
+
+
+:?..25
+
+
+
+
+
+
+
+
+
+(d)	\Vhat is the difference between stack and heap in Java?
+4. (a)	CSE cu department has several entities like students, teachers, a cad"'mic staffs, etc.
+ There are some common characteristics shared by the entities likename, birthdate, address, gender, etc. An address may have home no, road no, than2, district and country name. A student is in a particular semester. A semester may have several characteristics like offered credit, courses etc. Each course hasa cou;-se codec, ourse
+name, credit, assigned teacher. The department decides to ::issigna t acher to euch student asa	counselor so that they can get a continuous academic andnon-academic
+guidance from the counselor.
+i. Identify the classes, instance variables, methods from the above description.
+ii. Draw the class diagram. Indicate the has-a relationships and i5-a relationships
+in the diagram.
+iii. Write a }'.''/a program for the above class diagram. In each class, you mayuse get and set methods to set and retrieve data. Here, you have to use inheritance, composition, and abstract concept. The output of your program should be
+Name of the student is Sazzad.
+Lives in road no.2, Kotwoali, Chittagong. Student of 8th semester.
+Earned GPA is 3.85.
+Assigned to Rudra Pratap Deb Nath.
+.	Speciality is Affective Computing.
+(b) 	Vr te a Java program to calculate the volume of a cube. In th;s orogrm . it is md1spensable to 1eclare a class as an abstract class and call construct,)( of 'supe clas f:ram sub class usmg super.	:,
+Section B
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.75
+
+
+
+5	(a)
+(b)
+
+Explain ow a primitive and a reference variable work (use figure to clarify)
+What will be the output of the following pro0oram? Explain th	SC"	· ·	·  h
+
+
+few
+
+2
+2.5
+
+Sentences.
+class A
+
+'-'nano \Vlt
+
+{	int	a·J
+A()
+{
+
+System.out.println("From
+}}
+
+constructor A");
+
+class
+{
+
+B extends  A
+B ()
+{
+
+System. out.println ("From  constructor  B") _;
+}}
+class C extends B
+{
+
+C()
+{
+
+
+System. out.println("From constructor C");
+3
+
+
+
+
+
+
+})
+public :lass Choosy {
+public static void main (String[] arg)
+{
+
+B C ::: neli\J C () ;
+} }	.	l	three uses of super and this
+(c) Considering a complete e ecutablep aprograms_	commenting.
+references. Explicitly mention th  uses1 yourprogrnm y
+(d) How do you implement a thread 1n Java.
+
+
+3.25
+
+1
+
+.	.	.	, .
+
+_	·am'how package, class and 2cc ss
+
+2.25
+
+(a) What is encapsulation? Explainwitha	J_avaP modifier in java support OOP's (ObJect
+ 
+10Wt	J Proorammino) encapsulation 0nene		o	0
+
+concept.	.	l	bstract  and  interface  in java
+(b) Explain considering appropriate exampl_e1owc	ass,
+support COP's (Object Oriented Progra1:1i:nmg) ab tract:on con ep - .	the similarities
+(c) Java supports reusability using compos1t1on and inhen ance.	xp a1	fiure in	our anddistit1ction between them using the classes shown in the fo!l wing g		. ty
+J	Youcan fill the blank places of the classes w1tn relevant ins ance
+v		atl g: -methods and c nnect the classes with appropriate(is-aand/orhas-a) relations_
+
+2
+
+4.5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7.	(a)Using a complete java program differentiate between overloading and overriding. In3(b)your program, include a method that takes an object as a parameter. There arc four ways to call a method. Explain it within a single program.1.25(c)Using	a	complete  javn  program,  explain  that  Interface  supports	abstraction,•
+inheritance, and polymorphism.3(d)What is the connection between interface and abstract class? How can an interface be1.5implemeuted without implementing its method?
+8.	(a)
+\\ hat wili happen when you define a class and a method as final? Explain it with a
+2
+(b)suitable example.
+l-I?\\. is ,: method capable of causing an exception without handling it? Explain it with
+2
+(c)a .i;1va pr,)gram.
+Using n jt.1va program ex.plain inter-thread communication. What is the difference2.75
+( cl)bctwc n 5trirt () and nm() method of the Thread.class?
+\\ rite ;:i JJvc1program lo add cwo intc=>ers using st{lfic variable anu static mctholi
+2inside th_: class.
+
+
+
+
+
+
+Sct..nnecl with Ct..mSct..nner
