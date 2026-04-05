@@ -5,9 +5,9 @@
 
 const COURSES = {
   cse211: { code: 'CSE 211', fullName: 'Object Oriented Programming' },
-  cse214: { code: 'CSE 214', fullName: 'Discrete Mathematics' },
+  cse214: { code: 'CSE 214', fullName: 'Object Oriented Programming Lab' },
   eee221: { code: 'EEE 221', fullName: 'Electronic Devices & Circuits' },
-  eee222: { code: 'EEE 222', fullName: 'Electrical Circuits' },
+  eee222: { code: 'EEE 222', fullName: 'Electrical Circuits Lab' },
   eng271: { code: 'ENG 271', fullName: 'Technical English' },
   mat231: { code: 'MAT 231', fullName: 'Mathematics' },
   phy241: { code: 'PHY 241', fullName: 'Physics (General)' },
