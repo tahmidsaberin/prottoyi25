@@ -48,17 +48,17 @@
     CSE 211 (2nd Sem) / CSE 311 (3rd Sem) · Total marks: 54 · 4 hours
   </p>
   <div class="page-meta-row">
-    <div class="meta-pill"><strong>7</strong> years covered</div>
+    <div class="meta-pill"><strong>8</strong> years covered</div>
     <div class="meta-pill"><strong>140+</strong> questions mapped</div>
     <div class="meta-pill"><strong>19</strong> distinct topics</div>
-    <div class="meta-pill"><strong>2017 – 2023</strong></div>
+    <div class="meta-pill"><strong>2017 – 2024</strong></div>
   </div>
 </div>
 
 <!-- Notice -->
 <div class="notice">
   <div class="notice-box">
-    <strong>Note:</strong> The 2023 paper is CSE-211 (2nd Semester), while 2017–2022 papers are CSE-311/CSE-313 (3rd Semester). Both cover the same OOP subject in Java and are treated as one unified course for preparation purposes.
+    <strong>⚠ Major 2024 Curriculum Shift:</strong> The 2024 paper (CSE 211, 2nd Semester) switched entirely from <strong>Java to C++</strong>. Topics like JVM, Applet, AWT/Swing, HashMap/ArrayList are replaced by STL containers (std::vector, std::set, std::map, std::deque, std::list), pure virtual functions, object slicing, coupling/cohesion, and SOLID principles in C++. The 2023 and earlier papers (CSE-311/CSE-313) cover Java OOP. Prepare primarily for C++ if sitting the 2nd Semester exam in 2025. Both eras are mapped below.
   </div>
 </div>
 
@@ -97,8 +97,8 @@
         <tr>
           <td>2</td>
           <td><strong>Exception Handling</strong> (try-catch, throw/throws, custom)</td>
-          <td>All 7 years</td>
-          <td><span class="freq-bar" style="width:76px"></span>15</td>
+          <td>All 8 years</td>
+          <td><span class="freq-bar" style="width:80px"></span>17</td>
           <td><span class="badge badge-red">🔴 High</span></td>
         </tr>
         <tr>
@@ -194,8 +194,8 @@
         </tr>
         <tr>
           <td>16</td>
-          <td><strong>OOP Design Principles</strong> (SOLID, cohesion, coupling)</td>
-          <td>2022 only</td>
+          <td><strong>OOP Design Principles</strong> (SOLID, cohesion, coupling, side-effects)</td>
+          <td>2022, 2024</td>
           <td><span class="freq-bar" style="width:10px"></span>3</td>
           <td><span class="badge badge-green">🟢 Low</span></td>
         </tr>
@@ -593,6 +593,65 @@
       </div>
     </div>
 
+    <!-- 2024 NEW: STL Containers (C++) -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-red">🔴</span>
+        <strong>STL Containers</strong> (std::vector, std::set, std::map, std::list, std::deque) — 2024 C++ NEW
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">3</span><span class="q-text">Given a list of integers, write a function that removes all duplicates using std::set and outputs the unique values in sorted order.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">3</span><span class="q-text">Suppose you need to frequently insert and remove elements from both ends of a sequence. Which STL container would you choose and why? Implement a simple demo using your chosen container. (std::deque)</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">3</span><span class="q-text">Write a program to store student names and their scores using std::map. Then print the names and scores in ascending order of names.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">3</span><span class="q-text">Explain the difference between std::vector and std::list. Under what circumstances would you prefer one over the other?</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">4.5</span><span class="q-text">What are some features that you would expect to find in an OOP language? Are these features present in C++? Briefly explain to illustrate your answer.</span></div>
+      </div>
+    </div>
+
+    <!-- 2024 NEW: Friend Functions & Object Slicing -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-orange">🟠</span>
+        <strong>Friend Functions &amp; Object Slicing</strong> — 2024 C++ NEW
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">3</span><span class="q-text">How can you make the member function of a class friend of another class? Explain with necessary code. (C++ friend function)</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">3</span><span class="q-text">Write necessary code to arise a scenario of "object slicing" and then resolve it. (C++ polymorphism)</span></div>
+      </div>
+    </div>
+
+    <!-- 2024 NEW: Generic Classes / Templates -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-orange">🟠</span>
+        <strong>Generic Classes / Templates</strong> (C++) — 2024 NEW
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">3</span><span class="q-text">"A Generic Class can be used to maintain algorithm for any type of data" — Explain with necessary code. (C++ templates)</span></div>
+      </div>
+    </div>
+
+    <!-- OOP Design Principles (updated with 2024) -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-orange">🟠</span>
+        <strong>OOP Design Principles</strong> (SOLID, Cohesion, Coupling, Side-effects) — 2022, 2024
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">4</span><span class="q-text">Write the five SOLID principles of object-oriented design. (C++)</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">3</span><span class="q-text">Explain the notation of coupling and cohesion in the context of classes. Why is high cohesion and low coupling desirable?</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">2</span><span class="q-text">What is side-effect in programming? Explain with example.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">3</span><span class="q-text">Write a program to reverse a given text without reversing the individual words. Sample Input: "Technical Interview Preparation" → Output: "Preparation Interview Technical". (C++)</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">3</span><span class="q-text">Find the error in the following code segment: Void product() { int a=6, b=5, c=4, result; result=a*b*c; System.out.printf("Result is %d
+", result); return result; } — Identify all errors and fix them.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">3</span><span class="q-text">Why is the method main() declared as public and static? (C++ vs Java comparison)</span></div>
+      </div>
+    </div>
+
   </div><!-- end question map section -->
 
   <!-- ── SECTION 3: TRENDS ────────────────────────────────────── -->
@@ -631,8 +690,11 @@
       <li><strong>"min() overloading problem"</strong> — appeared identically in 2019 and 2021.</li>
     </ul>
 
-    <h3>Pattern Shift: Theory → Application</h3>
-    <p>Early years (2017–2019) had more pure theory. From 2020 onward, questions increasingly require writing code with specific output expectations. By 2023, even Section A short questions are code-completion type.</p>
+    <h3>⚠ 2024: The Java → C++ Paradigm Shift</h3>
+    <p><strong>The most significant change in the course's history.</strong> The 2024 paper (CSE 211, 2nd Semester) is entirely in C++. Java-specific topics — JVM, Bytecode, AWT/Swing, HashMap, ArrayList, Applet — are all replaced by C++ equivalents: STL containers (std::vector, std::set, std::map, std::deque, std::list), pure virtual functions, object slicing, friend functions, and C++ templates. Students preparing for 2025 must now focus on C++ OOP. The 2023 and earlier papers (CSE-311/CSE-313, 3rd Semester) remain in Java.</p>
+
+    <h3>Pattern Shift: Theory → Application → C++</h3>
+    <p>Early years (2017–2019) had more pure theory. From 2020 onward, questions increasingly require writing code. By 2024, the language itself changed entirely. Every question requires actual C++ code — templates, STL, polymorphism, multithreading in C++ — not conceptual Java answers.</p>
   </div>
 
   <!-- ── SECTION 4: PATTERNS ──────────────────────────────────── -->

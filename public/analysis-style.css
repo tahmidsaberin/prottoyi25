@@ -291,7 +291,24 @@ tr:hover td { background: var(--bg3); }
 @media print {
   .site-nav, .btn-pdf, .toc-bar { display: none !important; }
   body { background: #fff; color: #111; font-size: 12px; }
-  .analysis-section { border: 1px solid #ccc; box-shadow: none; }
+  .analysis-section { border: 1px solid #ccc; box-shadow: none; page-break-inside: avoid; }
   .page-title em, .section-title span { color: #1a7a30; }
   a { color: #1a7a30; }
+  /* ── CRITICAL: show all accordion content when printing ── */
+  .topic-body { display: block !important; }
+  .toggle-hint { display: none !important; }
+  .topic-header { cursor: default; }
+  .topic-block { border: 0.5px solid #ccc; page-break-inside: avoid; margin-bottom: 8px; }
+  .q-year { color: #1a7a30 !important; }
+  .q-marks { color: #555 !important; }
+  .q-text { color: #111 !important; }
+  .badge-red    { background: #fee; color: #c00; border-color: #fcc; }
+  .badge-orange { background: #fff3e0; color: #b45309; border-color: #fed7aa; }
+  .badge-green  { background: #f0fdf4; color: #166534; border-color: #bbf7d0; }
+  .freq-bar { background: #1a7a30; }
+  th { color: #333 !important; }
+  .predict-item { border-left-color: #1a7a30; background: #f0fdf4; }
+  .roadmap-num.red    { background: #fee; color: #c00; }
+  .roadmap-num.orange { background: #fff3e0; color: #b45309; }
+  .roadmap-num.green  { background: #f0fdf4; color: #166534; }
 }
