@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prottoyi 25 — CSE @ University of Chittagong</title>
+  <meta name="description" content="Official portal for Prottoyi 25 — the CSE batch of 2025 at the University of Chittagong." />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Google Fonts (already in style.css @import, but preconnect helps) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <style>
+    /* ── Page-specific styles ── */
+    .hero-welcome {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(245,166,35,0.1);
+      border: 1px solid rgba(245,166,35,0.25);
+      border-radius: 100px;
+      padding: 8px 18px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      transition: var(--transition);
+    }
+    .feature-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+    .feature-icon { font-size: 30px; margin-bottom: 14px; }
+    .feature-title {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .feature-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+    .section-alt { background: var(--bg-secondary); }
+    .members-note {
+      background: linear-gradient(135deg, rgba(79,70,229,0.1), rgba(124,58,237,0.08));
+      border: 1px solid rgba(79,70,229,0.2);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      text-align: center;
+    }
+    .members-note p { font-size: 15px; color: var(--text-secondary); margin-bottom: 20px; }
+    .login-prompt-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+    .login-prompt-inline a { color: var(--accent-light); text-decoration: underline; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     TOP BAR
+══════════════════════════════════════════ -->
+<header class="topbar">
+
+  <!-- Left: Logo -->
+  <div class="topbar-left">
+    <div class="logo-mark">প</div>
+    <div class="logo-text">
+      <span>Prottoyi 25</span>
+      <span>CSE · University of Chittagong</span>
+    </div>
+  </div>
+
+  <!-- Center: Profile (or sign-in hint when logged out) -->
+  <div class="topbar-center" id="topbarCenter">
+    <!-- Populated by auth.js -->
+    <button class="btn-login" onclick="openAuthModal()">Sign in</button>
+  </div>
+
+  <!-- Right: Nav + Auth buttons -->
+  <div class="topbar-right">
+    <a class="nav-link active" href="/">Home</a>
+    <a class="nav-link" href="#courses">Courses</a>
+    <a class="nav-link" href="#resources">Resources</a>
+    <div id="topbarAuthBtns" style="display:flex;gap:8px;margin-left:8px;">
+      <button class="btn-login"  onclick="openAuthModal()">Log In</button>
+      <button class="btn-signup" onclick="openAuthModal()">Sign Up</button>
+    </div>
+  </div>
+
+</header>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🎓 Department of Computer Science & Engineering</div>
+    <h1>Welcome to<br /><em>Prottoyi 25</em></h1>
+    <p>Your one-stop portal for course materials, resources, and everything the CSE batch of '25 needs — all in one place.</p>
+
+    <!-- Auth CTA (shown when logged out) -->
+    <div class="hero-cta" id="heroAuthSection">
+      <button class="btn-google" onclick="openAuthModal()">
+        <!-- Google SVG Icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        Sign in with Google
+      </button>
+      <button class="btn-explore" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">
+        Explore Courses ↓
+      </button>
+    </div>
+
+    <!-- Welcome (shown when logged in) -->
+    <div class="hero-cta hidden" id="heroLoggedIn">
+      <div class="hero-welcome">
+        👋 Welcome back, <strong id="welcomeName">there</strong>!
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     STATS BAR
+══════════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-number">8<em>th</em></div>
+    <div class="stat-label">Semester Portal</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">25<em>+</em></div>
+    <div class="stat-label">Course Materials</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">1<em>st</em></div>
+    <div class="stat-label">Batch at CU CSE</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">∞</div>
+    <div class="stat-label">Resources Shared</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     FEATURES
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Platform</div>
+      <h2 class="section-title">Everything Your Batch Needs</h2>
+      <p class="section-desc">Centralized materials, notes, resources and more — organized and always accessible.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <div class="feature-title">Course Materials</div>
+        <div class="feature-desc">Lecture notes, slides, and syllabi for every subject — uploaded and organized by your classmates.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📁</div>
+        <div class="feature-title">Shared Resources</div>
+        <div class="feature-desc">Past question papers, reference books, and study guides — all in one searchable library.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <div class="feature-title">Secure Access</div>
+        <div class="feature-desc">Sign in with your Google account. Only batch members can access and contribute content.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-title">Always Online</div>
+        <div class="feature-desc">Hosted on Netlify for lightning-fast global delivery. Access materials anytime, anywhere.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     COURSES
+══════════════════════════════════════════ -->
+<section class="section section-alt" id="courses">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Academics</div>
+      <h2 class="section-title">Current Courses</h2>
+      <p class="section-desc">Browse materials for all running courses. Click any course to access notes and resources.</p>
+    </div>
+
+    <div class="courses-grid">
+
+      <a class="course-card" href="/courses/mat231.html">
+        <div class="course-icon" style="background:rgba(245,166,35,0.1);">📐</div>
+        <div class="course-code">MAT 231</div>
+        <div class="course-name">Mathematical Analysis</div>
+        <div class="course-desc">Real analysis, sequences, series, limits, continuity, differentiation, and integration theory.</div>
+        <div class="course-meta">
+          <span class="course-tag">3 Credits</span>
+          <span class="course-tag">Core</span>
+          <span class="course-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="course-card" href="/courses/cse301.html">
+        <div class="course-icon" style="background:rgba(79,70,229,0.1);">🧠</div>
+        <div class="course-code">CSE 301</div>
+        <div class="course-name">Data Structures & Algorithms</div>
+        <div class="course-desc">Advanced data structures, algorithm design paradigms, complexity analysis, and problem solving.</div>
+        <div class="course-meta">
+          <span class="course-tag">3 Credits</span>
+          <span class="course-tag">Core</span>
+          <span class="course-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="course-card" href="/courses/cse302.html">
+        <div class="course-icon" style="background:rgba(52,211,153,0.1);">🌐</div>
+        <div class="course-code">CSE 302</div>
+        <div class="course-name">Computer Networks</div>
+        <div class="course-desc">Network layers, protocols, TCP/IP suite, routing algorithms, and network security fundamentals.</div>
+        <div class="course-meta">
+          <span class="course-tag">3 Credits</span>
+          <span class="course-tag">Core</span>
+          <span class="course-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="course-card" href="/courses/cse303.html">
+        <div class="course-icon" style="background:rgba(248,113,113,0.1);">🗄️</div>
+        <div class="course-code">CSE 303</div>
+        <div class="course-name">Database Systems</div>
+        <div class="course-desc">Relational models, SQL, normalization, transactions, concurrency control, and NoSQL systems.</div>
+        <div class="course-meta">
+          <span class="course-tag">3 Credits</span>
+          <span class="course-tag">Core</span>
+          <span class="course-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="course-card" href="/courses/cse304.html">
+        <div class="course-icon" style="background:rgba(167,139,250,0.1);">⚙️</div>
+        <div class="course-code">CSE 304</div>
+        <div class="course-name">Operating Systems</div>
+        <div class="course-desc">Process management, memory management, file systems, scheduling, and system-level programming.</div>
+        <div class="course-meta">
+          <span class="course-tag">3 Credits</span>
+          <span class="course-tag">Core</span>
+          <span class="course-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="course-card" href="/courses/cse305.html">
+        <div class="course-icon" style="background:rgba(34,211,238,0.1);">🤖</div>
+        <div class="course-code">CSE 305</div>
+        <div class="course-name">Artificial Intelligence</div>
+        <div class="course-desc">Search strategies, knowledge representation, machine learning basics, and intelligent agents.</div>
+        <div class="course-meta">
+          <span class="course-tag">3 Credits</span>
+          <span class="course-tag">Elective</span>
+          <span class="course-arrow">→</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     RESOURCES
+══════════════════════════════════════════ -->
+<section class="section" id="resources">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Library</div>
+      <h2 class="section-title">Shared Resources</h2>
+      <p class="section-desc">Past question papers, books, and supplementary materials from your batchmates.</p>
+    </div>
+    <div class="members-note">
+      <div class="feature-icon" style="font-size:40px;margin-bottom:16px;">🔐</div>
+      <p>Sign in with your Google account to access and contribute shared resources. The library is maintained by Prottoyi 25 members.</p>
+      <button class="btn-google" onclick="openAuthModal()" style="display:inline-flex;margin:0 auto;">
+        <svg viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        Sign in to Access
+      </button>
+      <div class="login-prompt-inline">
+        Don't have an account? <a onclick="openAuthModal()">Sign up — it's free</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-logo">Prottoyi 25</div>
+  <div class="footer-sub">CSE Batch · University of Chittagong</div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="#courses">Courses</a>
+    <a href="#resources">Resources</a>
+    <a href="mailto:admin@prottoyi25.dev">Contact</a>
+  </div>
+  <div class="footer-copy">
+    Made with <span>♥</span> by Prottoyi 25 &copy; <span id="footerYear"></span>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     AUTH MODAL
+══════════════════════════════════════════ -->
+<div class="modal-overlay" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeAuthModal()" aria-label="Close">✕</button>
+    <div class="modal-icon">🎓</div>
+    <h2 class="modal-title" id="authModalTitle">Welcome Back!</h2>
+    <p class="modal-subtitle">Sign in with your Google account to access course materials, resources, and your batch portal.</p>
+    <button class="btn-google-modal" onclick="handleGoogleSignIn()">
+      <svg viewBox="0 0 24 24" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+      </svg>
+      Continue with Google
+    </button>
+    <p class="modal-note">
+      By continuing, you agree to the Prottoyi 25 community guidelines.<br/>
+      This service is for University of Chittagong CSE batch members.
+    </p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PROFILE SETUP MODAL
+══════════════════════════════════════════ -->
+<div class="modal-overlay profile-setup-modal" id="profileSetupModal" role="dialog" aria-modal="true" aria-labelledby="profileSetupTitle">
+  <div class="modal-box">
+    <!-- Note: no close button here — user must complete profile -->
+    <div class="modal-icon">✨</div>
+    <h2 class="modal-title" id="profileSetupTitle">Set Up Your Profile</h2>
+    <p class="modal-subtitle">Choose a nickname and profile photo that will appear across the site.</p>
+
+    <!-- Avatar picker -->
+    <div class="avatar-picker">
+      <div class="avatar-preview" id="avatarPreview" onclick="triggerPhotoUpload()">
+        👤
+      </div>
+      <div class="avatar-hint">
+        Click the photo to upload your own, or <span onclick="useGooglePhoto()">use your Google photo</span>
+      </div>
+      <input type="file" id="photoFileInput" accept="image/*" style="display:none"
+             onchange="handlePhotoChange(this)" />
+    </div>
+
+    <!-- Nickname -->
+    <div class="form-group">
+      <label class="form-label" for="setupNickname">Nickname <span style="color:var(--text-muted)">(shown publicly)</span></label>
+      <input
+        class="form-input"
+        type="text"
+        id="setupNickname"
+        placeholder="e.g. Rafi, Sumi, TheCodeKid..."
+        maxlength="20"
+        oninput="updateCharCounter()"
+        autocomplete="off"
+      />
+      <div class="char-counter" id="charCounter">0/20</div>
+    </div>
+
+    <button class="btn-primary" id="saveProfileBtn" onclick="saveProfile()">
+      Save &amp; Continue →
+    </button>
+  </div>
+</div>
+
+<!-- ── Toast container ── -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- ══════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════ -->
+<script>
+  // Footer year
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+  // Use Google photo in profile setup
+  window.useGooglePhoto = function() {
+    // auth.js will handle this — just set from current user
+    if (window._currentUserPhotoURL) {
+      const previewEl = document.getElementById('avatarPreview');
+      if (previewEl) previewEl.innerHTML = `<img src="${window._currentUserPhotoURL}" alt="Google photo">`;
+    }
+  };
+</script>
+<script type="module" src="/js/auth.js"></script>
+</body>
+</html>
