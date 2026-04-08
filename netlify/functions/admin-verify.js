@@ -1,48 +1,51 @@
 // netlify/functions/admin-verify.js
-// POST { password }          → verify password, return session token
-// POST { setup, password }   → first-time setup (only works if no password set)
+// Verifies admin password stored in Netlify environment variable ADMIN_PASSWORD_HASH
 
-import {
-  sha256, getPasswordHash, setPasswordHash,
-  makeSessionToken, json
-} from "./_auth.js";
+import { createHash } from "crypto";
 
 export default async (req) => {
-  if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
+  if (req.method !== "POST") {
+    return new Response(JSON.stringify({ error: "Method not allowed" }), {
+      status: 405,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
 
-  let body;
-  try { body = await req.json(); }
-  catch { return json({ error: "Invalid JSON" }, 400); }
+  try {
+    const { password } = await req.json();
 
-  const stored = await getPasswordHash();
-
-  /* ── First-time setup ─────────────────────────────────────── */
-  if (body.setup) {
-    if (stored) {
-      return json({ error: "Password already set. Use change-password instead." }, 400);
+    if (!password) {
+      return new Response(JSON.stringify({ ok: false, error: "Password required" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
     }
-    if (!body.password || body.password.length < 6) {
-      return json({ error: "Password must be at least 6 characters." }, 400);
+
+    // ADMIN_PASSWORD_HASH should be a SHA-256 hex hash of the admin password.
+    // Set it in Netlify → Site Settings → Environment variables.
+    const storedHash = process.env.ADMIN_PASSWORD_HASH;
+    if (!storedHash) {
+      console.error("ADMIN_PASSWORD_HASH env variable is not set.");
+      return new Response(JSON.stringify({ ok: false, error: "Admin not configured" }), {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      });
     }
-    await setPasswordHash(sha256(body.password));
-    const token = await makeSessionToken();
-    return json({ ok: true, token, firstTime: false });
+
+    const inputHash = createHash("sha256").update(password).digest("hex");
+    const ok        = inputHash === storedHash.toLowerCase();
+
+    return new Response(JSON.stringify({ ok }), {
+      status: ok ? 200 : 401,
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (err) {
+    console.error("admin-verify error:", err);
+    return new Response(JSON.stringify({ ok: false, error: "Verification failed" }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
-
-  /* ── Normal login ─────────────────────────────────────────── */
-  if (!stored) {
-    // No password set yet — tell the client to show setup form
-    return json({ ok: false, firstTime: true });
-  }
-
-  if (!body.password) return json({ error: "Password required." }, 400);
-
-  if (sha256(body.password) !== stored) {
-    return json({ ok: false, error: "Incorrect password." }, 401);
-  }
-
-  const token = await makeSessionToken();
-  return json({ ok: true, token });
 };
 
 export const config = { path: "/api/admin/verify" };

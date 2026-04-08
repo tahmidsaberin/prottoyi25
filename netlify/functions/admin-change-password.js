@@ -1,29 +1,83 @@
 // netlify/functions/admin-change-password.js
-// POST { oldPassword, newPassword }  (requires valid session token in Authorization header)
+// Changes the admin password by updating the Netlify environment variable via the Netlify API.
+// Requires NETLIFY_API_TOKEN and NETLIFY_SITE_ID environment variables to be set.
 
-import {
-  sha256, getPasswordHash, setPasswordHash,
-  makeSessionToken, isAuthorized, json, unauthorized
-} from "./_auth.js";
+import { createHash } from "crypto";
 
 export default async (req) => {
-  if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
-  if (!(await isAuthorized(req.headers))) return unauthorized();
+  if (req.method !== "POST") {
+    return new Response(JSON.stringify({ error: "Method not allowed" }), {
+      status: 405,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
 
-  let body;
-  try { body = await req.json(); }
-  catch { return json({ error: "Invalid JSON" }, 400); }
+  try {
+    const { currentPassword, newPassword } = await req.json();
 
-  const { oldPassword, newPassword } = body;
-  if (!oldPassword || !newPassword) return json({ error: "Both passwords required." }, 400);
-  if (newPassword.length < 6)       return json({ error: "New password must be at least 6 characters." }, 400);
+    if (!currentPassword || !newPassword) {
+      return new Response(JSON.stringify({ ok: false, error: "Both passwords required" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
 
-  const stored = await getPasswordHash();
-  if (sha256(oldPassword) !== stored) return json({ error: "Current password is incorrect." }, 401);
+    if (newPassword.length < 8) {
+      return new Response(JSON.stringify({ ok: false, error: "New password must be at least 8 characters" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
 
-  await setPasswordHash(sha256(newPassword));
-  const token = await makeSessionToken();
-  return json({ ok: true, token }); // Return new token since password changed
+    // Verify current password first
+    const storedHash    = process.env.ADMIN_PASSWORD_HASH;
+    const currentHash   = createHash("sha256").update(currentPassword).digest("hex");
+    if (currentHash !== storedHash?.toLowerCase()) {
+      return new Response(JSON.stringify({ ok: false, error: "Current password is incorrect" }), {
+        status: 401,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
+    const newHash      = createHash("sha256").update(newPassword).digest("hex");
+    const apiToken     = process.env.NETLIFY_API_TOKEN;
+    const siteId       = process.env.NETLIFY_SITE_ID;
+
+    if (!apiToken || !siteId) {
+      return new Response(JSON.stringify({ ok: false, error: "Server not configured for password updates" }), {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
+    // Update environment variable via Netlify API
+    const netlifyRes = await fetch(
+      `https://api.netlify.com/api/v1/sites/${siteId}/env/ADMIN_PASSWORD_HASH`,
+      {
+        method:  "PATCH",
+        headers: {
+          "Authorization": `Bearer ${apiToken}`,
+          "Content-Type":  "application/json",
+        },
+        body: JSON.stringify({ value: newHash }),
+      }
+    );
+
+    if (!netlifyRes.ok) {
+      throw new Error(`Netlify API error: ${netlifyRes.status}`);
+    }
+
+    return new Response(JSON.stringify({ ok: true, message: "Password updated successfully" }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (err) {
+    console.error("admin-change-password error:", err);
+    return new Response(JSON.stringify({ ok: false, error: "Password change failed" }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
 };
 
 export const config = { path: "/api/admin/change-password" };

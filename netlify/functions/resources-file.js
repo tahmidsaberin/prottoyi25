@@ -1,49 +1,30 @@
 // netlify/functions/resources-file.js
-// GET /api/resources/file?key=resources/cse211/ct-questions/...
-// Streams the file from Netlify Blobs to the browser.
-// Public — students download directly from this endpoint.
-
 import { getStore } from "@netlify/blobs";
-import { json } from "./_auth.js";
 
 export default async (req) => {
-  if (req.method !== "GET") return json({ error: "Method not allowed" }, 405);
-
+  if (req.method !== "GET") {
+    return new Response(JSON.stringify({ error: "Method not allowed" }), { status: 405, headers: { "Content-Type": "application/json" } });
+  }
   const url = new URL(req.url);
   const key = url.searchParams.get("key");
-  if (!key) return json({ error: "?key= is required" }, 400);
-
-  // Security: key must start with "resources/" to prevent path traversal
-  if (!key.startsWith("resources/")) {
-    return json({ error: "Invalid key." }, 403);
-  }
-
-  const fileStore = getStore("files");
-
-  let result;
+  if (!key) return new Response(JSON.stringify({ error: "key required" }), { status: 400, headers: { "Content-Type": "application/json" } });
   try {
-    result = await fileStore.getWithMetadata(key, { type: "arrayBuffer" });
-  } catch {
-    return json({ error: "File not found." }, 404);
+    const store = getStore({ name: "resources", consistency: "strong" });
+    const blob  = await store.getWithMetadata(key, { type: "arrayBuffer" });
+    if (!blob?.data) return new Response(JSON.stringify({ error: "File not found" }), { status: 404, headers: { "Content-Type": "application/json" } });
+    const meta     = blob.metadata || {};
+    const filename = meta.originalName || key;
+    const mimeType = meta.type || "application/octet-stream";
+    return new Response(blob.data, {
+      status: 200,
+      headers: {
+        "Content-Type":        mimeType,
+        "Content-Disposition": `attachment; filename="${encodeURIComponent(filename)}"`,
+        "Cache-Control":       "private, max-age=3600",
+      },
+    });
+  } catch (err) {
+    return new Response(JSON.stringify({ error: "Retrieve failed" }), { status: 500, headers: { "Content-Type": "application/json" } });
   }
-
-  if (!result || !result.data) return json({ error: "File not found." }, 404);
-
-  const meta        = result.metadata ?? {};
-  const mimeType    = meta.mimeType   || "application/octet-stream";
-  const fileName    = meta.originalName || key.split("/").pop();
-  const disposition = mimeType.startsWith("image/") || mimeType === "application/pdf"
-    ? `inline; filename="${fileName}"`      // open PDFs/images in browser
-    : `attachment; filename="${fileName}"`; // download everything else
-
-  return new Response(result.data, {
-    status: 200,
-    headers: {
-      "Content-Type":        mimeType,
-      "Content-Disposition": disposition,
-      "Cache-Control":       "public, max-age=3600",
-    }
-  });
 };
-
 export const config = { path: "/api/resources/file" };

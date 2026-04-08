@@ -1,43 +1,18 @@
 // netlify/functions/resources-delete.js
-// DELETE /api/resources/delete
-// Body: { course, section, fileId, blobKey }
-
 import { getStore } from "@netlify/blobs";
-import { isAuthorized, json, unauthorized } from "./_auth.js";
 
 export default async (req) => {
-  if (req.method !== "DELETE" && req.method !== "POST")
-    return json({ error: "Method not allowed" }, 405);
-  if (!(await isAuthorized(req.headers))) return unauthorized();
-
-  let body;
-  try { body = await req.json(); }
-  catch { return json({ error: "Invalid JSON" }, 400); }
-
-  const { course, section, fileId, blobKey } = body;
-  if (!course || !section || !fileId || !blobKey)
-    return json({ error: "course, section, fileId, blobKey are required." }, 400);
-
-  // Security: blobKey must start with "resources/"
-  if (!blobKey.startsWith("resources/"))
-    return json({ error: "Invalid blobKey." }, 403);
-
-  // ── Delete the file blob ───────────────────────────────────────
-  const fileStore = getStore("files");
-  try { await fileStore.delete(blobKey); } catch { /* already gone — ok */ }
-
-  // ── Remove from the metadata index ────────────────────────────
-  const metaStore = getStore("metadata");
-  const indexKey  = `index/${course}/${section}`;
+  if (req.method !== "DELETE" && req.method !== "POST") {
+    return new Response(JSON.stringify({ error: "Method not allowed" }), { status: 405, headers: { "Content-Type": "application/json" } });
+  }
   try {
-    const existing = await metaStore.get(indexKey, { type: "json" });
-    if (Array.isArray(existing)) {
-      const updated = existing.filter(f => f.id !== fileId);
-      await metaStore.set(indexKey, JSON.stringify(updated));
-    }
-  } catch { /* index doesn't exist — nothing to remove */ }
-
-  return json({ ok: true });
+    const { key } = await req.json();
+    if (!key) return new Response(JSON.stringify({ error: "key required" }), { status: 400, headers: { "Content-Type": "application/json" } });
+    const store = getStore({ name: "resources", consistency: "strong" });
+    await store.delete(key);
+    return new Response(JSON.stringify({ success: true }), { status: 200, headers: { "Content-Type": "application/json" } });
+  } catch (err) {
+    return new Response(JSON.stringify({ error: "Delete failed" }), { status: 500, headers: { "Content-Type": "application/json" } });
+  }
 };
-
 export const config = { path: "/api/resources/delete" };

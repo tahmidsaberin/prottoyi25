@@ -1,37 +1,39 @@
 // netlify/functions/courses-delete.js
-// POST /api/courses/delete  { id, htmlBlobKey }
-
 import { getStore } from "@netlify/blobs";
-import { isAuthorized, json, unauthorized } from "./_auth.js";
 
 export default async (req) => {
-  if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
-  if (!(await isAuthorized(req.headers))) return unauthorized();
-
-  let body;
-  try { body = await req.json(); }
-  catch { return json({ error: "Invalid JSON" }, 400); }
-
-  const { id, htmlBlobKey } = body;
-  if (!id) return json({ error: "id is required." }, 400);
-
-  // Delete HTML blob if present
-  if (htmlBlobKey && htmlBlobKey.startsWith("analyses/")) {
-    const fileStore = getStore("files");
-    try { await fileStore.delete(htmlBlobKey); } catch {}
+  if (req.method !== "DELETE" && req.method !== "POST") {
+    return new Response(JSON.stringify({ error: "Method not allowed" }), {
+      status: 405,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 
-  // Remove from index
-  const metaStore = getStore("metadata");
   try {
-    const existing = await metaStore.get("index/courses", { type: "json" });
-    if (Array.isArray(existing)) {
-      const updated = existing.filter(c => c.id !== id);
-      await metaStore.set("index/courses", JSON.stringify(updated));
-    }
-  } catch {}
+    const body   = await req.json();
+    const { key, course } = body;
 
-  return json({ ok: true });
+    if (!key || !course) {
+      return new Response(JSON.stringify({ error: "key and course are required" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
+    const store = getStore({ name: `courses-${course}`, consistency: "strong" });
+    await store.delete(key);
+
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (err) {
+    console.error("courses-delete error:", err);
+    return new Response(JSON.stringify({ error: "Delete failed" }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
 };
 
 export const config = { path: "/api/courses/delete" };
