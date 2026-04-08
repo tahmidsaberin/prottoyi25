@@ -583,103 +583,114 @@
   </div>
 
   <!-- ── SECTION 8: STUDY ROADMAP ─────────────────────────────── -->
-  <div class="analysis-section" id="s8">
-    <h2>Prioritized Study Roadmap</h2>
+<div class="analysis-section" id="s8">
+  <h2>Prioritized Study Roadmap</h2>
 
-    <h3>Phase 1 — Guaranteed Questions (Days 1–3)</h3>
-    <div class="roadmap-item">
-      <div class="roadmap-num red">1</div>
-      <div>
-        <div class="roadmap-title">The A·dr Line Integral — Master Both Paths</div>
-        <div class="roadmap-sub">A=(3x²+6y)i-14yzj+20xz²k, from (0,0,0) to (1,1,1). Path 1: x=t, y=t², z=t³. Path 2: piecewise through (1,0,0)→(1,1,0)→(1,1,1). Both paths give 5. Know this cold — 4–5 marks guaranteed.</div>
-      </div>
-    </div>
-    <div class="roadmap-item">
-      <div class="roadmap-num red">2</div>
-      <div>
-        <div class="roadmap-title">Directional Derivative — The Standard Problem</div>
-        <div class="roadmap-sub">φ=4x²z-3x³y²z, find ∂φ/∂n at (2,-1,2) in direction 2i-3j+6k. Step 1: compute ∇φ. Step 2: evaluate at point. Step 3: unit vector of direction. Step 4: dot product. Answer = 21. 3 marks, 4 years out of 7.</div>
-      </div>
-    </div>
-    <div class="roadmap-item">
-      <div class="roadmap-num red">3</div>
-      <div>
-        <div class="roadmap-title">Fourier Series — The 9-Mark Block</div>
-        <div class="roadmap-sub">Master: (1) Computing aₙ and bₙ by integration by parts. (2) Dirichlet's conditions (state and verify). (3) Parseval's identity proof. (4) The piecewise function f(x)=x for 0<x<π, π for π<x<2π — derive its Fourier series from scratch.</div>
-      </div>
-    </div>
-    <div class="roadmap-item">
-      <div class="roadmap-num red">4</div>
-      <div>
-        <div class="roadmap-title">Heat Equation BVP — The 5-Mark Template</div>
-        <div class="roadmap-sub">∂u/∂t=∂²u/∂x². Separation of variables u(x,t)=X(x)T(t). Apply boundary conditions U(0,t)=0, U(π,t)=0 to get X(x)=sinλx. Apply initial condition U(x,0)=2x using Fourier sine series. Appeared identically in 2023 and 2024.</div>
-      </div>
-    </div>
-
-    <h3>Phase 2 — High-Frequency Core (Days 4–6)</h3>
-    <div class="roadmap-item">
-      <div class="roadmap-num red">5</div>
-      <div>
-        <div class="roadmap-title">Gradient/Divergence/Curl + Irrotationality</div>
-        <div class="roadmap-sub">Prove ∇×(∇×A)=-∇²A+∇(∇·A). Find a,b,c so that a vector field is irrotational (curl=0 gives 3 equations). Express as gradient of scalar potential φ: F=∇φ, then find φ by integrating. Practice the 2021 problem with V=(-4x-3y+az)i+... fully.</div>
-      </div>
-    </div>
-    <div class="roadmap-item">
-      <div class="roadmap-num red">6</div>
-      <div>
-        <div class="roadmap-title">Conic Sections — Reduction to Standard Form</div>
-        <div class="roadmap-sub">The five-step process: (1) Compute discriminant B²-4AC. (2) Rotate axes: find angle θ with cot2θ=(A-C)/B. (3) Translate: complete the square. (4) Identify standard form. (5) Read off properties (focus, directrix, latus rectum). Practice: 16x²-24xy+9y²-104x-172y+44=0 and 9x²-6xy+y²-14x-2y+12=0.</div>
-      </div>
-    </div>
-    <div class="roadmap-item">
-      <div class="roadmap-num red">7</div>
-      <div>
-        <div class="roadmap-title">3D Geometry — Planes, Lines &amp; Shortest Distance</div>
-        <div class="roadmap-sub">Memorize: SD formula between skew lines: |(a₂-a₁)·(d₁×d₂)|/|d₁×d₂|. Plane through intersection of two planes: P₁+λP₂=0 then apply condition. Coplanarity condition: (a₂-a₁)·(d₁×d₂)=0. Practice the (x-3)/3=(y-8)/(-1)=(z-3)/1 shortest distance problem.</div>
-      </div>
-    </div>
-
-    <h3>Phase 3 — Secondary Topics (Days 7–8)</h3>
-    <div class="roadmap-item">
-      <div class="roadmap-num orange">8</div>
-      <div>
-        <div class="roadmap-title">Surface &amp; Volume Integrals — Gauss's Theorem</div>
-        <div class="roadmap-sub">For ∬F·ndS over a closed surface, use Gauss's divergence theorem: ∭(∇·F)dv. Compute ∇·F first — if it simplifies, the volume integral may be easier. Practice with the cube [0,1]³ and first-octant plane problems.</div>
-      </div>
-    </div>
-    <div class="roadmap-item">
-      <div class="roadmap-num orange">9</div>
-      <div>
-        <div class="roadmap-title">Matrices (if 2018–2022 era) OR Fourier Transforms (if 2023–2024)</div>
-        <div class="roadmap-sub">If your syllabus is 2018–2022: master rank (row reduction), inverse (augmented matrix), Cayley-Hamilton (verify p(A)=0 and find A⁻¹), eigenvalues (characteristic polynomial). If 2023–2024: master Fourier transform F[f]=∫f(x)e^{ikx}dx and deduction of integral values from Parseval's theorem.</div>
-      </div>
-    </div>
-    <div class="roadmap-item">
-      <div class="roadmap-num green">10</div>
-      <div>
-        <div class="roadmap-title">Pair of Straight Lines, Circles, Spheres</div>
-        <div class="roadmap-sub">Quick revision: discriminant condition for pair of lines (h²-ab≥0). Sphere orthogonality condition: 2(g₁g₂+f₁f₂+h₁h₂)=d₁+d₂. Great circle: the cutting plane passes through center of sphere. These are 2–3 mark questions needing formula recall.</div>
-      </div>
-    </div>
-
-    <h3>Time Allocation (48 Hours Before Exam)</h3>
-    <div class="table-wrap">
-      <table>
-        <tr><th>Topic</th><th>Hours</th><th>Focus</th></tr>
-        <tr><td>A·dr line integral (both paths)</td><td>4 hrs</td><td>Write it from scratch twice — time it</td></tr>
-        <tr><td>Fourier Series (4 sub-skills)</td><td>8 hrs</td><td>aₙ/bₙ computation, Parseval proof, piecewise problem</td></tr>
-        <tr><td>BVP heat equation</td><td>3 hrs</td><td>Write solution from boundary conditions once</td></tr>
-        <tr><td>Conic reduction (2 problems)</td><td>5 hrs</td><td>One parabola, one ellipse — full 5-step process each</td></tr>
-        <tr><td>3D Geometry (planes + SD)</td><td>6 hrs</td><td>Plane through intersection, shortest distance formula</td></tr>
-        <tr><td>Gradient/Curl + irrotationality</td><td>5 hrs</td><td>Vector identity proof + finding constants a,b,c</td></tr>
-        <tr><td>Directional derivative</td><td>2 hrs</td><td>The standard problem — should take under 5 minutes</td></tr>
-        <tr><td>Matrices / Eigenvalues (if applicable)</td><td>6 hrs</td><td>Rank, Cayley-Hamilton, eigenvalues</td></tr>
-        <tr><td>Surface integrals + Gauss</td><td>4 hrs</td><td>One cube problem, one first-octant plane problem</td></tr>
-        <tr><td>Spheres + Pair of lines</td><td>3 hrs</td><td>Formula recall + one problem each</td></tr>
-        <tr><td>Fourier transforms + BVP review</td><td>2 hrs</td><td>Transform formula + deduce integral</td></tr>
-      </table>
+  <h3>Phase 1 — Guaranteed Questions (Days 1–3)</h3>
+  
+  <div class="roadmap-item">
+    <div class="roadmap-num red">1</div>
+    <div class="roadmap-content">
+      <div class="roadmap-title">The A·dr Line Integral — Master Both Paths</div>
+      <div class="roadmap-sub">A=(3x²+6y)i-14yzj+20xz²k, from (0,0,0) to (1,1,1). Path 1: x=t, y=t², z=t³. Path 2: piecewise through (1,0,0)→(1,1,0)→(1,1,1). Both paths give 5. Know this cold — 4–5 marks guaranteed.</div>
     </div>
   </div>
+
+  <div class="roadmap-item">
+    <div class="roadmap-num red">2</div>
+    <div class="roadmap-content">
+      <div class="roadmap-title">Directional Derivative — The Standard Problem</div>
+      <div class="roadmap-sub">φ=4x²z-3x³y²z, find ∂φ/n at (2,-1,2) in direction 2i-3j+6k. Step 1: compute ∇φ. Step 2: evaluate at point. Step 3: unit vector of direction. Step 4: dot product. Answer = 21. 3 marks, 4 years out of 7.</div>
+    </div>
+  </div>
+
+  <div class="roadmap-item">
+    <div class="roadmap-num red">3</div>
+    <div class="roadmap-content">
+      <div class="roadmap-title">Fourier Series — The 9-Mark Block</div>
+      <div class="roadmap-sub">Master: (1) Computing aₙ and bₙ by integration by parts. (2) Dirichlet's conditions (state and verify). (3) Parseval's identity proof. (4) The piecewise function f(x)=x for 0&lt;x&lt;π, π for π&lt;x&lt;2π — derive its Fourier series from scratch.</div>
+    </div>
+  </div>
+
+  <div class="roadmap-item">
+    <div class="roadmap-num red">4</div>
+    <div class="roadmap-content">
+      <div class="roadmap-title">Heat Equation BVP — The 5-Mark Template</div>
+      <div class="roadmap-sub">∂u/t=∂²u/∂x². Separation of variables u(x,t)=X(x)T(t). Apply boundary conditions U(0,t)=0, U(π,t)=0 to get X(x)=sinλx. Apply initial condition U(x,0)=2x using Fourier sine series. Appeared identically in 2023 and 2024.</div>
+    </div>
+  </div>
+
+  <h3>Phase 2 — High-Frequency Core (Days 4–6)</h3>
+
+  <div class="roadmap-item">
+    <div class="roadmap-num orange">5</div>
+    <div class="roadmap-content">
+      <div class="roadmap-title">Gradient/Divergence/Curl + Irrotationality</div>
+      <div class="roadmap-sub">Prove ∇×(×A)=-∇²A+∇(∇·A). Find a,b,c so that a vector field is irrotational (curl=0 gives 3 equations). Express as gradient of scalar potential φ: F=∇φ, then find φ by integrating. Practice the 2021 problem with V=(-4x-3y+az)i+... fully.</div>
+    </div>
+  </div>
+
+  <div class="roadmap-item">
+    <div class="roadmap-num orange">6</div>
+    <div class="roadmap-content">
+      <div class="roadmap-title">Conic Sections — Reduction to Standard Form</div>
+      <div class="roadmap-sub">The five-step process: (1) Compute discriminant B²-4AC. (2) Rotate axes: find angle θ with cot2θ=(A-C)/B. (3) Translate: complete the square. (4) Identify standard form. (5) Read off properties (focus, directrix, latus rectum). Practice: 16x²-24xy+9y²-104x-172y+44=0 and 9x²-6xy+y²-14x-2y+12=0.</div>
+    </div>
+  </div>
+
+  <div class="roadmap-item">
+    <div class="roadmap-num orange">7</div>
+    <div class="roadmap-content">
+      <div class="roadmap-title">3D Geometry — Planes, Lines &amp; Shortest Distance</div>
+      <div class="roadmap-sub">Memorize: SD formula between skew lines: |(a₂-a₁)·(d₁×d₂)|/|d₁×d₂|. Plane through intersection of two planes: P₁+λP₂=0 then apply condition. Coplanarity condition: (a₂-a₁)·(d₁×d₂)=0. Practice the (x-3)/3=(y-8)/(-1)=(z-3)/1 shortest distance problem.</div>
+    </div>
+  </div>
+
+  <h3>Phase 3 — Secondary Topics (Days 7–8)</h3>
+
+  <div class="roadmap-item">
+    <div class="roadmap-num green">8</div>
+    <div class="roadmap-content">
+      <div class="roadmap-title">Surface &amp; Volume Integrals — Gauss's Theorem</div>
+      <div class="roadmap-sub">For ∬F·ndS over a closed surface, use Gauss's divergence theorem: ∭(∇·F)dv. Compute ∇·F first — if it simplifies, the volume integral may be easier. Practice with the cube [0,1]³ and first-octant plane problems.</div>
+    </div>
+  </div>
+
+  <div class="roadmap-item">
+    <div class="roadmap-num green">9</div>
+    <div class="roadmap-content">
+      <div class="roadmap-title">Matrices (2018–2022) OR Fourier Transforms (2023–2024)</div>
+      <div class="roadmap-sub">If your syllabus is 2018–2022: master rank (row reduction), inverse (augmented matrix), Cayley-Hamilton (verify p(A)=0 and find A⁻¹), eigenvalues (characteristic polynomial). If 2023–2024: master Fourier transform F[f]=∫f(x)e^{ikx}dx and deduction of integral values from Parseval's theorem.</div>
+    </div>
+  </div>
+
+  <div class="roadmap-item">
+    <div class="roadmap-num green">10</div>
+    <div class="roadmap-content">
+      <div class="roadmap-title">Pair of Straight Lines, Circles, Spheres</div>
+      <div class="roadmap-sub">Quick revision: discriminant condition for pair of lines (h²-ab≥0). Sphere orthogonality condition: 2(g₁g₂+f₁f₂+h₁h₂)=d₁+d₂. Great circle: the cutting plane passes through center of sphere. These are 2–3 mark questions needing formula recall.</div>
+    </div>
+  </div>
+
+  <h3>Time Allocation (48 Hours Before Exam)</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>Topic</th><th>Hours</th><th>Focus</th></tr>
+      <tr><td>A·dr line integral (both paths)</td><td>4 hrs</td><td>Write it from scratch twice — time it</td></tr>
+      <tr><td>Fourier Series (4 sub-skills)</td><td>8 hrs</td><td>aₙ/bₙ computation, Parseval proof, piecewise problem</td></tr>
+      <tr><td>BVP heat equation</td><td>3 hrs</td><td>Write solution from boundary conditions once</td></tr>
+      <tr><td>Conic reduction (2 problems)</td><td>5 hrs</td><td>One parabola, one ellipse — full 5-step process each</td></tr>
+      <tr><td>3D Geometry (planes + SD)</td><td>6 hrs</td><td>Plane through intersection, shortest distance formula</td></tr>
+      <tr><td>Gradient/Curl + irrotationality</td><td>5 hrs</td><td>Vector identity proof + finding constants a,b,c</td></tr>
+      <tr><td>Directional derivative</td><td>2 hrs</td><td>The standard problem — should take under 5 minutes</td></tr>
+      <tr><td>Matrices / Eigenvalues (if applicable)</td><td>6 hrs</td><td>Rank, Cayley-Hamilton, eigenvalues</td></tr>
+      <tr><td>Surface integrals + Gauss</td><td>4 hrs</td><td>One cube problem, one first-octant plane problem</td></tr>
+      <tr><td>Spheres + Pair of lines</td><td>3 hrs</td><td>Formula recall + one problem each</td></tr>
+      <tr><td>Fourier transforms + BVP review</td><td>2 hrs</td><td>Transform formula + deduce integral</td></tr>
+    </table>
+  </div>
+</div>
+
 
 </div><!-- /content-wrap -->
 
