@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Prottoyi 25</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=DM+Sans:wght@400;500&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Page-specific overrides */
+    .dashboard-hero {
+      padding: 140px 5% 60px;
+      max-width: 960px; margin: 0 auto;
+    }
+    .user-profile-card {
+      display: flex; align-items: center; gap: 20px;
+      background: rgba(11,218,81,0.05);
+      border: 0.5px solid rgba(11,218,81,0.2);
+      border-radius: 14px; padding: 24px 28px;
+      margin-bottom: 40px;
+    }
+    .user-big-avatar {
+      width: 72px; height: 72px; border-radius: 50%;
+      border: 2px solid rgba(11,218,81,0.4);
+      flex-shrink: 0;
+    }
+    .user-big-fallback {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: #0BDA51; color: #060c07;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; font-weight: 700; flex-shrink: 0;
+    }
+    .user-info-name {
+      font-family: 'Rajdhani', sans-serif; font-size: 26px;
+      font-weight: 700; color: #e8f5e9; margin-bottom: 4px;
+    }
+    .user-info-email {
+      font-family: 'Space Mono', monospace; font-size: 12px;
+      color: #5a7a5b; letter-spacing: 0.5px;
+    }
+    .user-info-badge {
+      margin-top: 8px; display: inline-block;
+      font-family: 'Space Mono', monospace; font-size: 10px;
+      letter-spacing: 1px; text-transform: uppercase;
+      background: rgba(11,218,81,0.10);
+      border: 0.5px solid rgba(11,218,81,0.25);
+      color: #0BDA51; padding: 3px 10px; border-radius: 20px;
+    }
+    .stat-cards {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px; margin-bottom: 40px;
+    }
+    .stat-card {
+      background: rgba(11,218,81,0.05);
+      border: 0.5px solid rgba(11,218,81,0.15);
+      border-radius: 12px; padding: 20px;
+    }
+    .stat-card-label {
+      font-family: 'Space Mono', monospace; font-size: 10px;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      color: #5a7a5b; margin-bottom: 8px;
+    }
+    .stat-card-value {
+      font-family: 'Rajdhani', sans-serif; font-size: 28px;
+      font-weight: 700; color: #00FF40;
+    }
+    .section-heading {
+      font-family: 'Rajdhani', sans-serif; font-size: 22px;
+      font-weight: 700; color: #e8f5e9; margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="dot-grid"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<!-- ── NAVBAR ── -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-text">
+      <div class="logo-name">PROTTOYI 25</div>
+      <div class="logo-sub">CSE · University of Chittagong</div>
+    </div>
+  </a>
+
+  <!-- Auth widget — populated by auth-ui.js -->
+  <div id="auth-widget"></div>
+</nav>
+
+<!-- ── DASHBOARD CONTENT ── -->
+<main class="dashboard-hero" id="dashboard-content">
+  <!-- Content is hidden until auth is confirmed (body visibility:hidden) -->
+
+  <!-- User profile card -->
+  <div class="user-profile-card">
+    <div id="user-avatar-container">
+      <!-- Populated by JS -->
+    </div>
+    <div>
+      <div class="user-info-name" id="user-display-name">Loading…</div>
+      <div class="user-info-email" id="user-email"></div>
+      <div class="user-info-badge">✓ Verified Student</div>
+    </div>
+  </div>
+
+  <!-- Quick stats -->
+  <div class="stat-cards">
+    <div class="stat-card">
+      <div class="stat-card-label">Analyses Available</div>
+      <div class="stat-card-value">5</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">Courses Covered</div>
+      <div class="stat-card-value">5</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">Questions Mapped</div>
+      <div class="stat-card-value">700+</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">Years Analyzed</div>
+      <div class="stat-card-value">7</div>
+    </div>
+  </div>
+
+  <div class="section-heading">Quick Links</div>
+  <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:40px;">
+    <a href="analysis-oop.html" class="btn-primary" style="font-size:14px; padding:10px 20px;">CSE 211 Analysis</a>
+    <a href="analysis-eee221.html" class="btn-primary" style="font-size:14px; padding:10px 20px;">EEE 221 Analysis</a>
+    <a href="analysis-sta251.html" class="btn-primary" style="font-size:14px; padding:10px 20px;">STA 251 Analysis</a>
+    <a href="analysis-mat231.html" class="btn-primary" style="font-size:14px; padding:10px 20px;">MAT 231 Analysis</a>
+    <a href="resources.html" class="btn-secondary" style="font-size:14px; padding:10px 20px;">Resources</a>
+  </div>
+
+</main>
+
+<script type="module">
+  import { requireAuth }    from "./auth-ui.js";
+  import { initNavbarAuth } from "./auth-ui.js";
+
+  /* 1. Guard the page — redirects to /login.html if not signed in */
+  const user = await requireAuth("/login.html");
+
+  /* requireAuth returns null and redirects if not logged in — execution stops */
+  if (!user) return;
+
+  /* 2. Populate navbar auth widget */
+  initNavbarAuth(document.getElementById("auth-widget"));
+
+  /* 3. Populate user profile card */
+  document.getElementById("user-display-name").textContent =
+    user.displayName ?? user.email ?? "Student";
+  document.getElementById("user-email").textContent = user.email ?? "";
+
+  const avatarContainer = document.getElementById("user-avatar-container");
+  if (user.photoURL) {
+    const img = document.createElement("img");
+    img.src = user.photoURL;
+    img.alt = "";
+    img.className = "user-big-avatar";
+    avatarContainer.appendChild(img);
+  } else {
+    const fallback = document.createElement("div");
+    fallback.className = "user-big-fallback";
+    fallback.textContent = (user.displayName ?? user.email ?? "?")[0].toUpperCase();
+    avatarContainer.appendChild(fallback);
+  }
+</script>
+</body>
+</html>

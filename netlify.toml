@@ -1,0 +1,66 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# ── API route rewrites ────────────────────────────────────────
+[[redirects]]
+  from  = "/api/admin/verify"
+  to    = "/.netlify/functions/admin-verify"
+  status = 200
+
+[[redirects]]
+  from  = "/api/admin/change-password"
+  to    = "/.netlify/functions/admin-change-password"
+  status = 200
+
+[[redirects]]
+  from  = "/api/resources/list"
+  to    = "/.netlify/functions/resources-list"
+  status = 200
+
+[[redirects]]
+  from  = "/api/resources/upload"
+  to    = "/.netlify/functions/resources-upload"
+  status = 200
+
+[[redirects]]
+  from  = "/api/resources/delete"
+  to    = "/.netlify/functions/resources-delete"
+  status = 200
+
+[[redirects]]
+  from  = "/api/resources/file"
+  to    = "/.netlify/functions/resources-file"
+  status = 200
+
+[[redirects]]
+  from  = "/api/courses/list"
+  to    = "/.netlify/functions/courses-list"
+  status = 200
+
+[[redirects]]
+  from  = "/api/courses/upload"
+  to    = "/.netlify/functions/courses-upload"
+  status = 200
+
+[[redirects]]
+  from  = "/api/courses/delete"
+  to    = "/.netlify/functions/courses-delete"
+  status = 200
+
+[[redirects]]
+  from  = "/api/courses/file"
+  to    = "/.netlify/functions/courses-file"
+  status = 200
+
+# ── Security headers ──────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.gstatic.com https://apis.google.com https://accounts.google.com; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://identitytoolkit.googleapis.com wss://*.firebaseio.com; frame-src https://accounts.google.com https://*.firebaseapp.com; img-src 'self' data: https://*.googleusercontent.com https://*.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com"

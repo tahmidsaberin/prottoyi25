@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHY 241 Physics — PYQ Analysis | Prottoyi 25</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="analysis-style.css">
+</head>
+<body>
+
+<!-- ═══ NAVBAR ══════════════════════════════════════════════════ -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-back">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+    </svg>
+    Back to Prottoyi 25
+  </a>
+  <div class="nav-brand">PROTTOYI 25</div>
+  <div class="nav-actions">
+    <button class="btn-pdf" id="pdfBtn" onclick="downloadPDF()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      <span>Download PDF</span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ PAGE HEADER ══════════════════════════════════════════════ -->
+<div class="page-header">
+  <div class="page-breadcrumb">Prottoyi 25 <span>/</span> Courses <span>/</span> PHY 241</div>
+  <h1 class="page-title"><em>Physics (PHY 241)</em> — Full PYQ Analysis</h1>
+  <p class="page-subtitle">
+    University of Chittagong · Dept. of Computer Science and Engineering ·
+    2nd Semester B.Sc. Engineering · Full Marks: 54 · Time: 4 Hours
+  </p>
+  <div class="page-meta-row">
+    <div class="meta-pill"><strong>6</strong> years covered</div>
+    <div class="meta-pill"><strong>150+</strong> questions mapped</div>
+    <div class="meta-pill"><strong>22</strong> distinct topics</div>
+    <div class="meta-pill"><strong>2018 – 2024</strong></div>
+  </div>
+</div>
+
+<div class="notice">
+  <div class="notice-box">
+    <strong>Critical note:</strong> The course title changed from <strong>"Electricity, Magnetism and Optics"</strong> (2018–2022) to simply <strong>"Physics"</strong> (2023–2024). The 2023–2024 papers introduced entirely new topic groups — SHM, Blackbody Radiation, Global Radiation, Ecosystems, and Quantum Mechanics — that did not appear in earlier years. Students must prepare for both old and new topic domains.
+  </div>
+</div>
+
+<!-- ═══ MAIN CONTENT ══════════════════════════════════════════════ -->
+<div class="content-wrap">
+
+  <!-- Quick TOC -->
+  <div class="toc-bar">
+    <a href="#s1" class="toc-link">1. Frequency Table</a>
+    <a href="#s2" class="toc-link">2. Question Map</a>
+    <a href="#s3" class="toc-link">3. Trend Analysis</a>
+    <a href="#s4" class="toc-link">4. Question Patterns</a>
+    <a href="#s5" class="toc-link">5. Concept Depth</a>
+    <a href="#s6" class="toc-link">6. Hidden Insights</a>
+    <a href="#s7" class="toc-link">7. Predictions</a>
+    <a href="#s8" class="toc-link">8. Study Roadmap</a>
+  </div>
+
+  <!-- ── SECTION 1: FREQUENCY ──────────────────────────────────── -->
+  <div class="analysis-section" id="s1">
+    <h2>Topic Frequency Analysis</h2>
+    <p>Papers analyzed: <strong>2018, 2019, 2020, 2022, 2023, 2024</strong> (6 years). Topics grouped by the two major curriculum eras.</p>
+
+    <h3 style="color:var(--g1);margin-top:20px">Era 1 — Electricity, Magnetism &amp; Optics (2018–2022)</h3>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Rank</th><th>Topic</th><th>Years</th><th>Count</th><th>Priority</th></tr>
+        <tr>
+          <td>1</td>
+          <td><strong>Gauss's Law &amp; Electrostatics</strong> (Coulomb's law, electric field, flux, charge properties)</td>
+          <td>2018, 2019, 2020, 2022, 2023, 2024 — all 6</td>
+          <td><span class="freq-bar" style="width:88px"></span>12+</td>
+          <td><span class="badge badge-red">🔴 High</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Electromagnetic Induction</strong> (Faraday's law, Lenz's law, flux linkage)</td>
+          <td>2018, 2020, 2022, 2023, 2024 — 5 years</td>
+          <td><span class="freq-bar" style="width:74px"></span>9</td>
+          <td><span class="badge badge-red">🔴 High</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>Ampere's Law</strong> (Derivations, solenoid, applications)</td>
+          <td>2019, 2020, 2022, 2023, 2024 — 5 years</td>
+          <td><span class="freq-bar" style="width:74px"></span>8</td>
+          <td><span class="badge badge-red">🔴 High</span></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong>Diffraction of Light</strong> (Fresnel/Fraunhofer, single slit, Bragg's law)</td>
+          <td>2018, 2019, 2020, 2022, 2024 — 5 years</td>
+          <td><span class="freq-bar" style="width:74px"></span>8</td>
+          <td><span class="badge badge-red">🔴 High</span></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><strong>Biot-Savart Law</strong> (Magnetic field derivation for wire, circular conductor)</td>
+          <td>2020, 2022, 2023, 2024 — 4 years</td>
+          <td><span class="freq-bar" style="width:60px"></span>7</td>
+          <td><span class="badge badge-red">🔴 High</span></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><strong>Interference of Light</strong> (Young's double slit, Newton's rings, thin films)</td>
+          <td>2018, 2019, 2020, 2022 — 4 years</td>
+          <td><span class="freq-bar" style="width:60px"></span>7</td>
+          <td><span class="badge badge-red">🔴 High</span></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><strong>Polarization</strong> (Brewster's law, Malus's law, plane of polarization)</td>
+          <td>2018, 2019, 2020, 2022 — 4 years</td>
+          <td><span class="freq-bar" style="width:60px"></span>7</td>
+          <td><span class="badge badge-red">🔴 High</span></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td><strong>Self &amp; Mutual Inductance</strong> (Definitions, expressions, coaxial solenoids)</td>
+          <td>2018, 2020, 2022, 2023 — 4 years</td>
+          <td><span class="freq-bar" style="width:60px"></span>6</td>
+          <td><span class="badge badge-red">🔴 High</span></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td><strong>Kirchhoff's Laws (KCL/KVL)</strong> (Wheatstone bridge, circuit analysis)</td>
+          <td>2018, 2019, 2020, 2022 — 4 years</td>
+          <td><span class="freq-bar" style="width:60px"></span>6</td>
+          <td><span class="badge badge-red">🔴 High</span></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td><strong>Electric Dipole</strong> (Field derivation, torque, potential energy)</td>
+          <td>2018, 2020, 2022, 2023 — 4 years</td>
+          <td><span class="freq-bar" style="width:54px"></span>5</td>
+          <td><span class="badge badge-orange">🟠 Medium</span></td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td><strong>de Broglie Hypothesis / Photoelectric Effect</strong></td>
+          <td>2018, 2019, 2020, 2023 — 4 years</td>
+          <td><span class="freq-bar" style="width:54px"></span>5</td>
+          <td><span class="badge badge-orange">🟠 Medium</span></td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td><strong>AC Circuits</strong> (RMS, impedance, LCR resonance, Q factor)</td>
+          <td>2018, 2019, 2020 — 3 years</td>
+          <td><span class="freq-bar" style="width:44px"></span>5</td>
+          <td><span class="badge badge-orange">🟠 Medium</span></td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td><strong>Radioactive Decay</strong> (N=N₀e^(-λt), half-life, mean-life)</td>
+          <td>2018, 2019, 2020 — 3 years</td>
+          <td><span class="freq-bar" style="width:38px"></span>4</td>
+          <td><span class="badge badge-orange">🟠 Medium</span></td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td><strong>Capacitor &amp; Energy in Electric Field</strong></td>
+          <td>2018, 2022, 2023 — 3 years</td>
+          <td><span class="freq-bar" style="width:38px"></span>4</td>
+          <td><span class="badge badge-orange">🟠 Medium</span></td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td><strong>Wave Theory of Light / Huygens' Principle</strong></td>
+          <td>2019, 2020, 2022 — 3 years</td>
+          <td><span class="freq-bar" style="width:32px"></span>3</td>
+          <td><span class="badge badge-green">🟢 Low</span></td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td><strong>Lorentz Force / Charged particle in magnetic field</strong></td>
+          <td>2019, 2020, 2022 — 3 years</td>
+          <td><span class="freq-bar" style="width:32px"></span>3</td>
+          <td><span class="badge badge-green">🟢 Low</span></td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td><strong>Compton Effect</strong></td>
+          <td>2020, 2023 — 2 years</td>
+          <td><span class="freq-bar" style="width:20px"></span>2</td>
+          <td><span class="badge badge-green">🟢 Low</span></td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td><strong>LC Circuit / Cyclotron</strong></td>
+          <td>2022 only</td>
+          <td><span class="freq-bar" style="width:12px"></span>1</td>
+          <td><span class="badge badge-green">🟢 Low</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <h3 style="color:var(--g1);margin-top:28px">Era 2 — New Topics (2023–2024 only)</h3>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Topic</th><th>Years</th><th>Priority</th></tr>
+        <tr>
+          <td><strong>Simple Harmonic Motion (SHM)</strong> — periodic motion, SHM equation, velocity/acceleration calculation</td>
+          <td>2023, 2024</td>
+          <td><span class="badge badge-red">🔴 High (new)</span></td>
+        </tr>
+        <tr>
+          <td><strong>Blackbody Radiation</strong> — Wien's law, energy distribution curves, moon temperature</td>
+          <td>2024 only</td>
+          <td><span class="badge badge-orange">🟠 Medium</span></td>
+        </tr>
+        <tr>
+          <td><strong>Global Radiation / Solar Energy</strong> — pyranometer, albedo, earth's energy balance</td>
+          <td>2024 only</td>
+          <td><span class="badge badge-orange">🟠 Medium</span></td>
+        </tr>
+        <tr>
+          <td><strong>Ecosystem / Environmental Physics</strong> — conservation of matter, environmental systems</td>
+          <td>2023, 2024</td>
+          <td><span class="badge badge-orange">🟠 Medium</span></td>
+        </tr>
+        <tr>
+          <td><strong>Greenhouse Effect / Climate / Ozone</strong> — remote sensing, climate model errors</td>
+          <td>2023 only</td>
+          <td><span class="badge badge-orange">🟠 Medium</span></td>
+        </tr>
+        <tr>
+          <td><strong>Quantum Mechanics</strong> — wave function, Heisenberg's uncertainty, Planck's hypothesis</td>
+          <td>2023 only</td>
+          <td><span class="badge badge-orange">🟠 Medium</span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── SECTION 2: QUESTION MAP ───────────────────────────────── -->
+  <div class="analysis-section" id="s2">
+    <h2>Topic-wise Question Map</h2>
+    <p style="margin-bottom:18px">Click any topic to expand and see all actual exam questions under it.</p>
+
+    <!-- Gauss's Law & Electrostatics -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-red">🔴</span>
+        <strong>Gauss's Law &amp; Electrostatics</strong> — present in all 6 years
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">2+0.5</span><span class="q-text">Define electric field and potential. Write down the relation between them.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">3.5</span><span class="q-text">Calculate the electric field due to a long straight wire.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">1+3</span><span class="q-text">State Gauss' law of electrostatics. Hence derive the differential form of Gauss' law.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">2</span><span class="q-text">Two equal and opposite charges of magnitude 5×10⁵ C are at a distance 'd' apart such that their force of attraction is 4.5 N. Calculate the value of 'd'.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1</span><span class="q-text">What is a charge? What is meant by charge quantization?</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">3</span><span class="q-text">State Gauss's law. Show that Coulomb's law can be deduced from Gauss's law.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">4</span><span class="q-text">What is a dipole? Derive an expression for the electric field due to a dipole.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1</span><span class="q-text">Calculate the magnitude of the electric field which is sufficient to balance an alpha particle's weight.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">2</span><span class="q-text">Explain the properties of electric charges.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">2</span><span class="q-text">Explain the quantization of charges.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">2</span><span class="q-text">Calculate the electrical and gravitational forces between the electron and proton in a hydrogen atom and compare them.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">2</span><span class="q-text">Show Coulomb's law in vector form. What is an electric field?</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">2</span><span class="q-text">Deduce Coulomb's law from the Gauss's law.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">2</span><span class="q-text">Write a comparative discussion on Coulomb's law and Gauss's law in electrostatics.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">3</span><span class="q-text">Using Gauss's law find the electric field inside and outside a positively charged spherical shell.</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">1+1</span><span class="q-text">State Coulomb's law in electrostatics and discuss its significance. Define electric field.</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">4</span><span class="q-text">Calculate the electric field E at a distance y from an infinite line of charge whose linear charge density has the constant value λ.</span></div>
+        <div class="q-item"><span class="q-year">2018</span><span class="q-marks">2.75+3+3</span><span class="q-text">State Gauss's law in electrostatics. Discuss analogies and differences between Gauss's law and Ampere's law. Apply Gauss's law to obtain expression for electric field at point (i) outside and (ii) inside a charged conducting sphere.</span></div>
+      </div>
+    </div>
+
+    <!-- EM Induction -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-red">🔴</span>
+        <strong>Electromagnetic Induction</strong> (Faraday's, Lenz's) — 5 of 6 years
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">2</span><span class="q-text">Explain Faraday's law of electromagnetic induction.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1.5</span><span class="q-text">What is electromagnetic induction? State how Faraday relates the magnetic flux with induced electromotive force.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1.5</span><span class="q-text">What is Lenz's law? Does it obey the law of conservation of energy? Explain.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">3</span><span class="q-text">Explain Gauss's law of magnetic field and Faraday's law of induction. What is flux linkage?</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">2</span><span class="q-text">Explain Faraday's laws of electromagnetic induction.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">1+2</span><span class="q-text">Define electric field and electric potential. Find a relationship between them. (2020 v2)</span></div>
+        <div class="q-item"><span class="q-year">2018</span><span class="q-marks">3+3.75+2</span><span class="q-text">State and explain the laws of electromagnetic induction and define the terms coefficient of self induction and mutual induction. Deduce a relation between current and EMF of an AC circuit containing resistance, inductance and capacitance. Obtain the conditions for the emf and current to be in phase.</span></div>
+      </div>
+    </div>
+
+    <!-- Ampere's Law & Biot-Savart -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-red">🔴</span>
+        <strong>Ampere's Law &amp; Biot-Savart Law</strong> — 5 of 6 years
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">1</span><span class="q-text">State Biot-Savart law.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">4</span><span class="q-text">Using Biot-Savart law, calculate B for a long straight wire.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">2</span><span class="q-text">Mention few applications of Ampere's law.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">1</span><span class="q-text">What is the magnetic field of 10 cm away from a long wire carrying a current of 10 amp?</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">3</span><span class="q-text">State Ampere's law. Using this law, derive an expression for magnetic induction at a point on the axis of a circular current-carrying conductor.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">1</span><span class="q-text">Explain Ampere's law.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">2</span><span class="q-text">Using Biot-Savart law find the induced magnetic field at a point R distance apart from a straight and long current-carrying wire.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">2+2</span><span class="q-text">Briefly explain Laplace's rule on magnetic field due to a moving point charge and Biot-Savart law. Applying Biot-Savart law, find an expression for the magnetic field B at a point which is at distance R from a long straight wire carrying a steady current I.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">3</span><span class="q-text">What is solenoid? Using Ampere's law, find an expression for the magnetic field due to a solenoid.</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">2.5+1</span><span class="q-text">Prove that two long parallel wires separated by a distance 'd' carrying currents will attract each other. Hence show this can be used to define the Ampere.</span></div>
+      </div>
+    </div>
+
+    <!-- Diffraction -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-red">🔴</span>
+        <strong>Diffraction of Light</strong> — 5 of 6 years
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">1.5</span><span class="q-text">Explain diffraction of light.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">1.5+1.5</span><span class="q-text">Draw a schematic diagram of the technique used to observe the diffraction of X-rays by a single crystal and explain how Laue patterns are formed.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">3</span><span class="q-text">Derive Bragg's law.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">1.5</span><span class="q-text">X-rays of wavelength λ are being diffracted from a NaCl crystal having lattice constant 2.82Å. If the diffraction angle is 6° for the first order diffraction, find the wavelength λ.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">2</span><span class="q-text">Distinguish between Fresnel and Fraunhofer diffractions.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">6</span><span class="q-text">Obtain an expression for the intensity of a single-slit diffraction experiment.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">1</span><span class="q-text">What is diffraction grating?</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">3+3.75+2</span><span class="q-text">Distinguish between Fresnel and Fraunhofer classes. Explain why gratings with larger number of lines are preferred. Discuss diffraction by single slit. Obtain mathematical expression for amplitude and intensity. Fraunhofer diffraction calculation: screen 2m away, slit 0.2mm, find wavelength at first minima.</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">2+4+3</span><span class="q-text">Distinguish between interference and diffraction of light. What is bi-prism? Explain Fresnel bi-prism experiment. Calculate separation between coherent sources formed by a bi-prism.</span></div>
+        <div class="q-item"><span class="q-year">2018</span><span class="q-marks">3+3.75+2</span><span class="q-text">Distinguish between Fresnel and Fraunhofer diffractions. Discuss diffraction of light by a single slit. Obtain mathematical expression for amplitude and intensity. Fraunhofer diffraction calculation for slit width and wavelength.</span></div>
+      </div>
+    </div>
+
+    <!-- Interference -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-red">🔴</span>
+        <strong>Interference of Light</strong> (Young's double slit, Newton's rings, thin films) — 4 years
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">3</span><span class="q-text">What are meant by coherent sources? Write down the relation between phase difference and path difference.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">2</span><span class="q-text">In Young's double slit experiment, find the expression for the intensity of resultant wave at a point P.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">2</span><span class="q-text">For the interference due to reflected light in thin films, show that the apparent path difference is x = 2μtcosr.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">2</span><span class="q-text">A parallel beam of light (λ = 5890Å) is incident on a thin glass plate (μ=1.50) such that the angle of refraction is 60°. Calculate the smallest thickness of the plate which will appear dark by reflection.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">2</span><span class="q-text">What are meant by coherent sources and interferences of light?</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">3</span><span class="q-text">Discuss the formation of Newton's rings by reflected light. Derive the expressions for the radius of the nth bright and dark rings.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">5</span><span class="q-text">Show that the distances between any two consecutive bright or dark fringes formed in Young's double slits experiment is same.</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">1+2</span><span class="q-text">Write the conditions for interference of light. What are Newton's rings and interferometer?</span></div>
+        <div class="q-item"><span class="q-year">2018</span><span class="q-marks">2+4+2.75</span><span class="q-text">What are Newton's rings and how they are formed? Explain the importance of coherent sources in interference. Show that the distances between any two consecutive bright or dark fringes in Young's experiment are same. Newton's rings calculation: 12th ring changes, calculate refractive index.</span></div>
+      </div>
+    </div>
+
+    <!-- Polarization -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-red">🔴</span>
+        <strong>Polarization</strong> (Brewster's law, Malus's law) — 4 years
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">2</span><span class="q-text">Define plane of polarization and plane of vibration.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">3</span><span class="q-text">State the Brewster's law and show that when light is incident on a transparent medium at polarizing angle, the reflected and refracted rays are at right angles to each other.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">1</span><span class="q-text">What do you mean by a simple magnifier?</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">3</span><span class="q-text">Discuss briefly about the compound microscope and find an expression for magnifying power of it.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">2</span><span class="q-text">State and explain Brewster's Law.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">3</span><span class="q-text">State and explain Malus' law.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">2</span><span class="q-text">Define polarization of light. What are the applications of polarized light?</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">2</span><span class="q-text">Define polarization of light. What are the applications of polarized light?</span></div>
+        <div class="q-item"><span class="q-year">2018</span><span class="q-marks">2+3+3+1</span><span class="q-text">Define plane of polarization and plane of vibration. State Brewster's law and show reflected and refracted rays are at right angles. Find expressions for thickness of quarter-wave plate and half-wave plate. Calculate thickness of quarter-wave plate when λ=5890Å.</span></div>
+      </div>
+    </div>
+
+    <!-- Kirchhoff's Laws -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-red">🔴</span>
+        <strong>Kirchhoff's Laws (KCL/KVL)</strong> — 4 years (2018–2022)
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">1.5</span><span class="q-text">Explain Kirchhoff's loop and junction theorems.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">4.5</span><span class="q-text">Use the energy conservation principle to a RC circuit and derive the expressions for charge and current in the charging case. What is capacitive time constant?</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">3</span><span class="q-text">Explain Kirchhoff's laws of current electricity.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">4</span><span class="q-text">Find the general expression for the current through the galvanometer in the Wheatstone bridge by using Kirchhoff's laws.</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">3</span><span class="q-text">State and explain Kirchhoff's laws of electricity.</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">2</span><span class="q-text">Why do we need Kirchhoff's laws?</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">2</span><span class="q-text">What are meant by ohmic and non-ohmic devices? Give some examples of each.</span></div>
+        <div class="q-item"><span class="q-year">2018</span><span class="q-marks">2+4+2.75</span><span class="q-text">State and explain Kirchhoff's voltage law (KVL) with example. Define electric potential and electric potential energy. Calculate the component of electric field. What is an expression for torque exerted on the dipole in uniform electric field? Calculate work done to turn dipole through 180°.</span></div>
+      </div>
+    </div>
+
+    <!-- Self & Mutual Inductance -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-red">🔴</span>
+        <strong>Self &amp; Mutual Inductance</strong> — 4 years
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">2</span><span class="q-text">Write down the expression for energy stored in electric and magnetic field.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">2</span><span class="q-text">A coil has an inductance of 0.5 henry and a resistance of 20 ohms. If a 100 volt emf is applied, what energy is stored in the magnetic field after the current has built up to its maximum value e/R?</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">3</span><span class="q-text">Define mutual inductance. Obtain an expression for the mutual inductance of two coaxial solenoids.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">3</span><span class="q-text">Define self-inductance and mutual inductance. Establish the relation between them.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">3</span><span class="q-text">Define self-inductance and mutual inductance. Establish the relation between them.</span></div>
+        <div class="q-item"><span class="q-year">2018</span><span class="q-marks">3+2+2</span><span class="q-text">Derive an expression for the energy stored in the electric field of a charged capacitor. What is energy density? Define inductance and impedance of a single phase AC circuit. What is time constant of LR circuit? A 3.0 henry inductor is placed in series with 10Ω resistance and emf of 3.0 volts being suddenly applied. At 0.30 sec after contact, show that P_E = P_B + P_R.</span></div>
+      </div>
+    </div>
+
+    <!-- SHM (New) -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-red">🔴 New</span>
+        <strong>Simple Harmonic Motion (SHM)</strong> — 2023 &amp; 2024
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">2+1</span><span class="q-text">What do you mean by periodic motion? Give examples. Define Simple Harmonic Motion (SHM).</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">3.5</span><span class="q-text">Show that x = Acosωt + Bsinωt is the solution of the equation of SHM.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">1.5</span><span class="q-text">A body oscillates with SHM according to the equation x = 6.0 cos(3πt + π/3) metres. What is (i) the displacement, (ii) the velocity, and (iii) the acceleration at time 2 sec.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1.5+1.5</span><span class="q-text">What do you mean by average velocity and instantaneous velocity? Show that acceleration in uniform circular motion a = v²/r.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">2</span><span class="q-text">What are inertial frame of reference and non-inertial frame of reference?</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">2</span><span class="q-text">Find an expression for the work done by a spring force. Show that P = F⃗·v⃗.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">2</span><span class="q-text">Write down and explain Newton's second law of motion for rotational motion.</span></div>
+      </div>
+    </div>
+
+    <!-- Photoelectric & de Broglie -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-orange">🟠</span>
+        <strong>Photoelectric Effect &amp; de Broglie Hypothesis</strong> — 4 years
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1+2.5</span><span class="q-text">What is Compton Effect? Find an expression for the change in wavelength of incident and scattered photon in the Compton Effect.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">2+1</span><span class="q-text">Explain wave-particle duality and de Broglie wavelength.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1</span><span class="q-text">What is Planck's hypothesis?</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1</span><span class="q-text">Find the shortest wavelength present in the radiation from an X-ray machine whose accelerating potential is 50KV.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">1+2.5</span><span class="q-text">Define photoelectric effect. Derive equation of Einstein's photoelectric effect.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">1</span><span class="q-text">What is de Broglie hypothesis?</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">1+2.5</span><span class="q-text">Define photoelectric effect. Derive equation of Einstein's photoelectric effect.</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">1</span><span class="q-text">What is de Broglie hypothesis?</span></div>
+        <div class="q-item"><span class="q-year">2018</span><span class="q-marks">1+3</span><span class="q-text">What do you understand by work function. Explain photoelectric effect and write down the Einstein photoelectric equation.</span></div>
+      </div>
+    </div>
+
+    <!-- Radioactive Decay -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-orange">🟠</span>
+        <strong>Radioactive Decay</strong> — 3 years (2018, 2019, 2020)
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">1+1+1</span><span class="q-text">Mention some characteristic properties of nuclei. Define mass defect and binding energy. Plot the variation of binding energy per nucleon as a function of mass number schematically and explain the curve.</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">1+1+1</span><span class="q-text">Mention some characteristic properties of nuclei. Define mass defect and binding energy. Plot the variation of binding energy per nucleon schematically and explain.</span></div>
+        <div class="q-item"><span class="q-year">2018</span><span class="q-marks">3</span><span class="q-text">Establish the equation N = N₀e^(-λt); where the symbols express their usual meanings.</span></div>
+        <div class="q-item"><span class="q-year">2018</span><span class="q-marks">1+3+2</span><span class="q-text">What do you understand by work function? Explain half-life and mean-life of a radioactive substance. The disintegration constant λ of a radioactive element is 0.00231 × day. Calculate the half-life and mean-life.</span></div>
+      </div>
+    </div>
+
+    <!-- Blackbody & Global Radiation (New) -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-orange">🟠 New</span>
+        <strong>Blackbody Radiation &amp; Global Radiation</strong> — 2024 only
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">1+1</span><span class="q-text">Define blackbody and blackbody radiation.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">1.5</span><span class="q-text">How can a blackbody be realized experimentally?</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">1.5+2.5</span><span class="q-text">Sketch the energy distribution curves for blackbody radiation at three different temperatures and explain the features of the curves.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">1.5</span><span class="q-text">Calculate the temperature of the moon if it is treated as a blackbody and the maximum energy occurs at the wavelength λ_m = 14 μm.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">1+1</span><span class="q-text">Define global radiation. Mention the factors affecting global radiation.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">5</span><span class="q-text">Describe a method of measuring global radiation with a pyranometer.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">1</span><span class="q-text">What is albedo?</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">1</span><span class="q-text">Write about earth's energy balance.</span></div>
+      </div>
+    </div>
+
+    <!-- Ecosystem / Environment -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-orange">🟠 New</span>
+        <strong>Ecosystem &amp; Environmental Physics</strong> — 2023 &amp; 2024
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">1.5</span><span class="q-text">What are ecosystems? Give example.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">1+1.5</span><span class="q-text">State the law of conservation of matter and hence write about the role of matter in ecosystems.</span></div>
+        <div class="q-item"><span class="q-year">2024</span><span class="q-marks">1+1.5</span><span class="q-text">What do you mean by environmental systems? Discuss the key components of environmental systems briefly.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">2</span><span class="q-text">Describe how energy flows through a food chain in an ecosystem.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1+1.5</span><span class="q-text">Briefly describe human interactions with the environment. What are the key takeaways of human-environment interactions?</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1+1.5</span><span class="q-text">What is the greenhouse effect? What are its key features?</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">2</span><span class="q-text">Briefly explain the four-fold importance of ozone to climate.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1</span><span class="q-text">What is 'remote sensing'? Briefly describe its application to climate studies.</span></div>
+      </div>
+    </div>
+
+    <!-- Quantum Mechanics -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-orange">🟠 New</span>
+        <strong>Quantum Mechanics</strong> — 2023 only
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1+2</span><span class="q-text">What is wave function? What are its properties?</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1</span><span class="q-text">What is Planck's hypothesis?</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">2</span><span class="q-text">What is ultraviolet catastrophe?</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">2</span><span class="q-text">Briefly describe Heisenberg's uncertainty principle with its importance in quantum mechanics.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1.5</span><span class="q-text">Show that pair production cannot occur in empty space.</span></div>
+      </div>
+    </div>
+
+    <!-- Electric Dipole -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-orange">🟠</span>
+        <strong>Electric Dipole</strong> (Field, torque, potential energy) — 4 years
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1</span><span class="q-text">Calculate the magnitude of the electric field which is sufficient to balance an alpha particle's weight.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">1+1.5</span><span class="q-text">Apply Gauss's law to find the electric field inside and outside a charged conducting sphere. Obtain an expression for the torque and potential energy of a charged particle in a uniform magnetic field.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">3+1</span><span class="q-text">Derive expressions for the potential and field due to an electric dipole. Show that if an electric dipole is placed in an external electric field, it experiences a torque which tends to align it with the field.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">4</span><span class="q-text">An electric dipole consists of two opposite charges of magnitude q = 2×10⁻⁵ C separated by 2.0 cm. The dipole is placed in an external electric field of 2.0×10⁵ N/C. Calculate (a) the maximum torque on the dipole, and (b) the work done to turn the dipole through 180°, starting from θ = 0°.</span></div>
+      </div>
+    </div>
+
+    <!-- Capacitor & Energy -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-orange">🟠</span>
+        <strong>Capacitor &amp; Energy in Electric Field</strong> — 3 years
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1</span><span class="q-text">Define capacitor and capacitance.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">3</span><span class="q-text">The two ends of a capacitor of capacitance C are connected to a potential V. Derive an expression for the energy stored by the capacitor.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1</span><span class="q-text">Two air-filled parallel plate capacitor plates are 50 mm apart. What must be the area of each plate if the capacitance of the capacitor is 0.5 F?</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">3+2</span><span class="q-text">Derive an expression for the energy stored in the electric field of a charged capacitor. What is energy density?</span></div>
+      </div>
+    </div>
+
+    <!-- AC Circuits -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-orange">🟠</span>
+        <strong>AC Circuits (RMS, Impedance, LCR, Resonance)</strong> — 3 years
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">1+0.5</span><span class="q-text">What do you mean by rms value of an alternating current? What is power factor?</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">1+1</span><span class="q-text">Define reactance and impedance.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">4</span><span class="q-text">Find an expression for the instantaneous current in a series LCR circuit having alternating current source. Hence briefly explain the phenomena of resonance and its sharpness and quality factor 'Q'.</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">1+2</span><span class="q-text">What are root-mean-square (rms) values? Find the rms value of alternating current.</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">2</span><span class="q-text">Derive expressions for current and impedance when an alternating emf is applied to a circuit having capacitor C and resistor R in series.</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">1</span><span class="q-text">Find the current through the circuit shown. Hence (i) find the capacitive reactance X_c, (ii) the voltage amplitude across the capacitor, and (iii) write an expression for the instantaneous voltage across the capacitor when V_R = (1.20V) cos(2500 rad/s)t.</span></div>
+        <div class="q-item"><span class="q-year">2018</span><span class="q-marks">3+3.75</span><span class="q-text">Define AC circuit parameters. Derive expression for current in RC circuit with alternating source. Show LC circuit oscillations by energy conservation. Obtain resonance condition for RLC circuit and calculate frequency factor Q.</span></div>
+      </div>
+    </div>
+
+    <!-- Climate / Greenhouse / Ozone -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-orange">🟠</span>
+        <strong>Climate, Greenhouse Effect &amp; Ozone</strong> — 2023 only
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">4</span><span class="q-text">Define climate. What is the key variable of climate systems? Explain the temperature structure of the climate system using the necessary diagram.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1+1.5</span><span class="q-text">What is the greenhouse effect? What are its key features?</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">2</span><span class="q-text">Briefly explain the four-fold importance of ozone to climate.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1</span><span class="q-text">What is 'remote sensing'? Briefly describe its application to climate studies.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1</span><span class="q-text">Write down the three main categories of errors in models used to forecast future changes in the climate.</span></div>
+      </div>
+    </div>
+
+    <!-- Photoelectric Effect -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-orange">🟠</span>
+        <strong>Photoelectric Effect</strong> — 4 years
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1</span><span class="q-text">What is the superposition principle of electromagnetic waves?</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">1+2.5</span><span class="q-text">Define photoelectric effect. Derive equation of Einstein's photoelectric effect.</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">1+2.5</span><span class="q-text">Define photoelectric effect. Derive equation of Einstein's photoelectric effect.</span></div>
+        <div class="q-item"><span class="q-year">2018</span><span class="q-marks">1+3</span><span class="q-text">What do you understand by work function? Explain photoelectric effect and write down the Einstein photoelectric equation.</span></div>
+      </div>
+    </div>
+
+    <!-- Lorentz Force / Charged Particle in Magnetic Field -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-green">🟢</span>
+        <strong>Lorentz Force / Charged Particle in Magnetic Field</strong> — 3 years
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1</span><span class="q-text">Define magnetic induction, B and Tesla.</span></div>
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">3</span><span class="q-text">An electron of charge e is placed in a constant magnetic field, B. Deduce an expression for the force exerted by the magnetic field on the electron.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">2</span><span class="q-text">Find the expressions for the motion of a charged particle in a constant uniform magnetic field.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">1+1</span><span class="q-text">How does one define the magnetic field B? What is Lorentz force?</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">2</span><span class="q-text">A 10 cm long wire carrying a current of 10 amp is held at an angle 30° with the direction of a uniform magnetic field of strength 1 weber/m². Calculate the force acting on the wire.</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">1+1</span><span class="q-text">What is Lorentz force? When does Ampere's law become difficult to apply in a useful way?</span></div>
+      </div>
+    </div>
+
+    <!-- Wave Theory of Light -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-green">🟢</span>
+        <strong>Wave Theory of Light &amp; Huygens' Principle</strong> — 3 years
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">3</span><span class="q-text">What are the important theories of nature of light? Discuss briefly the wave theory of light.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">2</span><span class="q-text">What is rainbow? How is it formed?</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">2</span><span class="q-text">Explain the image formation by a refracting surface.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">1.5+1.5</span><span class="q-text">What are the important theories of nature of light? Discuss briefly the wave theory of light and corpuscular theory.</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">1.5</span><span class="q-text">What is electromagnetic radiation? Write down the properties of electromagnetic waves.</span></div>
+        <div class="q-item"><span class="q-year">2019</span><span class="q-marks">1.5</span><span class="q-text">Define electromagnetic spectrum. Sketch the electromagnetic spectrum chart in terms of frequency.</span></div>
+      </div>
+    </div>
+
+    <!-- LC Circuit / Cyclotron -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-green">🟢</span>
+        <strong>LC Circuit &amp; Cyclotron Frequency</strong> — 1-2 years
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">4</span><span class="q-text">For an LC circuit show that the total energy at any instant is constant and ω = 1/√(LC), where the symbols have their usual meanings.</span></div>
+        <div class="q-item"><span class="q-year">2022</span><span class="q-marks">2</span><span class="q-text">Deduce an expression for the cyclotron frequency of a circulating charge particle.</span></div>
+      </div>
+    </div>
+
+    <!-- Compton Effect -->
+    <div class="topic-block">
+      <div class="topic-header" onclick="toggle(this)">
+        <span class="badge badge-green">🟢</span>
+        <strong>Compton Effect</strong> — 2 years
+        <span class="toggle-hint">▼ expand</span>
+      </div>
+      <div class="topic-body">
+        <div class="q-item"><span class="q-year">2023</span><span class="q-marks">1+2.5</span><span class="q-text">What is Compton Effect? Find an expression for the change in wavelength of incident and scattered photon in the Compton Effect.</span></div>
+        <div class="q-item"><span class="q-year">2020</span><span class="q-marks">2+2+3.75</span><span class="q-text">Explain the ultraviolet catastrophe. Define Compton Effect and derive the expression for the change in wavelength. Discuss diffraction of X-rays by a single crystal with Laue patterns formation.</span></div>
+      </div>
+    </div>
+
+  </div><!-- end question map -->
+
+  <!-- ── SECTION 3: TRENDS ──────────────────────────────────────── -->
+  <div class="analysis-section" id="s3">
+    <h2>Trend Analysis</h2>
+
+    <h3>The Biggest Story: A Curriculum Overhaul in 2023</h3>
+    <p>PHY 241 underwent a major scope change. The pre-2023 course was tightly focused on Electromagnetism and Optics. From 2023, the course became a general "Physics" course, adding mechanics, radiation science, environmental physics, and modern quantum physics. This means students cannot rely only on old papers.</p>
+
+    <div class="grid2" style="margin-top:20px">
+      <div>
+        <h3>Topics That Disappeared (2018–2022 → 2023+)</h3>
+        <ul>
+          <li><strong>Kirchhoff's Laws</strong> — dominant for 4 years, absent in 2023–2024</li>
+          <li><strong>AC Circuits (LCR, resonance, RMS)</strong> — 3 years, gone since 2022</li>
+          <li><strong>Interference (Young's, Newton's rings)</strong> — 4 years, absent 2023–2024</li>
+          <li><strong>Polarization (Brewster's, Malus's)</strong> — 4 years, absent 2023–2024</li>
+          <li><strong>Radioactive Decay</strong> — 3 years, absent 2022–2024</li>
+          <li><strong>Bohr's Atom / Hydrogen spectrum</strong> — 2 years, gone after 2020</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Topics That Are Rising (2023–2024)</h3>
+        <ul>
+          <li><strong>SHM / Mechanics</strong> — new in 2023, repeated in 2024</li>
+          <li><strong>Blackbody Radiation</strong> — first in 2024 (high marks: ~7 marks)</li>
+          <li><strong>Global Radiation &amp; Solar Physics</strong> — first in 2024 (~8 marks)</li>
+          <li><strong>Ecosystems &amp; Environment</strong> — appeared in both 2023 &amp; 2024</li>
+          <li><strong>Quantum Mechanics</strong> — first in 2023 (wave function, Heisenberg)</li>
+          <li><strong>X-ray Diffraction / Bragg's law</strong> — first in 2024</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:20px">Repeated Questions Across Years</h3>
+    <ul>
+      <li><strong>Biot-Savart for a long straight wire</strong> — appeared in 2020, 2022, and 2024. Very likely to continue.</li>
+      <li><strong>Fresnel vs Fraunhofer diffraction distinction</strong> — appeared in 2018, 2019, 2020, 2022.</li>
+      <li><strong>Self-inductance and mutual inductance definition + relation</strong> — appeared in 2020 and 2022 with identical wording.</li>
+      <li><strong>Photoelectric effect + Einstein's equation</strong> — appeared in 2018, 2019, 2020 with near-identical wording.</li>
+      <li><strong>de Broglie hypothesis</strong> — appeared in 2018, 2019, 2020, 2023.</li>
+      <li><strong>Consecutive fringe distance in Young's double slit</strong> — appeared in 2018, 2019, 2020.</li>
+      <li><strong>Brewster's law proof</strong> — appeared in 2018, 2019, 2020, 2022.</li>
+    </ul>
+
+    <h3>Consistent Structure Across All Years</h3>
+    <p>Section A always covers electricity and magnetism. Section B covers optics and modern/applied physics. This split has held across all years. In 2023–2024, Section B shifted toward new physics topics while Section A kept the electromagnetism core.</p>
+  </div>
+
+  <!-- ── SECTION 4: PATTERNS ────────────────────────────────────── -->
+  <div class="analysis-section" id="s4">
+    <h2>Question Pattern Breakdown</h2>
+
+    <h3>Section Structure (All Years)</h3>
+    <p>Each paper: <strong>Section A + Section B</strong>, 3–4 questions each (answer any 3). Each question has 3–5 sub-parts. Total marks: 54 in 4 hours.</p>
+    <ul>
+      <li><strong>Section A:</strong> Electrostatics, Gauss's law, Kirchhoff's/Ohm's law, Magnetism (Biot-Savart, Ampere), EM Induction, Inductance</li>
+      <li><strong>Section B (old):</strong> Optics (interference, diffraction, polarization), Modern Physics (photoelectric, radioactive decay)</li>
+      <li><strong>Section B (new 2023+):</strong> Environmental physics, Mechanics/SHM, Blackbody/Solar radiation, Quantum mechanics</li>
+    </ul>
+
+    <h3>Recurring Question Archetypes</h3>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Template</th><th>Example</th><th>Frequency</th></tr>
+        <tr><td>"State X law. Derive expression for Y using X."</td><td>State Biot-Savart. Derive B for long wire.</td><td>Every year</td></tr>
+        <tr><td>"Define X and Y. Find the relation between them."</td><td>Electric field and potential. Self and mutual inductance.</td><td>Every year</td></tr>
+        <tr><td>"Distinguish between X and Y."</td><td>Fresnel vs Fraunhofer. Interference vs diffraction.</td><td>Every year</td></tr>
+        <tr><td>"Show that [expression] is true."</td><td>x = Acosωt + Bsinωt is solution of SHM. N = N₀e^(-λt).</td><td>High frequency</td></tr>
+        <tr><td>"State [law/theorem]. Hence derive [formula]."</td><td>Gauss's law → Coulomb's law. Ampere's → solenoid field.</td><td>Every year</td></tr>
+        <tr><td>Numerical calculation</td><td>Magnetic field of wire at distance d, NaCl crystal diffraction angle</td><td>Every year (1–2 per paper)</td></tr>
+        <tr><td>"Sketch [graph] and explain features."</td><td>Blackbody energy distribution at three temperatures</td><td>New trend 2023+</td></tr>
+      </table>
+    </div>
+
+    <h3>Marks Distribution</h3>
+    <ul>
+      <li><strong>Definitions / short concepts</strong> (1–2 marks): "Define X", "State Y", "What is meant by Z?"</li>
+      <li><strong>Derivations / proofs</strong> (3–4 marks): most high-mark sub-parts; these are the marks battleground</li>
+      <li><strong>Numericals</strong> (1.5–3 marks): 1–2 per question, always paired with derivation</li>
+      <li><strong>Explain/discuss</strong> (1.5–3 marks): applied understanding, ecosystem/environmental questions</li>
+    </ul>
+  </div>
+
+  <!-- ── SECTION 5: DEPTH MAP ───────────────────────────────────── -->
+  <div class="analysis-section" id="s5">
+    <h2>Concept Depth Map</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Topic</th><th>Depth Required</th><th>What's tested</th></tr>
+        <tr><td>Gauss's Law / Electrostatics</td><td>Advanced</td><td>Full derivations (differential form, spherical shell, dipole field) + numericals</td></tr>
+        <tr><td>Ampere's Law</td><td>Intermediate</td><td>Derivation for solenoid, circular conductor; numerical (B at distance)</td></tr>
+        <tr><td>Biot-Savart Law</td><td>Intermediate–Advanced</td><td>Derivation for long straight wire — appears almost every year, must know cold</td></tr>
+        <tr><td>EM Induction</td><td>Intermediate</td><td>Faraday's/Lenz's statements + proof/derivation + sometimes LCR or railway track numerical</td></tr>
+        <tr><td>Self/Mutual Inductance</td><td>Intermediate</td><td>Definitions + expression for coaxial solenoids + numerical</td></tr>
+        <tr><td>Diffraction</td><td>Advanced</td><td>Full intensity derivation for single slit (6 marks in 2022); Bragg's law derivation; Fresnel vs Fraunhofer</td></tr>
+        <tr><td>Interference</td><td>Intermediate</td><td>Young's fringe distance proof, Newton's rings radius, thin film condition</td></tr>
+        <tr><td>Polarization</td><td>Intermediate</td><td>Brewster's law proof + Malus's law + wave plate thickness</td></tr>
+        <tr><td>Kirchhoff's Laws</td><td>Intermediate</td><td>Statement + Wheatstone bridge derivation + circuit calculation</td></tr>
+        <tr><td>AC Circuits</td><td>Advanced</td><td>LCR derivation, resonance condition, Q factor — complex math</td></tr>
+        <tr><td>Photoelectric Effect</td><td>Basic</td><td>Statement + Einstein's equation + de Broglie wavelength (numerical)</td></tr>
+        <tr><td>Radioactive Decay</td><td>Basic</td><td>Derive N=N₀e^(-λt) + half-life, mean-life calculation</td></tr>
+        <tr><td>SHM</td><td>Intermediate</td><td>Proof x=Acosωt+Bsinωt is solution; displacement/velocity/acceleration numerical</td></tr>
+        <tr><td>Blackbody Radiation</td><td>Basic–Intermediate</td><td>Definition + sketch energy distribution curves + Wien's law numerical (moon temperature)</td></tr>
+        <tr><td>Global Radiation</td><td>Basic</td><td>Definition + pyranometer description + albedo + earth energy balance — mostly descriptive</td></tr>
+        <tr><td>Ecosystem/Environment</td><td>Basic</td><td>Mostly descriptive — definitions, examples, key components. No math.</td></tr>
+        <tr><td>Quantum Mechanics</td><td>Intermediate</td><td>Wave function properties, Heisenberg's uncertainty statement + significance</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── SECTION 6: HIDDEN INSIGHTS ────────────────────────────── -->
+  <div class="analysis-section" id="s6">
+    <h2>Hidden Insights &amp; Strategic Observations</h2>
+    <ul>
+      <li><strong>Biot-Savart for a long wire is the most reliable derivation question:</strong> It has appeared in 2020, 2022, and 2024. In 2024, it was a standalone 4-mark sub-part. Know this derivation perfectly — it is free marks.</li>
+      <li><strong>The Faraday/Lenz/EM Induction combination carries ~5–6 marks and appears 5 of 6 years:</strong> Any student who can state Faraday's law, explain Lenz's law with conservation of energy, and write an expression for mutual inductance covers two of the most reliable question areas.</li>
+      <li><strong>Diffraction is the single highest-stakes Section B topic:</strong> The single-slit intensity derivation was worth 6 marks in 2022. Bragg's law appeared in 2024 for 3+1.5 marks. This is Section B's biggest mark opportunity in both old and new curriculum.</li>
+      <li><strong>Ecosystem and Environmental questions are the easiest marks in 2023–2024:</strong> They are purely descriptive (no math), and each sub-part is only 1–1.5 marks. A student who reads the definitions can score 4–5 marks in 10 minutes.</li>
+      <li><strong>Global Radiation (pyranometer) carries 5 marks in 2024:</strong> The largest single sub-part in Section B. It is purely descriptive. Students who prepare this topic can secure a large chunk of Section B marks quickly.</li>
+      <li><strong>The AC Circuits (LCR, resonance, Q factor) block was extremely high-mark in 2018–2020</strong> but disappeared after 2022. If the 2023–2024 trend continues, preparing AC circuits may be low ROI. However, if your exam follows the older syllabus, it becomes critical.</li>
+      <li><strong>Coherent sources + fringe distance in Young's experiment appeared identically in 2018, 2019, and 2020:</strong> It's the most repeated optics sub-question and could easily return if the curriculum reverts to electromagnetism and optics.</li>
+      <li><strong>The 2022 paper is the most important single reference</strong> because it's the most recent paper in the old "Electromagnetism and Optics" format. Topics from 2022 are more likely to return than topics from 2018–2019.</li>
+    </ul>
+  </div>
+
+  <!-- ── SECTION 7: PREDICTIONS ──────────────────────────────────── -->
+  <div class="analysis-section" id="s7">
+    <h2>Predicted High-Probability Questions</h2>
+    <p style="margin-bottom:16px">Based on frequency patterns and 2023–2024 curriculum trends. Confidence: <strong>Medium–High</strong> for electromagnetic core topics.</p>
+
+    <div class="predict-item">Using Biot-Savart law, derive an expression for the magnetic field at a point at distance R from a long straight wire carrying current I. (Appeared in 2020, 2022, 2024 — nearly guaranteed)</div>
+    <div class="predict-item">State Gauss's law. Derive the differential form of Gauss's law. / Apply Gauss's law to find the electric field inside and outside a charged sphere. (Appeared in some form in every single year)</div>
+    <div class="predict-item">Define mutual inductance. Obtain an expression for the mutual inductance of two coaxial solenoids. (Appeared identically in 2022 and 2023)</div>
+    <div class="predict-item">Show that x = Acosωt + Bsinωt is the solution of the equation of SHM. Followed by a numerical on displacement/velocity/acceleration. (SHM appeared in 2023 and 2024 — clear recurring pattern)</div>
+    <div class="predict-item">Ecosystems and environmental systems question (definition, components, energy flow in food chain). (Appeared in 2023 and 2024 — becoming a fixture)</div>
+    <div class="predict-item">Derive Bragg's law. Followed by NaCl crystal numerical. (New in 2024 with significant marks — likely to consolidate)</div>
+    <div class="predict-item">Blackbody radiation: sketch energy distribution curves at different temperatures and explain features. Calculate temperature using Wien's law. (2024 — strong new pattern)</div>
+    <div class="predict-item">Explain Faraday's laws of EM induction. State and explain Lenz's law with conservation of energy argument. (Appeared in 5 of 6 years)</div>
+    <div class="predict-item">Compton Effect: derive expression for change in wavelength. (Appeared in 2020 and 2023 — modern physics staple)</div>
+    <div class="predict-item">Global Radiation + pyranometer description. (2024 carried 5 marks — high probability of return)</div>
+  </div>
+
+  <!-- ── SECTION 8: STUDY ROADMAP ────────────────────────────────── -->
+  <div class="analysis-section" id="s8">
+    <h2>Prioritized Study Roadmap</h2>
+
+    <div class="notice-box" style="margin-bottom:24px">
+      <strong>First determine your syllabus version:</strong> If your 2024–2025 exam follows the <em>new "Physics" curriculum</em>, prepare SHM, Blackbody, Global Radiation, and Ecosystems as high priority. If it follows the older <em>"Electromagnetism and Optics"</em> curriculum, skip those and heavily prepare AC Circuits, Interference, and Polarization.
+    </div>
+
+    <h3>Phase 1 — Universal Core (Days 1–3): Present in ALL years</h3>
+    <div class="roadmap-item">
+      <div class="roadmap-num red">1</div>
+      <div>
+        <div class="roadmap-title">Gauss's Law &amp; Electrostatics</div>
+        <div class="roadmap-sub">Know the differential form derivation. Practice: electric field of spherical shell, long wire, dipole. Know Coulomb's law deduction from Gauss's law. Prepare 2–3 numericals on force/field calculation.</div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-num red">2</div>
+      <div>
+        <div class="roadmap-title">Biot-Savart Law — Derivation for a Long Straight Wire</div>
+        <div class="roadmap-sub">This single derivation has appeared in 2020, 2022, 2024. Know it from memory (step-by-step, with diagram). Also know the circular conductor variation. Very high ROI — 4 marks in 30 minutes of preparation.</div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-num red">3</div>
+      <div>
+        <div class="roadmap-title">EM Induction + Self/Mutual Inductance</div>
+        <div class="roadmap-sub">State Faraday's and Lenz's laws clearly. Know Lenz's law + conservation of energy argument. Derive mutual inductance for coaxial solenoids (appeared identically in 2022 and 2023). Prepare the energy stored in magnetic field formula.</div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-num red">4</div>
+      <div>
+        <div class="roadmap-title">Ampere's Law</div>
+        <div class="roadmap-sub">State Ampere's law. Derive magnetic field for solenoid. Know the expression for field at axis of circular conductor. Prepare at least one numerical (B at a distance from wire).</div>
+      </div>
+    </div>
+
+    <h3>Phase 2 — New Curriculum Priorities (Days 4–5): If your exam is 2023+ format</h3>
+    <div class="roadmap-item">
+      <div class="roadmap-num red">5</div>
+      <div>
+        <div class="roadmap-title">SHM — Show x = Acosωt + Bsinωt is solution + numerical</div>
+        <div class="roadmap-sub">Know the differential equation of SHM and the verification proof. Practice calculating displacement, velocity, and acceleration from x = A cos(ωt + φ) at a given time. This is now a Section B staple.</div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-num red">6</div>
+      <div>
+        <div class="roadmap-title">Ecosystem &amp; Environmental Physics</div>
+        <div class="roadmap-sub">Pure memorization — no math. Prepare: ecosystem definition + examples, conservation of matter, environmental system components, food chain energy flow, greenhouse effect, ozone importance. 15–20 minutes of reading = 4+ marks.</div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-num orange">7</div>
+      <div>
+        <div class="roadmap-title">Blackbody Radiation + Wien's Law numerical</div>
+        <div class="roadmap-sub">Definitions of blackbody and blackbody radiation. Know the energy distribution curve sketch (3 temperatures, peak shifts). Know Wien's displacement law (λ_m T = constant) for the moon temperature calculation type. Know what albedo and earth's energy balance mean.</div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-num orange">8</div>
+      <div>
+        <div class="roadmap-title">Global Radiation &amp; Pyranometer</div>
+        <div class="roadmap-sub">Know the definition of global radiation and factors affecting it. Describe the pyranometer method (5-mark question in 2024 — descriptive). Know albedo, earth energy balance concept.</div>
+      </div>
+    </div>
+
+    <h3>Phase 3 — Optics Core (Days 5–6): High priority if old syllabus applies</h3>
+    <div class="roadmap-item">
+      <div class="roadmap-num orange">9</div>
+      <div>
+        <div class="roadmap-title">Diffraction — Single slit intensity derivation + Bragg's law</div>
+        <div class="roadmap-sub">The single-slit derivation was 6 marks in 2022. Know Fresnel vs Fraunhofer distinction. Know Bragg's law derivation and the lattice constant numerical. This is the Section B flagship topic.</div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-num orange">10</div>
+      <div>
+        <div class="roadmap-title">Interference — Young's double slit + Newton's rings</div>
+        <div class="roadmap-sub">Show that fringe spacing is λD/d (appears repeatedly). Know the Newton's rings radius formula and thin film condition (2μtcosr). Prepare the thin glass plate numerical.</div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-num orange">11</div>
+      <div>
+        <div class="roadmap-title">Polarization — Brewster's law proof</div>
+        <div class="roadmap-sub">State Brewster's law. Show reflected and refracted rays are at 90°. Know Malus's law. Know the quarter-wave plate thickness formula. Prepare one numerical.</div>
+      </div>
+    </div>
+
+    <h3>Phase 4 — Modern Physics (Day 7)</h3>
+    <div class="roadmap-item">
+      <div class="roadmap-num green">12</div>
+      <div>
+        <div class="roadmap-title">Photoelectric Effect + de Broglie + Compton Effect</div>
+        <div class="roadmap-sub">State Einstein's photoelectric equation. Know work function. State de Broglie hypothesis with formula. Know Compton effect shift formula. These appeared in 4 years and are quick 1–2 mark definitions + one numerical.</div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-num green">13</div>
+      <div>
+        <div class="roadmap-title">Radioactive Decay + Kirchhoff's Laws (if old syllabus)</div>
+        <div class="roadmap-sub">Derive N = N₀e^(-λt). Know half-life and mean-life formulas and calculation. For Kirchhoff's: state KVL/KCL clearly, know the Wheatstone bridge derivation.</div>
+      </div>
+    </div>
+
+    <h3>Exam Day Strategy</h3>
+    <ul>
+      <li>In Section A: <strong>always attempt the Gauss's law/electrostatics question first</strong> — it's the most predictable and structured</li>
+      <li><strong>Biot-Savart derivation</strong>: if it appears, answer it immediately — it's almost guaranteed full marks</li>
+      <li>In Section B: if Ecosystem/Global Radiation appears, <strong>attempt it</strong> — it's purely descriptive and easy marks</li>
+      <li>For derivation sub-parts: <strong>draw a labeled diagram first</strong> — even if the derivation is incomplete, the diagram earns partial marks</li>
+      <li>Numericals: <strong>always write the formula → substitute values → calculate</strong>, even if the answer is wrong; the method earns marks</li>
+      <li>Don't skip the "Define X and Y" sub-parts (1–2 marks each) — they accumulate fast</li>
+    </ul>
+  </div>
+
+</div><!-- /content-wrap -->
+
+<script src="analysis.js"></script>
+</body>
+</html>
