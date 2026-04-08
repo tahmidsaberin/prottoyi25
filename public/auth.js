@@ -1,6 +1,6 @@
 /* ================================================================
-   auth.js — Prottoyi 25 Authentication Module
-   Firebase Authentication with Google OAuth
+   auth.js — Prottoyi 25 Authentication + Profile System
+   Firebase Authentication with Google OAuth + Firestore profiles
    ================================================================ */
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
@@ -13,130 +13,101 @@ import {
   setPersistence,
   browserLocalPersistence,
 } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  updateDoc,
+} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-storage.js";
 
-/* ── Firebase config ─────────────────────────────────────────
-   IMPORTANT: Replace every value below with YOUR project's config.
-   Get it from: Firebase Console → Project Settings → Your apps
-   These values are PUBLIC and safe to expose in frontend code.
-   (Firebase security is enforced by Security Rules, not by hiding keys)
-─────────────────────────────────────────────────────────────── */
-const firebaseConfig = {
-  apiKey: "AIzaSyC-j09OzvXVwbSnCn6-mfJQ6diGKyotaSo",
-  authDomain: "prottoyi25cse.firebaseapp.com",
-  projectId: "prottoyi25cse",
-  storageBucket: "prottoyi25cse.firebasestorage.app",
-  messagingSenderId: "574758538627",
-  appId: "1:574758538627:web:c23dde120db8800accfab6"
+/* ── Firebase config — REPLACE WITH YOUR VALUES ─────────────── */
+const FIREBASE_CONFIG = {
+  apiKey:            "YOUR_API_KEY",
+  authDomain:        "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId:         "YOUR_PROJECT_ID",
+  storageBucket:     "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId:             "YOUR_APP_ID",
 };
 
 /* ── Initialize Firebase ─────────────────────────────────────── */
-const app      = initializeApp(firebaseConfig);
+const app      = initializeApp(FIREBASE_CONFIG);
 const auth     = getAuth(app);
+const db       = getFirestore(app);
+const storage  = getStorage(app);
 const provider = new GoogleAuthProvider();
 
-/* Request these extra scopes (optional — remove if not needed) */
 provider.addScope("profile");
 provider.addScope("email");
-
-/* Force account picker every time (prevents auto-login as wrong account) */
 provider.setCustomParameters({ prompt: "select_account" });
 
-/* ── Set persistence to LOCAL ────────────────────────────────────
-   browserLocalPersistence = user stays logged in across browser restarts
-   browserSessionPersistence = user logged out when tab closes
-   inMemoryPersistence = no persistence (most secure, least convenient)
-─────────────────────────────────────────────────────────────── */
 await setPersistence(auth, browserLocalPersistence);
 
-/* ════════════════════════════════════════════════════════════════
-   PUBLIC API — import these functions in your pages
-════════════════════════════════════════════════════════════════ */
-
-/**
- * Sign in with Google (popup).
- * Returns the user object on success.
- * Throws on error.
- */
 export async function signInWithGoogle() {
   try {
     const result = await signInWithPopup(auth, provider);
     return result.user;
   } catch (error) {
-    /* Translate Firebase error codes to friendly messages */
-    const msg = FIREBASE_ERROR_MESSAGES[error.code] ?? error.message;
-    throw new Error(msg);
+    throw new Error(FIREBASE_ERRORS[error.code] ?? error.message);
   }
 }
 
-/**
- * Sign out the current user.
- */
 export async function signOutUser() {
   await signOut(auth);
 }
 
-/**
- * Get the currently signed-in user synchronously.
- * Returns null if no user is signed in.
- * NOTE: This may return null momentarily on page load while Firebase
- * restores the session. Use onAuthChange() for reliable state.
- */
-export function getCurrentUser() {
-  return auth.currentUser;
-}
-
-/**
- * Subscribe to auth state changes.
- * Callback fires immediately with current user (or null),
- * then again whenever the user signs in or out.
- *
- * @param {function} callback - called with (user | null)
- * @returns {function} unsubscribe function
- *
- * Usage:
- *   const unsub = onAuthChange(user => {
- *     if (user) console.log("Logged in:", user.displayName);
- *     else console.log("Logged out");
- *   });
- */
 export function onAuthChange(callback) {
   return onAuthStateChanged(auth, callback);
 }
 
-/**
- * Returns a Promise that resolves with the current user once Firebase
- * has finished restoring the session from storage.
- * Use this when you need to know the auth state exactly once (e.g., on page load).
- */
 export function waitForUser() {
   return new Promise((resolve) => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      unsubscribe();   // stop listening after first event
+    const unsub = onAuthStateChanged(auth, (user) => {
+      unsub();
       resolve(user);
     });
   });
 }
 
-/**
- * Returns the current user's ID token (JWT).
- * Use this when calling your own API endpoints that need to verify identity.
- * The token expires every 1 hour; Firebase refreshes it automatically.
- */
-export async function getIdToken() {
-  const user = auth.currentUser;
-  if (!user) return null;
-  return await user.getIdToken(/* forceRefresh= */ false);
+export async function getProfile(uid) {
+  const snap = await getDoc(doc(db, "profiles", uid));
+  return snap.exists() ? snap.data() : null;
 }
 
-/* ── Friendly error messages ──────────────────────────────────── */
-const FIREBASE_ERROR_MESSAGES = {
-  "auth/popup-closed-by-user":      "Sign-in was cancelled.",
-  "auth/popup-blocked":             "Pop-up was blocked by your browser. Please allow pop-ups for this site.",
-  "auth/cancelled-popup-request":   "Sign-in was cancelled.",
-  "auth/account-exists-with-different-credential":
-    "An account already exists with a different sign-in method.",
-  "auth/network-request-failed":    "Network error. Please check your internet connection.",
-  "auth/too-many-requests":         "Too many failed attempts. Please try again later.",
-  "auth/user-disabled":             "This account has been disabled.",
-  "auth/operation-not-allowed":     "Google sign-in is not enabled for this project.",
+export async function createProfile(uid, data) {
+  await setDoc(doc(db, "profiles", uid), {
+    uid,
+    nickname:  data.nickname,
+    avatarUrl: data.avatarUrl ?? null,
+    email:     data.email ?? null,
+    createdAt: new Date().toISOString(),
+  });
+}
+
+export async function updateProfile(uid, data) {
+  await updateDoc(doc(db, "profiles", uid), data);
+}
+
+export async function uploadAvatar(uid, file) {
+  const ext     = file.name.split(".").pop();
+  const storRef = ref(storage, `avatars/${uid}.${ext}`);
+  await uploadBytes(storRef, file, { contentType: file.type });
+  return await getDownloadURL(storRef);
+}
+
+const FIREBASE_ERRORS = {
+  "auth/popup-closed-by-user":    "Sign-in cancelled.",
+  "auth/popup-blocked":           "Pop-up blocked. Please allow pop-ups for this site.",
+  "auth/cancelled-popup-request": "Sign-in cancelled.",
+  "auth/network-request-failed":  "Network error. Check your connection.",
+  "auth/too-many-requests":       "Too many attempts. Try again later.",
+  "auth/user-disabled":           "This account has been disabled.",
+  "auth/operation-not-allowed":   "Google sign-in is not enabled for this project.",
 };

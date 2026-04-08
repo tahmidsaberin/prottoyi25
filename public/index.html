@@ -379,11 +379,12 @@
   </div>
 </footer>
 
-<!-- Firebase SDK (compat v10) -->
-<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-storage-compat.js"></script>
-<script src="firebase-config.js"></script>
+<!-- Auth system (ES modules) -->
+<script type="module">
+  import { initNavbarAuth } from "./navbar-auth.js";
+  initNavbarAuth();
+</script>
+<!-- Legacy scripts -->
 <script src="main.js"></script>
 </body>
 </html>

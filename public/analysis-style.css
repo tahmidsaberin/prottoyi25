@@ -244,7 +244,8 @@ tr:hover td { background: var(--bg3); }
 }
 .roadmap-item:last-child { border-bottom: none; }
 .roadmap-num {
-  flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+  flex-shrink: 0; min-width: 30px; width: auto; height: 30px;
+  padding: 0 6px; border-radius: 15px;
   display: flex; align-items: center; justify-content: center;
   font-size: 13px; font-weight: 700; font-family: var(--font-mono);
 }
@@ -291,24 +292,48 @@ tr:hover td { background: var(--bg3); }
 @media print {
   .site-nav, .btn-pdf, .toc-bar { display: none !important; }
   body { background: #fff; color: #111; font-size: 12px; }
-  .analysis-section { border: 1px solid #ccc; box-shadow: none; page-break-inside: avoid; }
+  /* Force all sections to block layout for print */
+  .analysis-section {
+    border: 1px solid #ccc; box-shadow: none;
+    page-break-inside: avoid;
+    display: block !important;
+  }
   .page-title em, .section-title span { color: #1a7a30; }
   a { color: #1a7a30; }
   /* ── CRITICAL: show all accordion content when printing ── */
   .topic-body { display: block !important; }
   .toggle-hint { display: none !important; }
   .topic-header { cursor: default; }
-  .topic-block { border: 0.5px solid #ccc; page-break-inside: avoid; margin-bottom: 8px; }
-  .q-year { color: #1a7a30 !important; }
+  .topic-block {
+    border: 0.5px solid #ccc; page-break-inside: avoid;
+    margin-bottom: 8px; display: block !important;
+  }
+  .q-year  { color: #1a7a30 !important; }
   .q-marks { color: #555 !important; }
-  .q-text { color: #111 !important; }
+  .q-text  { color: #111 !important; }
   .badge-red    { background: #fee; color: #c00; border-color: #fcc; }
   .badge-orange { background: #fff3e0; color: #b45309; border-color: #fed7aa; }
   .badge-green  { background: #f0fdf4; color: #166534; border-color: #bbf7d0; }
   .freq-bar { background: #1a7a30; }
   th { color: #333 !important; }
   .predict-item { border-left-color: #1a7a30; background: #f0fdf4; }
-  .roadmap-num.red    { background: #fee; color: #c00; }
-  .roadmap-num.orange { background: #fff3e0; color: #b45309; }
-  .roadmap-num.green  { background: #f0fdf4; color: #166534; }
+  /* ── Roadmap items — force vertical stacking, prevent column layout ── */
+  .roadmap-item {
+    display: flex !important; flex-direction: row !important;
+    page-break-inside: avoid; break-inside: avoid;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+  }
+  .roadmap-num {
+    flex-shrink: 0 !important;
+    print-color-adjust: exact; -webkit-print-color-adjust: exact;
+  }
+  .roadmap-num.red    { background: #fee !important; color: #c00 !important; }
+  .roadmap-num.orange { background: #fff3e0 !important; color: #b45309 !important; }
+  .roadmap-num.green  { background: #f0fdf4 !important; color: #166534 !important; }
+  .roadmap-title { font-weight: 600; color: #111 !important; }
+  .roadmap-sub   { color: #333 !important; }
+  /* Prevent grid2 from creating columns in print */
+  .grid2 { display: block !important; }
+  .grid2 > * { width: 100% !important; margin-bottom: 12px; }
 }
