@@ -20,17 +20,17 @@ import {
    These values are PUBLIC and safe to expose in frontend code.
    (Firebase security is enforced by Security Rules, not by hiding keys)
 ─────────────────────────────────────────────────────────────── */
-const FIREBASE_CONFIG = {
-  apiKey:            "YOUR_API_KEY",
-  authDomain:        "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId:         "YOUR_PROJECT_ID",
-  storageBucket:     "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId:             "YOUR_APP_ID",
+const firebaseConfig = {
+  apiKey: "AIzaSyC-j09OzvXVwbSnCn6-mfJQ6diGKyotaSo",
+  authDomain: "prottoyi25cse.firebaseapp.com",
+  projectId: "prottoyi25cse",
+  storageBucket: "prottoyi25cse.firebasestorage.app",
+  messagingSenderId: "574758538627",
+  appId: "1:574758538627:web:c23dde120db8800accfab6"
 };
 
 /* ── Initialize Firebase ─────────────────────────────────────── */
-const app      = initializeApp(FIREBASE_CONFIG);
+const app      = initializeApp(firebaseConfig);
 const auth     = getAuth(app);
 const provider = new GoogleAuthProvider();
 
