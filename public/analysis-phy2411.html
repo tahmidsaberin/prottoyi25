@@ -8,84 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="analysis-style.css">
-  <style>
-    /* ── Syllabus Status Styles ──────────────────────────────── */
-    /* Ensure topic-header is flex for badge alignment */
-    .topic-header { display: flex !important; align-items: center !important; flex-wrap: wrap; gap: 6px; }
-    .badge-in-syllabus {
-      display: inline-flex; align-items: center; gap: 5px;
-      background: rgba(0,255,64,0.15);
-      color: #00ff40;
-      border: 1px solid rgba(0,255,64,0.45);
-      border-radius: 4px;
-      padding: 2px 8px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .04em;
-      white-space: nowrap;
-    }
-    .badge-not-syllabus {
-      display: inline-flex; align-items: center; gap: 5px;
-      background: rgba(255,60,60,0.12);
-      color: #ff5555;
-      border: 1px solid rgba(255,60,60,0.35);
-      border-radius: 4px;
-      padding: 2px 8px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .04em;
-      white-space: nowrap;
-    }
-    /* Table row highlight for in-syllabus */
-    tr.row-in-syllabus td {
-    background: rgba(0,255,64,0.10) !important;
-    opacity: 1 !important;
-    }
-    tr.row-in-syllabus td:first-child {
-      border-left: 3px solid #00ff40;
-    }
-    /* Table row highlight for not-in-syllabus */
-    tr.row-not-syllabus td {
-      background: rgba(255,60,60,0.05) !important;
-      opacity: 0.72;
-    }
-    tr.row-not-syllabus td:first-child {
-      border-left: 3px solid #ff5555;
-    }
-    /* Topic block header highlight */
-    .topic-header.in-syllabus {
-      border-left: 4px solid #00ff40 !important;
-      background: rgba(0,255,64,0.07) !important;
-    }
-    .topic-header.not-syllabus {
-      border-left: 4px solid #ff5555 !important;
-      background: rgba(255,60,60,0.05) !important;
-      opacity: 0.78;
-    }
-    /* Era2 table rows */
-    tr.era2-in-syllabus td {
-      background: rgba(0,255,64,0.055) !important;
-      border-left: 3px solid #00ff40;
-    }
-    tr.era2-not-syllabus td {
-      background: rgba(255,60,60,0.05) !important;
-      opacity: 0.72;
-      border-left: 3px solid #ff5555;
-    }
-    /* Legend box */
-    .syllabus-legend {
-      display: flex; gap: 18px; flex-wrap: wrap;
-      margin: 14px 0 8px;
-      padding: 10px 16px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 6px;
-      font-size: 12px;
-    }
-    .syllabus-legend span { display: flex; align-items: center; gap: 6px; }
-    .legend-dot-green { width:10px;height:10px;border-radius:50%;background:#00ff40;display:inline-block; }
-    .legend-dot-red   { width:10px;height:10px;border-radius:50%;background:#ff5555;display:inline-block; }
-  </style>
 </head>
 <body>
 
@@ -150,158 +72,136 @@
   <div class="analysis-section" id="s1">
     <h2>Topic Frequency Analysis</h2>
     <p>Papers analyzed: <strong>2018, 2019, 2020, 2022, 2023, 2024</strong> (6 years). Topics grouped by the two major curriculum eras.</p>
-    <div class="syllabus-legend">
-      <span><span class="legend-dot-green"></span> <strong>In Syllabus</strong> — matches current PHY 241 course outline &amp; teacher notes</span>
-      <span><span class="legend-dot-red"></span> <strong>Not in Current Syllabus</strong> — appeared in older papers but not covered in current course material</span>
-    </div>
 
     <h3 style="color:var(--g1);margin-top:20px">Era 1 — Electricity, Magnetism &amp; Optics (2018–2022)</h3>
     <div class="table-wrap">
       <table>
-        <tr><th>Rank</th><th>Topic</th><th>Years</th><th>Count</th><th>Priority</th><th>Syllabus</th></tr>
-        <tr class="row-in-syllabus">
+        <tr><th>Rank</th><th>Topic</th><th>Years</th><th>Count</th><th>Priority</th></tr>
+        <tr>
           <td>1</td>
           <td><strong>Gauss's Law &amp; Electrostatics</strong> (Coulomb's law, electric field, flux, charge properties)</td>
           <td>2018, 2019, 2020, 2022, 2023, 2024 — all 6</td>
           <td><span class="freq-bar" style="width:88px"></span>12+</td>
           <td><span class="badge badge-red">🔴 High</span></td>
-                  <td><span class="badge-in-syllabus">✅ In Syllabus</span></td>
         </tr>
-        <tr class="row-in-syllabus">
+        <tr>
           <td>2</td>
           <td><strong>Electromagnetic Induction</strong> (Faraday's law, Lenz's law, flux linkage)</td>
           <td>2018, 2020, 2022, 2023, 2024 — 5 years</td>
           <td><span class="freq-bar" style="width:74px"></span>9</td>
           <td><span class="badge badge-red">🔴 High</span></td>
-                  <td><span class="badge-in-syllabus">✅ In Syllabus</span></td>
         </tr>
-        <tr class="row-in-syllabus">
+        <tr>
           <td>3</td>
           <td><strong>Ampere's Law</strong> (Derivations, solenoid, applications)</td>
           <td>2019, 2020, 2022, 2023, 2024 — 5 years</td>
           <td><span class="freq-bar" style="width:74px"></span>8</td>
           <td><span class="badge badge-red">🔴 High</span></td>
-                  <td><span class="badge-in-syllabus">✅ In Syllabus</span></td>
         </tr>
-        <tr class="row-not-syllabus">
+        <tr>
           <td>4</td>
           <td><strong>Diffraction of Light</strong> (Fresnel/Fraunhofer, single slit, Bragg's law)</td>
           <td>2018, 2019, 2020, 2022, 2024 — 5 years</td>
           <td><span class="freq-bar" style="width:74px"></span>8</td>
           <td><span class="badge badge-red">🔴 High</span></td>
-                  <td><span class="badge-not-syllabus">❌ Not in Syllabus</span></td>
         </tr>
-        <tr class="row-in-syllabus">
+        <tr>
           <td>5</td>
           <td><strong>Biot-Savart Law</strong> (Magnetic field derivation for wire, circular conductor)</td>
           <td>2020, 2022, 2023, 2024 — 4 years</td>
           <td><span class="freq-bar" style="width:60px"></span>7</td>
           <td><span class="badge badge-red">🔴 High</span></td>
-                  <td><span class="badge-in-syllabus">✅ In Syllabus</span></td>
         </tr>
-        <tr class="row-not-syllabus">
+        <tr>
           <td>6</td>
           <td><strong>Interference of Light</strong> (Young's double slit, Newton's rings, thin films)</td>
           <td>2018, 2019, 2020, 2022 — 4 years</td>
           <td><span class="freq-bar" style="width:60px"></span>7</td>
           <td><span class="badge badge-red">🔴 High</span></td>
-                  <td><span class="badge-not-syllabus">❌ Not in Syllabus</span></td>
         </tr>
-        <tr class="row-not-syllabus">
+        <tr>
           <td>7</td>
           <td><strong>Polarization</strong> (Brewster's law, Malus's law, plane of polarization)</td>
           <td>2018, 2019, 2020, 2022 — 4 years</td>
           <td><span class="freq-bar" style="width:60px"></span>7</td>
           <td><span class="badge badge-red">🔴 High</span></td>
-                  <td><span class="badge-not-syllabus">❌ Not in Syllabus</span></td>
         </tr>
-        <tr class="row-in-syllabus">
+        <tr>
           <td>8</td>
           <td><strong>Self &amp; Mutual Inductance</strong> (Definitions, expressions, coaxial solenoids)</td>
           <td>2018, 2020, 2022, 2023 — 4 years</td>
           <td><span class="freq-bar" style="width:60px"></span>6</td>
           <td><span class="badge badge-red">🔴 High</span></td>
-                  <td><span class="badge-in-syllabus">✅ In Syllabus</span></td>
         </tr>
-        <tr class="row-not-syllabus">
+        <tr>
           <td>9</td>
           <td><strong>Kirchhoff's Laws (KCL/KVL)</strong> (Wheatstone bridge, circuit analysis)</td>
           <td>2018, 2019, 2020, 2022 — 4 years</td>
           <td><span class="freq-bar" style="width:60px"></span>6</td>
           <td><span class="badge badge-red">🔴 High</span></td>
-                  <td><span class="badge-not-syllabus">❌ Not in Syllabus</span></td>
         </tr>
-        <tr class="row-in-syllabus">
+        <tr>
           <td>10</td>
           <td><strong>Electric Dipole</strong> (Field derivation, torque, potential energy)</td>
           <td>2018, 2020, 2022, 2023 — 4 years</td>
           <td><span class="freq-bar" style="width:54px"></span>5</td>
           <td><span class="badge badge-orange">🟠 Medium</span></td>
-                  <td><span class="badge-in-syllabus">✅ In Syllabus</span></td>
         </tr>
-        <tr class="row-in-syllabus">
+        <tr>
           <td>11</td>
           <td><strong>de Broglie Hypothesis / Photoelectric Effect</strong></td>
           <td>2018, 2019, 2020, 2023 — 4 years</td>
           <td><span class="freq-bar" style="width:54px"></span>5</td>
           <td><span class="badge badge-orange">🟠 Medium</span></td>
-                  <td><span class="badge-in-syllabus">✅ In Syllabus</span></td>
         </tr>
-        <tr class="row-not-syllabus">
+        <tr>
           <td>12</td>
           <td><strong>AC Circuits</strong> (RMS, impedance, LCR resonance, Q factor)</td>
           <td>2018, 2019, 2020 — 3 years</td>
           <td><span class="freq-bar" style="width:44px"></span>5</td>
           <td><span class="badge badge-orange">🟠 Medium</span></td>
-                  <td><span class="badge-not-syllabus">❌ Not in Syllabus</span></td>
         </tr>
-        <tr class="row-not-syllabus">
+        <tr>
           <td>13</td>
           <td><strong>Radioactive Decay</strong> (N=N₀e^(-λt), half-life, mean-life)</td>
           <td>2018, 2019, 2020 — 3 years</td>
           <td><span class="freq-bar" style="width:38px"></span>4</td>
           <td><span class="badge badge-orange">🟠 Medium</span></td>
-                  <td><span class="badge-not-syllabus">❌ Not in Syllabus</span></td>
         </tr>
-        <tr class="row-not-syllabus">
+        <tr>
           <td>14</td>
           <td><strong>Capacitor &amp; Energy in Electric Field</strong></td>
           <td>2018, 2022, 2023 — 3 years</td>
           <td><span class="freq-bar" style="width:38px"></span>4</td>
           <td><span class="badge badge-orange">🟠 Medium</span></td>
-                  <td><span class="badge-not-syllabus">❌ Not in Syllabus</span></td>
         </tr>
-        <tr class="row-not-syllabus">
+        <tr>
           <td>15</td>
           <td><strong>Wave Theory of Light / Huygens' Principle</strong></td>
           <td>2019, 2020, 2022 — 3 years</td>
           <td><span class="freq-bar" style="width:32px"></span>3</td>
           <td><span class="badge badge-green">🟢 Low</span></td>
-                  <td><span class="badge-not-syllabus">❌ Not in Syllabus</span></td>
         </tr>
-        <tr class="row-in-syllabus">
+        <tr>
           <td>16</td>
           <td><strong>Lorentz Force / Charged particle in magnetic field</strong></td>
           <td>2019, 2020, 2022 — 3 years</td>
           <td><span class="freq-bar" style="width:32px"></span>3</td>
           <td><span class="badge badge-green">🟢 Low</span></td>
-                  <td><span class="badge-in-syllabus">✅ In Syllabus</span></td>
         </tr>
-        <tr class="row-in-syllabus">
+        <tr>
           <td>17</td>
           <td><strong>Compton Effect</strong></td>
           <td>2020, 2023 — 2 years</td>
           <td><span class="freq-bar" style="width:20px"></span>2</td>
           <td><span class="badge badge-green">🟢 Low</span></td>
-                  <td><span class="badge-in-syllabus">✅ In Syllabus</span></td>
         </tr>
-        <tr class="row-not-syllabus">
+        <tr>
           <td>18</td>
           <td><strong>LC Circuit / Cyclotron</strong></td>
           <td>2022 only</td>
           <td><span class="freq-bar" style="width:12px"></span>1</td>
           <td><span class="badge badge-green">🟢 Low</span></td>
-                  <td><span class="badge-not-syllabus">❌ Not in Syllabus</span></td>
         </tr>
       </table>
     </div>
@@ -309,42 +209,36 @@
     <h3 style="color:var(--g1);margin-top:28px">Era 2 — New Topics (2023–2024 only)</h3>
     <div class="table-wrap">
       <table>
-        <tr><th>Topic</th><th>Years</th><th>Priority</th><th>Syllabus</th></tr>
-        <tr class="era2-in-syllabus">
+        <tr><th>Topic</th><th>Years</th><th>Priority</th></tr>
+        <tr>
           <td><strong>Simple Harmonic Motion (SHM)</strong> — periodic motion, SHM equation, velocity/acceleration calculation</td>
           <td>2023, 2024</td>
           <td><span class="badge badge-red">🔴 High (new)</span></td>
-                  <td><span class="badge-in-syllabus">✅ In Syllabus</span></td>
         </tr>
-        <tr class="era2-in-syllabus">
+        <tr>
           <td><strong>Blackbody Radiation</strong> — Wien's law, energy distribution curves, moon temperature</td>
           <td>2024 only</td>
           <td><span class="badge badge-orange">🟠 Medium</span></td>
-                  <td><span class="badge-in-syllabus">✅ In Syllabus</span></td>
         </tr>
-        <tr class="era2-in-syllabus">
+        <tr>
           <td><strong>Global Radiation / Solar Energy</strong> — pyranometer, albedo, earth's energy balance</td>
           <td>2024 only</td>
           <td><span class="badge badge-orange">🟠 Medium</span></td>
-                  <td><span class="badge-in-syllabus">✅ In Syllabus</span></td>
         </tr>
-        <tr class="era2-in-syllabus">
+        <tr>
           <td><strong>Ecosystem / Environmental Physics</strong> — conservation of matter, environmental systems</td>
           <td>2023, 2024</td>
           <td><span class="badge badge-orange">🟠 Medium</span></td>
-                  <td><span class="badge-in-syllabus">✅ In Syllabus</span></td>
         </tr>
-        <tr class="era2-in-syllabus">
+        <tr>
           <td><strong>Greenhouse Effect / Climate / Ozone</strong> — remote sensing, climate model errors</td>
           <td>2023 only</td>
           <td><span class="badge badge-orange">🟠 Medium</span></td>
-                  <td><span class="badge-in-syllabus">✅ In Syllabus</span></td>
         </tr>
-        <tr class="era2-in-syllabus">
+        <tr>
           <td><strong>Quantum Mechanics</strong> — wave function, Heisenberg's uncertainty, Planck's hypothesis</td>
           <td>2023 only</td>
           <td><span class="badge badge-orange">🟠 Medium</span></td>
-                  <td><span class="badge-in-syllabus">✅ In Syllabus</span></td>
         </tr>
       </table>
     </div>
@@ -353,18 +247,13 @@
   <!-- ── SECTION 2: QUESTION MAP ───────────────────────────────── -->
   <div class="analysis-section" id="s2">
     <h2>Topic-wise Question Map</h2>
-    <p style="margin-bottom:8px">Click any topic to expand and see all actual exam questions under it.</p>
-    <div class="syllabus-legend">
-      <span><span class="legend-dot-green"></span> <strong>In Syllabus</strong></span>
-      <span><span class="legend-dot-red"></span> <strong>Not in Current Syllabus</strong></span>
-    </div>
+    <p style="margin-bottom:18px">Click any topic to expand and see all actual exam questions under it.</p>
 
     <!-- Gauss's Law & Electrostatics -->
     <div class="topic-block">
-      <div class="topic-header in-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-red">🔴</span>
         <strong>Gauss's Law &amp; Electrostatics</strong> — present in all 6 years
-        <span class="badge-in-syllabus" style="margin-left:auto;margin-right:8px">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -391,10 +280,9 @@
 
     <!-- EM Induction -->
     <div class="topic-block">
-      <div class="topic-header in-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-red">🔴</span>
         <strong>Electromagnetic Induction</strong> (Faraday's, Lenz's) — 5 of 6 years
-        <span class="badge-in-syllabus" style="margin-left:auto;margin-right:8px">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -410,10 +298,9 @@
 
     <!-- Ampere's Law & Biot-Savart -->
     <div class="topic-block">
-      <div class="topic-header in-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-red">🔴</span>
         <strong>Ampere's Law &amp; Biot-Savart Law</strong> — 5 of 6 years
-        <span class="badge-in-syllabus" style="margin-left:auto;margin-right:8px">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -432,10 +319,9 @@
 
     <!-- Diffraction -->
     <div class="topic-block">
-      <div class="topic-header not-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-red">🔴</span>
         <strong>Diffraction of Light</strong> — 5 of 6 years
-        <span class="badge-not-syllabus" style="margin-left:auto;margin-right:8px">❌ Not in Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -454,10 +340,9 @@
 
     <!-- Interference -->
     <div class="topic-block">
-      <div class="topic-header not-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-red">🔴</span>
         <strong>Interference of Light</strong> (Young's double slit, Newton's rings, thin films) — 4 years
-        <span class="badge-not-syllabus" style="margin-left:auto;margin-right:8px">❌ Not in Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -475,10 +360,9 @@
 
     <!-- Polarization -->
     <div class="topic-block">
-      <div class="topic-header not-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-red">🔴</span>
         <strong>Polarization</strong> (Brewster's law, Malus's law) — 4 years
-        <span class="badge-not-syllabus" style="margin-left:auto;margin-right:8px">❌ Not in Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -496,10 +380,9 @@
 
     <!-- Kirchhoff's Laws -->
     <div class="topic-block">
-      <div class="topic-header not-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-red">🔴</span>
         <strong>Kirchhoff's Laws (KCL/KVL)</strong> — 4 years (2018–2022)
-        <span class="badge-not-syllabus" style="margin-left:auto;margin-right:8px">❌ Not in Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -516,10 +399,9 @@
 
     <!-- Self & Mutual Inductance -->
     <div class="topic-block">
-      <div class="topic-header in-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-red">🔴</span>
         <strong>Self &amp; Mutual Inductance</strong> — 4 years
-        <span class="badge-in-syllabus" style="margin-left:auto;margin-right:8px">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -534,10 +416,9 @@
 
     <!-- SHM (New) -->
     <div class="topic-block">
-      <div class="topic-header in-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-red">🔴 New</span>
         <strong>Simple Harmonic Motion (SHM)</strong> — 2023 &amp; 2024
-        <span class="badge-in-syllabus" style="margin-left:auto;margin-right:8px">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -553,10 +434,9 @@
 
     <!-- Photoelectric & de Broglie -->
     <div class="topic-block">
-      <div class="topic-header in-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>Photoelectric Effect &amp; de Broglie Hypothesis</strong> — 4 years
-        <span class="badge-in-syllabus" style="margin-left:auto;margin-right:8px">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -574,10 +454,9 @@
 
     <!-- Radioactive Decay -->
     <div class="topic-block">
-      <div class="topic-header not-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>Radioactive Decay</strong> — 3 years (2018, 2019, 2020)
-        <span class="badge-not-syllabus" style="margin-left:auto;margin-right:8px">❌ Not in Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -590,10 +469,9 @@
 
     <!-- Blackbody & Global Radiation (New) -->
     <div class="topic-block">
-      <div class="topic-header in-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠 New</span>
         <strong>Blackbody Radiation &amp; Global Radiation</strong> — 2024 only
-        <span class="badge-in-syllabus" style="margin-left:auto;margin-right:8px">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -610,10 +488,9 @@
 
     <!-- Ecosystem / Environment -->
     <div class="topic-block">
-      <div class="topic-header in-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠 New</span>
         <strong>Ecosystem &amp; Environmental Physics</strong> — 2023 &amp; 2024
-        <span class="badge-in-syllabus" style="margin-left:auto;margin-right:8px">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -630,10 +507,9 @@
 
     <!-- Quantum Mechanics -->
     <div class="topic-block">
-      <div class="topic-header in-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠 New</span>
         <strong>Quantum Mechanics</strong> — 2023 only
-        <span class="badge-in-syllabus" style="margin-left:auto;margin-right:8px">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -647,10 +523,9 @@
 
     <!-- Electric Dipole -->
     <div class="topic-block">
-      <div class="topic-header in-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>Electric Dipole</strong> (Field, torque, potential energy) — 4 years
-        <span class="badge-in-syllabus" style="margin-left:auto;margin-right:8px">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -663,10 +538,9 @@
 
     <!-- Capacitor & Energy -->
     <div class="topic-block">
-      <div class="topic-header not-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>Capacitor &amp; Energy in Electric Field</strong> — 3 years
-        <span class="badge-not-syllabus" style="margin-left:auto;margin-right:8px">❌ Not in Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -679,10 +553,9 @@
 
     <!-- AC Circuits -->
     <div class="topic-block">
-      <div class="topic-header not-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>AC Circuits (RMS, Impedance, LCR, Resonance)</strong> — 3 years
-        <span class="badge-not-syllabus" style="margin-left:auto;margin-right:8px">❌ Not in Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -698,10 +571,9 @@
 
     <!-- Climate / Greenhouse / Ozone -->
     <div class="topic-block">
-      <div class="topic-header in-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>Climate, Greenhouse Effect &amp; Ozone</strong> — 2023 only
-        <span class="badge-in-syllabus" style="margin-left:auto;margin-right:8px">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -715,10 +587,9 @@
 
     <!-- Photoelectric Effect -->
     <div class="topic-block">
-      <div class="topic-header in-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>Photoelectric Effect</strong> — 4 years
-        <span class="badge-in-syllabus" style="margin-left:auto;margin-right:8px">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -731,10 +602,9 @@
 
     <!-- Lorentz Force / Charged Particle in Magnetic Field -->
     <div class="topic-block">
-      <div class="topic-header in-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-green">🟢</span>
         <strong>Lorentz Force / Charged Particle in Magnetic Field</strong> — 3 years
-        <span class="badge-in-syllabus" style="margin-left:auto;margin-right:8px">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -749,10 +619,9 @@
 
     <!-- Wave Theory of Light -->
     <div class="topic-block">
-      <div class="topic-header not-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-green">🟢</span>
         <strong>Wave Theory of Light &amp; Huygens' Principle</strong> — 3 years
-        <span class="badge-not-syllabus" style="margin-left:auto;margin-right:8px">❌ Not in Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -767,10 +636,9 @@
 
     <!-- LC Circuit / Cyclotron -->
     <div class="topic-block">
-      <div class="topic-header not-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-green">🟢</span>
         <strong>LC Circuit &amp; Cyclotron Frequency</strong> — 1-2 years
-        <span class="badge-not-syllabus" style="margin-left:auto;margin-right:8px">❌ Not in Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -781,10 +649,9 @@
 
     <!-- Compton Effect -->
     <div class="topic-block">
-      <div class="topic-header in-syllabus" onclick="toggle(this)">
+      <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-green">🟢</span>
         <strong>Compton Effect</strong> — 2 years
-        <span class="badge-in-syllabus" style="margin-left:auto;margin-right:8px">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">

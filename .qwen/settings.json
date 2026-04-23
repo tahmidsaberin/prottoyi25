@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(C:\\Users\\Tahmid\\Desktop/**)",
+      "Bash(start *)",
+      "Read(c:\\Users\\Tahmid\\Desktop/**)",
+      "Bash(findstr *)",
+      "Bash(python *)",
+      "Bash(netstat *)",
+      "Bash(taskkill *)",
+      "Bash(npx *)"
+    ]
+  },
+  "$version": 3
+}

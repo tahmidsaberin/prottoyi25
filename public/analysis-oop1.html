@@ -12,51 +12,6 @@
 
   <!-- Analysis stylesheet -->
   <link rel="stylesheet" href="analysis-style.css">
-<style>
-  /* ── SYLLABUS STATUS BADGES ─────────────────────────── */
-  .syl-in {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    background: #0d3320;
-    color: #4ade80;
-    border: 1px solid #22c55e;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 2px 9px;
-    border-radius: 20px;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-    vertical-align: middle;
-    margin-left: 6px;
-  }
-  .syl-out {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    background: #2d1010;
-    color: #f87171;
-    border: 1px solid #ef4444;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 2px 9px;
-    border-radius: 20px;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-    vertical-align: middle;
-    margin-left: 6px;
-  }
-  .row-in td { background: rgba(22,101,52,0.18) !important; border-left: 4px solid #22c55e; }
-  .row-out td { background: rgba(127,29,29,0.18) !important; border-left: 4px solid #ef4444; opacity:0.85; }
-  .topic-block.blk-in  { border-left: 4px solid #22c55e !important; background: rgba(22,101,52,0.07) !important; }
-  .topic-block.blk-out { border-left: 4px solid #ef4444 !important; background: rgba(127,29,29,0.09) !important; }
-  .syl-legend {
-    display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
-    font-size: 13px; margin-bottom: 18px; padding: 12px 16px;
-    background: rgba(255,255,255,0.04); border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.09);
-  }
-</style>
 </head>
 <body>
 
@@ -128,144 +83,139 @@
   <div class="analysis-section" id="s1">
     <h2>Topic Frequency Analysis</h2>
     <p>Total distinct topics: <strong>19</strong>. Total question parts analyzed: <strong>140+</strong> across 7 exam years.</p>
-    <div class="syl-legend">
-  <strong>Syllabus Status:</strong>
-  <span class="syl-in">✅ In Syllabus</span> &nbsp;—&nbsp; topic is covered in the official course syllabus &nbsp;&nbsp;|&nbsp;&nbsp;
-  <span class="syl-out">🚫 Not in Syllabus</span> &nbsp;—&nbsp; topic appeared in older Java exams but is <em>not</em> in the current C++ syllabus
-</div>
 
     <div class="table-wrap">
       <table>
         <tr><th>Rank</th><th>Topic</th><th>Years</th><th>~Questions</th><th>Priority</th></tr>
-        <tr class="row-in">
+        <tr>
           <td>1</td>
-          <td><strong>Inheritance</strong><span class="syl-in">✅ In Syllabus</span> (forms, super, multiple via interface)</td>
+          <td><strong>Inheritance</strong> (forms, super, multiple via interface)</td>
           <td>All 7 years</td>
           <td><span class="freq-bar" style="width:80px"></span>16</td>
           <td><span class="badge badge-red">🔴 High</span></td>
         </tr>
-        <tr class="row-in">
+        <tr>
           <td>2</td>
-          <td><strong>Exception Handling</strong><span class="syl-in">✅ In Syllabus</span> (try-catch, throw/throws, custom)</td>
+          <td><strong>Exception Handling</strong> (try-catch, throw/throws, custom)</td>
           <td>All 8 years</td>
           <td><span class="freq-bar" style="width:80px"></span>17</td>
           <td><span class="badge badge-red">🔴 High</span></td>
         </tr>
-        <tr class="row-in">
+        <tr>
           <td>3</td>
-          <td><strong>Multithreading</strong><span class="syl-in">✅ In Syllabus</span> (creation, sync, deadlock, start/run)</td>
+          <td><strong>Multithreading</strong> (creation, sync, deadlock, start/run)</td>
           <td>All 7 years</td>
           <td><span class="freq-bar" style="width:76px"></span>15</td>
           <td><span class="badge badge-red">🔴 High</span></td>
         </tr>
-        <tr class="row-in">
+        <tr>
           <td>4</td>
-          <td><strong>Abstract Class &amp; Interface</strong><span class="syl-in">✅ In Syllabus</span></td>
+          <td><strong>Abstract Class &amp; Interface</strong></td>
           <td>All 7 years</td>
           <td><span class="freq-bar" style="width:68px"></span>13</td>
           <td><span class="badge badge-red">🔴 High</span></td>
         </tr>
-        <tr class="row-in">
+        <tr>
           <td>5</td>
-          <td><strong>Polymorphism</strong><span class="syl-in">✅ In Syllabus</span> (overloading, overriding, DMD)</td>
+          <td><strong>Polymorphism</strong> (overloading, overriding, DMD)</td>
           <td>All 7 years</td>
           <td><span class="freq-bar" style="width:62px"></span>12</td>
           <td><span class="badge badge-red">🔴 High</span></td>
         </tr>
-        <tr class="row-in">
+        <tr>
           <td>6</td>
-          <td><strong>OOP Fundamentals</strong><span class="syl-in">✅ In Syllabus</span> (JVM, bytecode, platform independence)</td>
+          <td><strong>OOP Fundamentals</strong> (JVM, bytecode, platform independence)</td>
           <td>All 7 years</td>
           <td><span class="freq-bar" style="width:58px"></span>11</td>
           <td><span class="badge badge-red">🔴 High</span></td>
         </tr>
-        <tr class="row-in">
+        <tr>
           <td>7</td>
-          <td><strong>Classes, Objects &amp; Constructors</strong><span class="syl-in">✅ In Syllabus</span> (this, copy, overloaded)</td>
+          <td><strong>Classes, Objects &amp; Constructors</strong> (this, copy, overloaded)</td>
           <td>All 7 years</td>
           <td><span class="freq-bar" style="width:58px"></span>11</td>
           <td><span class="badge badge-red">🔴 High</span></td>
         </tr>
-        <tr class="row-out">
+        <tr>
           <td>8</td>
-          <td><strong>Collections Framework</strong><span class="syl-out">🚫 Not in Syllabus</span> (HashMap, ArrayList, Generics)</td>
+          <td><strong>Collections Framework</strong> (HashMap, ArrayList, Generics)</td>
           <td>2017, 2020, 2022, 2023</td>
           <td><span class="freq-bar" style="width:50px"></span>10</td>
           <td><span class="badge badge-orange">🟠 Medium</span></td>
         </tr>
-        <tr class="row-in">
+        <tr>
           <td>9</td>
-          <td><strong>Code Output / Tracing</strong><span class="syl-in">✅ In Syllabus</span></td>
+          <td><strong>Code Output / Tracing</strong></td>
           <td>All 7 years</td>
           <td><span class="freq-bar" style="width:46px"></span>9</td>
           <td><span class="badge badge-orange">🟠 Medium</span></td>
         </tr>
-        <tr class="row-in">
+        <tr>
           <td>10</td>
-          <td><strong>Encapsulation &amp; Access Modifiers</strong><span class="syl-in">✅ In Syllabus</span></td>
+          <td><strong>Encapsulation &amp; Access Modifiers</strong></td>
           <td>All 7 years</td>
           <td><span class="freq-bar" style="width:42px"></span>8</td>
           <td><span class="badge badge-orange">🟠 Medium</span></td>
         </tr>
-        <tr class="row-out">
+        <tr>
           <td>11</td>
-          <td><strong>GUI — AWT / Swing</strong><span class="syl-out">🚫 Not in Syllabus</span></td>
+          <td><strong>GUI — AWT / Swing</strong></td>
           <td>2017, 2018, 2021, 2022, 2023</td>
           <td><span class="freq-bar" style="width:36px"></span>7</td>
           <td><span class="badge badge-orange">🟠 Medium</span></td>
         </tr>
-        <tr class="row-in">
+        <tr>
           <td>12</td>
-          <td><strong>Static keyword</strong><span class="syl-in">✅ In Syllabus</span> (variable, method, block)</td>
+          <td><strong>Static keyword</strong> (variable, method, block)</td>
           <td>2017–2021</td>
           <td><span class="freq-bar" style="width:30px"></span>6</td>
           <td><span class="badge badge-orange">🟠 Medium</span></td>
         </tr>
-        <tr class="row-out">
+        <tr>
           <td>13</td>
-          <td><strong>String Handling</strong><span class="syl-out">🚫 Not in Syllabus</span> (immutability, StringBuffer, equals)</td>
+          <td><strong>String Handling</strong> (immutability, StringBuffer, equals)</td>
           <td>2017–2020</td>
           <td><span class="freq-bar" style="width:30px"></span>6</td>
           <td><span class="badge badge-orange">🟠 Medium</span></td>
         </tr>
-        <tr class="row-in">
+        <tr>
           <td>14</td>
-          <td><strong>I/O Streams &amp; File Handling</strong><span class="syl-in">✅ In Syllabus</span></td>
+          <td><strong>I/O Streams &amp; File Handling</strong></td>
           <td>2017, 2019, 2021</td>
           <td><span class="freq-bar" style="width:18px"></span>4</td>
           <td><span class="badge badge-green">🟢 Low</span></td>
         </tr>
-        <tr class="row-out">
+        <tr>
           <td>15</td>
-          <td><strong>Nested / Inner Classes</strong><span class="syl-out">🚫 Not in Syllabus</span></td>
+          <td><strong>Nested / Inner Classes</strong></td>
           <td>2017, 2020, 2022</td>
           <td><span class="freq-bar" style="width:18px"></span>4</td>
           <td><span class="badge badge-green">🟢 Low</span></td>
         </tr>
-        <tr class="row-in">
+        <tr>
           <td>16</td>
-          <td><strong>OOP Design Principles</strong><span class="syl-in">✅ In Syllabus</span> (SOLID, cohesion, coupling, side-effects)</td>
+          <td><strong>OOP Design Principles</strong> (SOLID, cohesion, coupling, side-effects)</td>
           <td>2022, 2024</td>
           <td><span class="freq-bar" style="width:10px"></span>3</td>
           <td><span class="badge badge-green">🟢 Low</span></td>
         </tr>
-        <tr class="row-in">
+        <tr>
           <td>17</td>
-          <td><strong>Generics</strong><span class="syl-in">✅ In Syllabus</span></td>
+          <td><strong>Generics</strong></td>
           <td>2022, 2023</td>
           <td><span class="freq-bar" style="width:10px"></span>3</td>
           <td><span class="badge badge-green">🟢 Low</span></td>
         </tr>
-        <tr class="row-in">
+        <tr>
           <td>18</td>
-          <td><strong>Lambda Expressions</strong><span class="syl-in">✅ In Syllabus</span></td>
+          <td><strong>Lambda Expressions</strong></td>
           <td>2023 only</td>
           <td><span class="freq-bar" style="width:6px"></span>1</td>
           <td><span class="badge badge-green">🟢 Low</span></td>
         </tr>
-        <tr class="row-out">
+        <tr>
           <td>19</td>
-          <td><strong>Packages</strong><span class="syl-out">🚫 Not in Syllabus</span></td>
+          <td><strong>Packages</strong></td>
           <td>2021 only</td>
           <td><span class="freq-bar" style="width:6px"></span>1</td>
           <td><span class="badge badge-green">🟢 Low</span></td>
@@ -278,18 +228,12 @@
   <div class="analysis-section" id="s2">
     <h2>Topic-wise Question Map</h2>
     <p style="margin-bottom:18px">Click any topic to expand and see all actual exam questions under it.</p>
-    <div class="syl-legend">
-  <strong>Syllabus Status:</strong>
-  <span class="syl-in">✅ In Syllabus</span> &nbsp;—&nbsp; topic is covered in the official course syllabus &nbsp;&nbsp;|&nbsp;&nbsp;
-  <span class="syl-out">🚫 Not in Syllabus</span> &nbsp;—&nbsp; topic appeared in older Java exams but is <em>not</em> in the current C++ syllabus
-</div>
 
     <!-- Inheritance -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-red">🔴</span>
         <strong>Inheritance</strong> — 16 questions, all 7 years
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -313,11 +257,10 @@
     </div>
 
     <!-- Exception Handling -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-red">🔴</span>
         <strong>Exception Handling</strong> — 15 questions, all 7 years
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -340,11 +283,10 @@
     </div>
 
     <!-- Multithreading -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-red">🔴</span>
         <strong>Multithreading</strong> — 15 questions, all 7 years
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -367,11 +309,10 @@
     </div>
 
     <!-- Abstract / Interface -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-red">🔴</span>
         <strong>Abstract Class &amp; Interface</strong> — 13 questions, all 7 years
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -392,11 +333,10 @@
     </div>
 
     <!-- Collections -->
-    <div class="topic-block blk-out">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>Collections Framework</strong> — 10 questions (rising trend: 2022–2023)
-        <span class="syl-out">🚫 Not in Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -414,11 +354,10 @@
     </div>
 
     <!-- Polymorphism -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>Polymorphism</strong> — 12 questions, all 7 years
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -438,11 +377,10 @@
     </div>
 
     <!-- OOP Fundamentals -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>OOP Fundamentals</strong> — 11 questions, all 7 years
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -461,11 +399,10 @@
     </div>
 
     <!-- Classes, Objects & Constructors -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>Classes, Objects &amp; Constructors</strong> — 11 questions, all 7 years
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -484,11 +421,10 @@
     </div>
 
     <!-- Code Output / Tracing -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>Code Output / Tracing</strong> — 9 questions, all 7 years
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -505,11 +441,10 @@
     </div>
 
     <!-- Encapsulation & Access Modifiers -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>Encapsulation &amp; Access Modifiers</strong> — 8 questions, all 7 years
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -525,11 +460,10 @@
     </div>
 
     <!-- GUI - AWT / Swing -->
-    <div class="topic-block blk-out">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>GUI — AWT / Swing</strong> — 7 questions, 2017–2023
-        <span class="syl-out">🚫 Not in Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -544,11 +478,10 @@
     </div>
 
     <!-- Static Keyword -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>Static Keyword</strong> — 6 questions, 2017–2021
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -562,11 +495,10 @@
     </div>
 
     <!-- String Handling -->
-    <div class="topic-block blk-out">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>String Handling</strong> — 6 questions, 2017–2020
-        <span class="syl-out">🚫 Not in Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -580,11 +512,10 @@
     </div>
 
     <!-- I/O Streams & File Handling -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-green">🟢</span>
         <strong>I/O Streams &amp; File Handling</strong> — 4 questions, 2017–2021
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -596,11 +527,10 @@
     </div>
 
     <!-- Nested / Inner Classes -->
-    <div class="topic-block blk-out">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-green">🟢</span>
         <strong>Nested / Inner Classes</strong> — 4 questions, 2017–2022
-        <span class="syl-out">🚫 Not in Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -612,11 +542,10 @@
     </div>
 
     <!-- OOP Design Principles -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-green">🟢</span>
         <strong>OOP Design Principles</strong> — 3 questions, 2022 onward
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -627,11 +556,10 @@
     </div>
 
     <!-- Generics -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-green">🟢</span>
         <strong>Generics</strong> — 3 questions, 2022–2023
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -642,11 +570,10 @@
     </div>
 
     <!-- Lambda Expressions -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-green">🟢</span>
         <strong>Lambda Expressions</strong> — 1 question, 2023
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -655,11 +582,10 @@
     </div>
 
     <!-- Packages -->
-    <div class="topic-block blk-out">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-green">🟢</span>
         <strong>Packages</strong> — 1 question, 2021
-        <span class="syl-out">🚫 Not in Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -668,11 +594,10 @@
     </div>
 
     <!-- 2024 NEW: STL Containers (C++) -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-red">🔴</span>
         <strong>STL Containers</strong> (std::vector, std::set, std::map, std::list, std::deque) — 2024 C++ NEW
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -685,11 +610,10 @@
     </div>
 
     <!-- 2024 NEW: Friend Functions & Object Slicing -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>Friend Functions &amp; Object Slicing</strong> — 2024 C++ NEW
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -699,11 +623,10 @@
     </div>
 
     <!-- 2024 NEW: Generic Classes / Templates -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>Generic Classes / Templates</strong> (C++) — 2024 NEW
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">
@@ -712,11 +635,10 @@
     </div>
 
     <!-- OOP Design Principles (updated with 2024) -->
-    <div class="topic-block blk-in">
+    <div class="topic-block">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>OOP Design Principles</strong> (SOLID, Cohesion, Coupling, Side-effects) — 2022, 2024
-        <span class="syl-in">✅ In Syllabus</span>
         <span class="toggle-hint">▼ expand</span>
       </div>
       <div class="topic-body">

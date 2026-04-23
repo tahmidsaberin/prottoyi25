@@ -199,6 +199,37 @@ tr:hover td { background: var(--bg3); }
   height: 6px; border-radius: 3px; display: inline-block;
   vertical-align: middle; margin-right: 8px;
   background: var(--g4);
+  white-space: nowrap;
+}
+
+.freq-number {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* Outdated row in frequency table */
+tr.outdated-row {
+  opacity: 0.4;
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 80, 80, 0.5);
+}
+
+/* Style NOT-in-syllabus rows in the frequency table as faded/outdated */
+.table-wrap table tr:has(.badge-not-syllabus) {
+  opacity: 0.45;
+}
+.table-wrap table tr:has(.badge-not-syllabus) td {
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 80, 80, 0.4);
+}
+
+/* Style in-syllabus rows as highlighted/bright */
+.table-wrap table tr:has(.badge-in-syllabus) {
+  opacity: 1;
+}
+.table-wrap table tr:has(.badge-in-syllabus) td {
+  text-decoration: none;
 }
 
 /* ─── PRIORITY BADGES ────────────────────────────────────────── */
@@ -340,52 +371,174 @@ tr:hover td { background: var(--bg3); }
   .nav-brand { font-size: 14px; }
 }
 
-/* ─── PRINT / PDF STYLES ─────────────────────────────────────── */
+/* ─── OUTDATED / NOT IN SYLLABUS STYLES ─────────────────────── */
+.topic-block.outdated {
+  border-color: rgba(255, 80, 80, 0.3);
+  opacity: 0.55;
+}
+.topic-block.outdated .topic-header {
+  background: rgba(255, 60, 60, 0.08);
+  border-left: 3px solid #ff5050;
+}
+.topic-block.outdated .topic-body {
+  background: rgba(255, 50, 50, 0.03);
+}
+.topic-block.outdated .q-item {
+  color: var(--red-text);
+  opacity: 0.7;
+}
+.topic-block.outdated .q-text {
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 80, 80, 0.4);
+}
+.topic-block.outdated::after {
+  content: '⚠ NOT IN CURRENT SYLLABUS';
+  display: block;
+  text-align: center;
+  padding: 6px;
+  font-size: 10px;
+  font-family: var(--font-mono);
+  letter-spacing: 2px;
+  color: #ff5050;
+  background: rgba(255, 50, 50, 0.06);
+  border-top: 1px solid rgba(255, 80, 80, 0.2);
+}
+
+/* ─── IN SYLLABUS HIGHLIGHT ─────────────────────────────────── */
+.topic-block.in-syllabus {
+  border-color: rgba(74, 222, 128, 0.4);
+  border-width: 1px;
+  box-shadow: 0 0 12px rgba(74, 222, 128, 0.08);
+}
+.topic-block.in-syllabus .topic-header {
+  background: rgba(74, 222, 128, 0.06);
+  border-left: 3px solid #4ade80;
+}
+.topic-block.in-syllabus::before {
+  content: '✓ IN CURRENT SYLLABUS';
+  display: block;
+  text-align: center;
+  padding: 6px;
+  font-size: 10px;
+  font-family: var(--font-mono);
+  letter-spacing: 2px;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.04);
+  border-bottom: 1px solid rgba(74, 222, 128, 0.2);
+}
+
+/* ─── PRINT STYLES ───────────────────────────────────────────── */
 @media print {
   .site-nav, .btn-pdf, .toc-bar { display: none !important; }
-  body { background: #fff; color: #111; font-size: 12px; }
+  body { background: #fff; color: #111; font-size: 12px; line-height: 1.4; }
   /* Force all sections to block layout for print */
   .analysis-section {
     border: 1px solid #ccc; box-shadow: none;
     page-break-inside: avoid;
     display: block !important;
+    margin-bottom: 20px;
+    padding: 20px;
   }
-  .page-title em, .section-title span { color: #1a7a30; }
-  a { color: #1a7a30; }
+  .page-header {
+    padding: 20px 0;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+  }
+  .page-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .page-subtitle {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  .page-meta-row {
+    margin-bottom: 15px;
+  }
+  .meta-pill {
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+  }
+  .notice-box {
+    background: #fff9e6;
+    border-left: 3px solid #f59e0b;
+    color: #d97706;
+    margin-bottom: 15px;
+  }
   /* ── CRITICAL: show all accordion content when printing ── */
   .topic-body { display: block !important; }
   .toggle-hint { display: none !important; }
   .topic-header { cursor: default; }
   .topic-block {
-    border: 0.5px solid #ccc; page-break-inside: avoid;
-    margin-bottom: 8px; display: block !important;
+    border: 1px solid #ccc; page-break-inside: avoid;
+    margin-bottom: 15px; display: block !important;
+    padding: 15px;
   }
-  .q-year  { color: #1a7a30 !important; }
+  .topic-header {
+    background: #f8f9fa;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+  }
+  .q-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .q-year  { color: #1a7a30 !important; font-weight: bold; }
   .q-marks { color: #555 !important; }
   .q-text  { color: #111 !important; }
   .badge-red    { background: #fee; color: #c00; border-color: #fcc; }
   .badge-orange { background: #fff3e0; color: #b45309; border-color: #fed7aa; }
   .badge-green  { background: #f0fdf4; color: #166534; border-color: #bbf7d0; }
-  .freq-bar { background: #1a7a30; }
-  th { color: #333 !important; }
-  .predict-item { border-left-color: #1a7a30; background: #f0fdf4; }
+  .freq-bar { background: #1a7a30; height: 8px; }
+  th { color: #333 !important; background: #f8f9fa; padding: 10px; }
+  td { padding: 8px 10px; border-bottom: 1px solid #eee; }
+  table { border-collapse: collapse; width: 100%; margin-bottom: 15px; }
+  .predict-item {
+    border-left: 3px solid #1a7a30;
+    background: #f0fdf4;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 0 5px 5px 0;
+  }
+  .predict-item strong { color: #1a7a30; }
   /* ── Roadmap items — force vertical stacking, prevent column layout ── */
   .roadmap-item {
     display: flex !important; flex-direction: row !important;
     page-break-inside: avoid; break-inside: avoid;
     flex-wrap: nowrap !important;
     width: 100% !important;
+    margin-bottom: 15px;
+    padding: 15px;
   }
   .roadmap-num {
     flex-shrink: 0 !important;
     print-color-adjust: exact; -webkit-print-color-adjust: exact;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
   }
   .roadmap-num.red    { background: #fee !important; color: #c00 !important; }
   .roadmap-num.orange { background: #fff3e0 !important; color: #b45309 !important; }
   .roadmap-num.green  { background: #f0fdf4 !important; color: #166534 !important; }
-  .roadmap-title { font-weight: 600; color: #111 !important; }
-  .roadmap-sub   { color: #333 !important; }
+  .roadmap-title { font-weight: 600; color: #111 !important; font-size: 14px; }
+  .roadmap-sub   { color: #333 !important; font-size: 12px; line-height: 1.4; }
   /* Prevent grid2 from creating columns in print */
   .grid2 { display: block !important; }
   .grid2 > * { width: 100% !important; margin-bottom: 12px; }
+  /* Improve table readability */
+  .table-wrap { overflow: visible; }
+  /* Remove outdated styles */
+  .topic-block.outdated { opacity: 1 !important; }
+  .topic-block.outdated .q-text { text-decoration: none !important; }
+  /* Better spacing for print */
+  h2 { page-break-after: avoid; }
+  h3 { page-break-after: avoid; }
+  /* Ensure proper page breaks */
+  .analysis-section { break-inside: avoid; }
+  .topic-block { break-inside: avoid; }
+  /* Better font rendering for print */
+  body { font-family: Arial, sans-serif; }
+  /* Remove background patterns */
+  body::before { display: none; }
 }

@@ -12,7 +12,7 @@ function toggle(header) {
   hint.textContent = isOpen ? '▼ expand' : '▲ collapse';
 }
 
-/* ── PDF Download via direct existing file ────────── */
+/* ── PDF Download via browser print ───────────────────────────── */
 function downloadPDF() {
   const btn = document.getElementById('pdfBtn');
 
@@ -21,20 +21,14 @@ function downloadPDF() {
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
     </svg>
-    <span>Downloading…</span>
+    <span>Generating PDF…</span>
   `;
   btn.disabled = true;
 
-  // Force exact PDF download
-  const link = document.createElement('a');
-  link.href = 'pdfs/CSE211_OOP_PYQ_Analysis.pdf';
-  link.target = '_blank';
-  link.download = 'CSE211_OOP_PYQ_Analysis.pdf';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  // Use browser's print functionality to generate PDF
+  window.print();
 
-  // Restore button state
+  // Restore button state after print dialog closes
   setTimeout(() => {
     btn.innerHTML = `
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -44,5 +38,5 @@ function downloadPDF() {
       <span>Download PDF</span>
     `;
     btn.disabled = false;
-  }, 500);
+  }, 1000);
 }

@@ -271,6 +271,74 @@
       body { background: #fff; color: #111; }
       .topic-body { display: block !important; }
     }
+
+    /* ── OUTDATED / NOT IN SYLLABUS STYLES ─────────────────────── */
+    .topic-block.outdated {
+      border-color: rgba(255, 80, 80, 0.3);
+      opacity: 0.55;
+    }
+    .topic-block.outdated .topic-header {
+      background: rgba(255, 60, 60, 0.08);
+      border-left: 3px solid #ff5050;
+    }
+    .topic-block.outdated .topic-body {
+      background: rgba(255, 50, 50, 0.03);
+    }
+    .topic-block.outdated .q-item {
+      color: var(--red);
+      opacity: 0.7;
+    }
+    .topic-block.outdated .q-text {
+      text-decoration: line-through;
+      text-decoration-color: rgba(255, 80, 80, 0.4);
+    }
+    .topic-block.outdated::after {
+      content: '⚠ NOT IN CURRENT SYLLABUS';
+      display: block;
+      text-align: center;
+      padding: 6px;
+      font-size: 10px;
+      font-family: var(--mono);
+      letter-spacing: 2px;
+      color: #ff5050;
+      background: rgba(255, 50, 50, 0.06);
+      border-top: 1px solid rgba(255, 80, 80, 0.2);
+    }
+
+    /* ── IN SYLLABUS HIGHLIGHT ─────────────────────────────────── */
+    .topic-block.in-syllabus {
+      border-color: rgba(74, 222, 128, 0.4);
+      border-width: 1.5px;
+      box-shadow: 0 0 12px rgba(74, 222, 128, 0.08);
+    }
+    .topic-block.in-syllabus .topic-header {
+      background: rgba(74, 222, 128, 0.06);
+      border-left: 3px solid #4ade80;
+    }
+    .topic-block.in-syllabus::before {
+      content: '✓ IN CURRENT SYLLABUS';
+      display: block;
+      text-align: center;
+      padding: 6px;
+      font-size: 10px;
+      font-family: var(--mono);
+      letter-spacing: 2px;
+      color: #4ade80;
+      background: rgba(74, 222, 128, 0.04);
+      border-bottom: 1px solid rgba(74, 222, 128, 0.2);
+    }
+
+    /* Frequency table row styling */
+    .table-wrap table tr:has(.badge-red) {
+      opacity: 0.45;
+    }
+    .table-wrap table tr:has(.badge-red) td {
+      text-decoration: line-through;
+      text-decoration-color: rgba(255, 80, 80, 0.4);
+    }
+    .table-wrap table tr:has(.badge-green) {
+      background: rgba(74, 222, 128, 0.05);
+    }
   </style>
 </head>
 <body>
@@ -317,8 +385,14 @@
 
 <!-- Notice -->
 <div class="notice">
+  <div class="notice-box" style="background:rgba(255,50,50,0.08); border-left-color:#ff5050; color:#ff6b6b;">
+    <strong>⚠ EEE 221 SYLLABUS ALERT (Current Semester):</strong> Your current syllabus covers: <strong>Semiconductors, PN junctions, Diodes, Rectifiers, Clippers/Clampers, Zener diodes, BJT &amp; MOSFET as switches, Op-Amps as comparators/buffers, Schmitt trigger, 555 timer, Logic-level interfacing (TTL/CMOS), Power delivery, ADC/DAC overview</strong>. Topics NOT in your syllabus (SCR/DIAC/TRIAC, Special Diodes, Digital Circuits at circuit level) are marked in <span style="color:#ff5050; text-decoration:line-through;">red with strikethrough</span>. Focus only on green-marked topics.
+  </div>
+</div>
+
+<div class="notice">
   <div class="notice-box">
-    <strong>Note:</strong> The 2024 paper introduced a major structural change — Section A now includes digital circuit design (flip-flops, MUX, shift registers, D/A–A/D converters) for the first time. All earlier years covered only analog electronics in both sections. Prepare for both in 2025.
+    <strong>📚 Current Semester Syllabus (EEE 221):</strong> Section A — Semiconductors, PN junctions, diodes, rectification, voltage regulation, clippers/clampers, Zener diodes, BJT/MOSFET switching, Op-Amps as comparators, Schmitt trigger (Weeks 1–8). Section B — 555 timer, TTL/CMOS logic interfacing, power delivery, sensor/actuator interfacing, ADC/DAC overview (Weeks 9–13). Topics like SCR/DIAC/TRIAC, Special Diodes (LED, photodiode, solar cell), and detailed Digital Circuits (flip-flops, MUX, shift registers) are <strong>NOT in current syllabus</strong>.
   </div>
 </div>
 
@@ -352,98 +426,98 @@
           <td><strong>BJT — Basics, Configurations &amp; Characteristics</strong> (CB/CE/CC, α, β, switch, amplifier)</td>
           <td>All 10 years</td>
           <td><span class="freq-bar" style="width:90px"></span>35</td>
-          <td><span class="badge badge-red">🔴 High</span></td>
+          <td><span class="badge badge-green">🟢 IN SYLLABUS</span></td>
         </tr>
         <tr>
           <td>2</td>
           <td><strong>Rectifiers</strong> (HWR, FWR bridge &amp; center-tap, efficiency, PIV, ripple factor)</td>
           <td>All 10 years</td>
           <td><span class="freq-bar" style="width:86px"></span>30</td>
-          <td><span class="badge badge-red">🔴 High</span></td>
+          <td><span class="badge badge-green">🟢 IN SYLLABUS</span></td>
         </tr>
         <tr>
           <td>3</td>
           <td><strong>P-N Junction Diode</strong> (bias, V-I characteristics, circuit analysis)</td>
           <td>All 10 years</td>
           <td><span class="freq-bar" style="width:86px"></span>32</td>
-          <td><span class="badge badge-red">🔴 High</span></td>
+          <td><span class="badge badge-green">🟢 IN SYLLABUS</span></td>
         </tr>
         <tr>
           <td>4</td>
           <td><strong>BJT Biasing &amp; Q-point</strong> (fixed bias, voltage divider, load line)</td>
           <td>All 10 years</td>
           <td><span class="freq-bar" style="width:82px"></span>28</td>
-          <td><span class="badge badge-red">🔴 High</span></td>
+          <td><span class="badge badge-green">🟢 IN SYLLABUS</span></td>
         </tr>
         <tr>
           <td>5</td>
           <td><strong>Semiconductor Physics</strong> (energy bands, doping, n/p-type, Si vs Ge, Fermi level)</td>
           <td>All 10 years</td>
           <td><span class="freq-bar" style="width:78px"></span>27</td>
-          <td><span class="badge badge-red">🔴 High</span></td>
+          <td><span class="badge badge-green">🟢 IN SYLLABUS</span></td>
         </tr>
         <tr>
           <td>6</td>
           <td><strong>Clippers &amp; Clampers</strong> (waveform sketching, DC level, shunt/series)</td>
           <td>All 10 years</td>
           <td><span class="freq-bar" style="width:75px"></span>25</td>
-          <td><span class="badge badge-red">🔴 High</span></td>
+          <td><span class="badge badge-green">🟢 IN SYLLABUS</span></td>
         </tr>
         <tr>
           <td>7</td>
           <td><strong>JFET</strong> (construction, transfer curve, IDSS/VP, biasing numerics, rd, gm, μ)</td>
           <td>All 10 years</td>
           <td><span class="freq-bar" style="width:75px"></span>27</td>
-          <td><span class="badge badge-red">🔴 High</span></td>
+          <td><span class="badge badge-green">🟢 IN SYLLABUS</span></td>
         </tr>
         <tr>
           <td>8</td>
           <td><strong>MOSFET</strong> (enhancement/depletion types, CMOS inverter, channel formation)</td>
           <td>2016–2024 (9 years)</td>
           <td><span class="freq-bar" style="width:70px"></span>25</td>
-          <td><span class="badge badge-orange">🟠 Medium</span></td>
+          <td><span class="badge badge-green">🟢 IN SYLLABUS</span></td>
         </tr>
         <tr>
           <td>9</td>
           <td><strong>Op-Amp</strong> (CMRR, summing, inverting, noninverting, integrator, slew rate)</td>
           <td>2016–2024 (9 years)</td>
           <td><span class="freq-bar" style="width:70px"></span>27</td>
-          <td><span class="badge badge-orange">🟠 Medium</span></td>
+          <td><span class="badge badge-green">🟢 IN SYLLABUS</span></td>
         </tr>
         <tr>
           <td>10</td>
           <td><strong>Zener Diode</strong> (equivalent circuit, voltage regulation, Zener vs avalanche)</td>
           <td>2017–2024 (8 years)</td>
           <td><span class="freq-bar" style="width:56px"></span>17</td>
-          <td><span class="badge badge-orange">🟠 Medium</span></td>
+          <td><span class="badge badge-green">🟢 IN SYLLABUS</span></td>
         </tr>
         <tr>
           <td>11</td>
           <td><strong>Logic Families</strong> (TTL, CMOS, RTL, DTL, noise margin, fan-in/out, CMOS gates)</td>
           <td>2016, 2021–2024 (6 years)</td>
           <td><span class="freq-bar" style="width:58px"></span>22</td>
-          <td><span class="badge badge-orange">🟠 Medium</span></td>
+          <td><span class="badge badge-green">🟢 IN SYLLABUS</span></td>
         </tr>
         <tr>
           <td>12</td>
-          <td><strong>SCR / DIAC / TRIAC</strong> (V-I characteristics, construction, AC regulator)</td>
+          <td><strong>❌ NOT IN SYLLABUS: SCR / DIAC / TRIAC</strong> (V-I characteristics, construction, AC regulator)</td>
           <td>2016–2022 (7 years)</td>
           <td><span class="freq-bar" style="width:44px"></span>15</td>
-          <td><span class="badge badge-orange">🟠 Medium</span></td>
+          <td><span class="badge badge-red">🔴 Outdated</span></td>
         </tr>
         <tr>
           <td>13</td>
-          <td><strong>Special Diodes</strong> (LED, photodiode, solar cell, tunnel diode, VMOS)</td>
+          <td><strong>❌ NOT IN SYLLABUS: Special Diodes</strong> (LED, photodiode, solar cell, tunnel diode, VMOS)</td>
           <td>2016–2022 (7 years)</td>
           <td><span class="freq-bar" style="width:40px"></span>14</td>
-          <td><span class="badge badge-green">🟢 Low</span></td>
+          <td><span class="badge badge-red">🔴 Outdated</span></td>
         </tr>
         <tr>
           <td>14</td>
-          <td><strong>Digital Circuits</strong> (flip-flops, MUX, shift registers, A/D–D/A converters)</td>
+          <td><strong>❌ NOT IN SYLLABUS: Digital Circuits</strong> (flip-flops, MUX, shift registers, A/D–D/A converters)</td>
           <td>2024 only</td>
           <td><span class="freq-bar" style="width:22px"></span>8</td>
-          <td><span class="badge badge-green">🟢 Low</span></td>
+          <td><span class="badge badge-red">🔴 Outdated</span></td>
         </tr>
         <tr>
           <td>15</td>
@@ -462,9 +536,9 @@
     <p style="margin-bottom:18px">Click any topic to expand and see all actual exam questions under it.</p>
 
     <!-- Semiconductor Physics -->
-    <div class="topic-block">
+    <div class="topic-block in-syllabus">
       <div class="topic-header" onclick="toggle(this)">
-        <span class="badge badge-red">🔴</span>
+        <span class="badge badge-green">🟢</span>
         <strong>Semiconductor Physics</strong> — 27 questions, all 10 years
         <span class="toggle-hint">▼ expand</span>
       </div>
@@ -500,9 +574,9 @@
     </div>
 
     <!-- P-N Junction Diode -->
-    <div class="topic-block">
+    <div class="topic-block in-syllabus">
       <div class="topic-header" onclick="toggle(this)">
-        <span class="badge badge-red">🔴</span>
+        <span class="badge badge-green">🟢</span>
         <strong>P-N Junction Diode</strong> — 32 questions, all 10 years
         <span class="toggle-hint">▼ expand</span>
       </div>
@@ -535,9 +609,9 @@
     </div>
 
     <!-- Zener Diode -->
-    <div class="topic-block">
+    <div class="topic-block in-syllabus">
       <div class="topic-header" onclick="toggle(this)">
-        <span class="badge badge-orange">🟠</span>
+        <span class="badge badge-green">🟢</span>
         <strong>Zener Diode</strong> — 17 questions, 2017–2024
         <span class="toggle-hint">▼ expand</span>
       </div>
@@ -558,9 +632,9 @@
     </div>
 
     <!-- Rectifiers -->
-    <div class="topic-block">
+    <div class="topic-block in-syllabus">
       <div class="topic-header" onclick="toggle(this)">
-        <span class="badge badge-red">🔴</span>
+        <span class="badge badge-green">🟢</span>
         <strong>Rectifiers</strong> — 30 questions, all 10 years
         <span class="toggle-hint">▼ expand</span>
       </div>
@@ -592,9 +666,9 @@
     </div>
 
     <!-- Clippers & Clampers -->
-    <div class="topic-block">
+    <div class="topic-block in-syllabus">
       <div class="topic-header" onclick="toggle(this)">
-        <span class="badge badge-red">🔴</span>
+        <span class="badge badge-green">🟢</span>
         <strong>Clippers &amp; Clampers</strong> — 25 questions, all 10 years
         <span class="toggle-hint">▼ expand</span>
       </div>
@@ -621,9 +695,9 @@
     </div>
 
     <!-- BJT Basics -->
-    <div class="topic-block">
+    <div class="topic-block in-syllabus">
       <div class="topic-header" onclick="toggle(this)">
-        <span class="badge badge-red">🔴</span>
+        <span class="badge badge-green">🟢</span>
         <strong>BJT — Basics, Configurations &amp; Characteristics</strong> — 35 questions, all 10 years
         <span class="toggle-hint">▼ expand</span>
       </div>
@@ -661,9 +735,9 @@
     </div>
 
     <!-- BJT Biasing -->
-    <div class="topic-block">
+    <div class="topic-block in-syllabus">
       <div class="topic-header" onclick="toggle(this)">
-        <span class="badge badge-red">🔴</span>
+        <span class="badge badge-green">🟢</span>
         <strong>BJT Biasing &amp; Q-point</strong> — 28 questions, all 10 years
         <span class="toggle-hint">▼ expand</span>
       </div>
@@ -692,9 +766,9 @@
     </div>
 
     <!-- JFET -->
-    <div class="topic-block">
+    <div class="topic-block in-syllabus">
       <div class="topic-header" onclick="toggle(this)">
-        <span class="badge badge-red">🔴</span>
+        <span class="badge badge-green">🟢</span>
         <strong>JFET</strong> — 27 questions, all 10 years
         <span class="toggle-hint">▼ expand</span>
       </div>
@@ -726,9 +800,9 @@
     </div>
 
     <!-- MOSFET -->
-    <div class="topic-block">
+    <div class="topic-block in-syllabus">
       <div class="topic-header" onclick="toggle(this)">
-        <span class="badge badge-orange">🟠</span>
+        <span class="badge badge-green">🟢</span>
         <strong>MOSFET</strong> — 25 questions, 2016–2024
         <span class="toggle-hint">▼ expand</span>
       </div>
@@ -756,9 +830,9 @@
     </div>
 
     <!-- Op-Amp -->
-    <div class="topic-block">
+    <div class="topic-block in-syllabus">
       <div class="topic-header" onclick="toggle(this)">
-        <span class="badge badge-orange">🟠</span>
+        <span class="badge badge-green">🟢</span>
         <strong>Op-Amp</strong> — 27 questions, 2016–2024
         <span class="toggle-hint">▼ expand</span>
       </div>
@@ -793,9 +867,9 @@
     </div>
 
     <!-- Logic Families -->
-    <div class="topic-block">
+    <div class="topic-block in-syllabus">
       <div class="topic-header" onclick="toggle(this)">
-        <span class="badge badge-orange">🟠</span>
+        <span class="badge badge-green">🟢</span>
         <strong>Logic Families (TTL / CMOS / RTL)</strong> — 22 questions, 2016, 2021–2024
         <span class="toggle-hint">▼ expand</span>
       </div>
@@ -822,7 +896,7 @@
     </div>
 
     <!-- SCR / DIAC / TRIAC -->
-    <div class="topic-block">
+    <div class="topic-block outdated">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-orange">🟠</span>
         <strong>SCR / DIAC / TRIAC</strong> — 15 questions, 2016–2022
@@ -845,7 +919,7 @@
     </div>
 
     <!-- Special Diodes -->
-    <div class="topic-block">
+    <div class="topic-block outdated">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-green">🟢</span>
         <strong>Special Diodes</strong> — 14 questions, 2016–2022
@@ -865,7 +939,7 @@
     </div>
 
     <!-- Digital Circuits -->
-    <div class="topic-block">
+    <div class="topic-block outdated">
       <div class="topic-header" onclick="toggle(this)">
         <span class="badge badge-green">🟢</span>
         <strong>Digital Circuits</strong> — 8 questions, 2024 only (NEW)

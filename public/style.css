@@ -701,3 +701,51 @@ footer {
   .hero-actions { flex-direction: column; align-items: stretch; }
   .btn-primary, .btn-secondary { text-align: center; }
 }
+
+/* --- Custom Google Button Theme --- */
+
+/* 1. Base Button Styling */
+.abcRioButton, 
+button[id*="google_signin"], 
+div[id*="google"] button {
+    background-color: rgba(0, 10, 0, 0.8) !important; /* Dark transparent background */
+    border: 1px solid #00ff41 !important; /* Neon Green Border */
+    color: #00ff41 !important; /* Neon Green Text */
+    border-radius: 4px !important;
+    font-family: 'Courier New', Courier, monospace !important; /* Match tech vibe */
+    font-weight: bold !important;
+    box-shadow: 0 0 5px rgba(0, 255, 65, 0.2); /* Subtle initial glow */
+    transition: all 0.3s ease-in-out !important;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 2. Fix the Google Logo Icon Color */
+/* This filters the white Google 'G' to match your green theme */
+.abcRioButton svg, 
+button[id*="google_signin"] svg,
+div[id*="google"] svg {
+    filter: invert(87%) sepia(13%) saturate(657%) hue-rotate(91deg) brightness(103%) contrast(105%); 
+    /* The above filter converts white/black to approx #00ff41 */
+}
+
+/* 3. Hover Effects (Glow & Gradient Shift) */
+.abcRioButton:hover, 
+button[id*="google_signin"]:hover, 
+div[id*="google"] button:hover {
+    background: linear-gradient(90deg, rgba(0, 20, 0, 1) 0%, rgba(0, 255, 65, 0.15) 50%, rgba(0, 20, 0, 1) 100%) !important;
+    border-color: #00ff41 !important;
+    box-shadow: 
+        0 0 10px #00ff41, 
+        0 0 20px rgba(0, 255, 65, 0.4),
+        inset 0 0 10px rgba(0, 255, 65, 0.1); /* Inner glow */
+    transform: translateY(-2px); /* Slight lift */
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.8);
+}
+
+/* 4. Active/Click State */
+.abcRioButton:active, 
+button[id*="google_signin"]:active {
+    transform: translateY(0);
+    box-shadow: 0 0 5px #00ff41;
+}
